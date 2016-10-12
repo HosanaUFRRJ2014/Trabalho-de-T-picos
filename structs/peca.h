@@ -71,7 +71,7 @@ int pecasIguais(PECA *x, PECA *y)
 //dado uma peca a, verificar se esta é maior que a peca b, seguindo os critérios de majoritariedade do artigo 
 int pecaMaior(PECA *a, PECA *b)
 {
-	if(( a->v/(a->l * a->w) ) > ( b->v/(b->l + b->w) ) )
+	if(( a->v/(a->l * a->w) ) > ( b->v/(b->l * b->w) ) )
 		return true;
 
 	return false;
