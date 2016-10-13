@@ -48,7 +48,7 @@ R * criarRetanguloR(int l, int w)
 {
 	R *r = (R *) malloc(sizeof(R));
 
-	int i = 0, j = 0;
+	int i = 0;
 
 	
 		
@@ -68,7 +68,7 @@ R * criarRetanguloR(int l, int w)
 		//preencher retângulo R com zeros
 		preencherComZeros(r->matriz,r->L,r->W);
 
-		imprimirR(r->matriz,r->L,r->W);
+
 
 	}
 
