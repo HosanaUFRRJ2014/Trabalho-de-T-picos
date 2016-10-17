@@ -42,27 +42,6 @@ LISTA_LIGADA *criarLista()
 	return lista;
 }
 
-//peça existe, independentemente de a lista existir ou não
-//por isso comentei essa parte, pois a mesma faz com que peca só exista se  a lista existir
-/*PECA *newPeca(int id_peca, int valor)
-{
-	NO *no = (NO *) malloc(sizeof(NO));
-
-	no->anterior = NULL;
-
-	no->proximo = NULL;
-
-	PECA *peca = (PECA *) malloc(sizeof(PECA));
-
-	
-	peca->id_peca = id_peca;
-	peca->valor = valor;
-
-	no->peca = peca;
-
-
-	return no->peca;
-}*/
 
 int vazia(LISTA_LIGADA *l)
 {
@@ -71,38 +50,6 @@ int vazia(LISTA_LIGADA *l)
 
 	return false;
 }
-
-/*inserir peca no inicio da lista*/
-/*int inserirPecaInicio(LISTA_LIGADA *lista, PECA *peca)
-{
-
-	NO *pnovo = (NO *) malloc (sizeof(NO));
-
-	if(pnovo != NULL)
-	{
-		pnovo->peca = peca;
-        pnovo->anterior = NULL;
-        pnovo->proximo = lista->inicio;
-
-
-        if(lista->inicio == NULL)
-        	lista->fim = pnovo;
-
-        else
-        	lista->inicio->anterior = pnovo;
-
-
-        lista->inicio = pnovo;
-		lista->tamanho++;
-		
-		return true;
-	}
-
-
-
-    return false;	
-
-}*/
 
 int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *peca)
 {
@@ -190,101 +137,18 @@ int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *peca)
 
 }
 
-/*Inserir peça ordenadamente*/
-//ideia: ao invés de inserir ou no inicio ou no fim, varrer a lista toda procurando
-//uma lugar em que o tamamho seja menor 
-//
-/*int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *peca)
-{
-
-	NO *pnovo = (NO *) malloc (sizeof(NO));
-
-	NO *aux;
-
-
-	if(pnovo != NULL)
-	{
-		//pnovo->peca = peca;
-       // pnovo->proximo = NULL;
-        //pnovo->anterior = lista->fim;
-
-
-        if(lista->inicio == NULL) //se for o primeiro nó a ser inserido
-        {
-        	pnovo->peca = peca;
-        	lista->inicio = pnovo;
-        	lista->fim = pnovo;
-        }
-
-        else
-        {
-        	//lista->fim->proximo = pnovo;
-        	aux = lista->inicio;
-
-        	while(aux != NULL)
-        	{
-
-        		if( ( peca->v/(peca->l * peca->w) ) > ( aux->v/(peca->l + peca->w) )
-        		{
-        			//verificar se peca anterior já existe.
-        			//se sim, só colocar a quantidade
-        			//se não, criar o nó e colocá-lo na frente de aux.
-
-        			if(aux->anterior != NULL)
-        			{
-        				//se são pecas iguais,é só adicionar a nova quantidade. Não está verificando os limites aqui
-        				if( pecasIguais(aux->anterior->peca, peca) )
-        					aux->anterior->peca->quantidade += peca->quantidade;
-
-        				else
-        				{
-
-        				}
-
-
-        			}
-
-        			else
-        			{
-        				pnovo->peca = peca;
-
-
-        			}
-        		}
-
-        		aux = aux->proximo;
-        	}
-
-        	//se chegar no fim da lista
-        	   //a) comparar com a última peca e ver se são iguais
-        	        //subcasos
-        	   //só adicionar no fim da lista o novo nó.
-
-
-
-        }
-
-
-       // lista->fim = pnovo;
-		lista->tamanho++;
-		return true;
-	}
-
-
-    return false;	
-
-}*/
-
 /*Remover sempre a primeira peça da lista*/
 //verificar se a qtd da peça será zerada
 	//se sim, remover o nó
 	//se não, só decrementar a quantidade dela
-int removerPeca(LISTA_LIGADA *lista)
+/*PECA  *removerPeca(LISTA_LIGADA *lista)
 {
 	if(!vazia(lista))
 	{
 		NO *aRemover = lista->inicio;
 
+		PECA *retorno;
+		
 		if(aRemover->peca->quantidade == 1)
 		{
 			lista->inicio = aRemover->proximo;
@@ -296,68 +160,93 @@ int removerPeca(LISTA_LIGADA *lista)
 	        		lista->fim = aRemover->anterior;
 
 	        lista->tamanho--;
-	        free(aRemover);   //será substituido por apagarNo
+
+	        *retorno =  *aRemover->peca; //copia do ponteiro aRemover->peca para o retorno;
+
+	        retorno->quantidade = 1;
+
+
+	       
+
+	        free(aRemover);
+
+	        
 
         }
 
         else
         {
-        	aRemover->peca->quantidade--; 
+			retorno->peca->quantidade  = 1;
+
+			printf("quantidade pecas pont retorno %d\n", retorno->peca->quantidade);
+
+			aRemover->peca->quantidade --;
+
+			printf("quantidade pecas pont aRemover %d\n", aRemover->peca->quantidade);
+
+
+			
+        	
         }
       
-        return true;	
+        return retorno->peca;	
        
 	}
 
-	return false;
-}
+	return NULL;
+}*/
 
-/*Remover um peca dado um id_peca*/
-/*int removerPeca(LISTA_LIGADA *lista, int id_peca)
+PECA  *removerPeca(LISTA_LIGADA *lista)
 {
 	if(!vazia(lista))
 	{
 		NO *aRemover = lista->inicio;
 
-		while(aRemover != NULL && aRemover->peca->id_peca != id_peca)
-			aRemover = aRemover->proximo;
-
-        
-        if(aRemover != NULL)
-        {
-        	if(aRemover != lista->inicio)
-        	    aRemover->anterior->proximo = aRemover->proximo;
-
-        	else
-        	    lista->inicio = aRemover->proximo;
+		PECA *retorno =  (PECA *) malloc (sizeof(PECA));
+		*retorno =  *aRemover->peca; //copia do ponteiro aRemover->peca para o retorno;
 
 
+		
+		if(aRemover->peca->quantidade == 1)
+		{
+			lista->inicio = aRemover->proximo;
+
+			if(aRemover != lista->fim)
+	        	aRemover->proximo->anterior = aRemover->anterior;
+
+	        	else
+	        		lista->fim = aRemover->anterior;
+
+	        lista->tamanho--;
+
+	        free(aRemover);
 
 
-        	if(aRemover != lista->fim)
-        		aRemover->proximo->anterior = aRemover->anterior;
-
-        	else
-        		lista->fim = aRemover->anterior;
-
-
-
-        	lista->tamanho--;
-            free(aRemover);   //será substituido por apagarNo
-            return true;
-
+	        
 
         }
 
-        return false;
+        else
+        {
+			retorno->quantidade  = 1;
+
+		//	printf("quantidade pecas pont retorno %d\n", retorno->quantidade);
+
+			aRemover->peca->quantidade --;
+
+		//	printf("quantidade pecas pont aRemover %d\n", aRemover->peca->quantidade);
 
 
-
-        
+			
+        	
+        }
+      
+        return retorno;	
+       
 	}
 
-	return false;
-}*/
+	return NULL;
+}
 
 void imprimirLista(LISTA_LIGADA *l)
 {
@@ -367,6 +256,7 @@ void imprimirLista(LISTA_LIGADA *l)
 
 	while(aux != NULL)
 	{
+		custoBeneficio(aux->peca);
 		imprimirPeca(aux->peca);
 		aux = aux->proximo;
 	}

@@ -15,6 +15,8 @@ typedef struct             //comprimento l e largura w,
 	int Q;
 	int v;
 	int quantidade;   //quantidade existente da peça
+
+	
 	
 }PECA;
 
@@ -71,11 +73,18 @@ int pecasIguais(PECA *x, PECA *y)
 //dado uma peca a, verificar se esta é maior que a peca b, seguindo os critérios de majoritariedade do artigo 
 int pecaMaior(PECA *a, PECA *b)
 {
-	if(( a->v/(a->l * a->w) ) > ( b->v/(b->l * b->w) ) )
+	if(( (float)a->v/(a->l * a->w) ) > ( (float)b->v/(b->l * b->w) ) )
 		return true;
 
 	return false;
 
+}
+
+void custoBeneficio(PECA *a)
+{
+	float f = (float) a->v/(a->l * a->w);
+	printf("%f\n", f);
+	
 }
 
 void imprimirPeca(PECA *p)

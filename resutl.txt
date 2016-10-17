@@ -1,0 +1,2288 @@
+2.000000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40
+
+2.000000
+Quantidade: 2
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 43
+
+1.000000
+Quantidade: 2
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 35
+
+1.000000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27
+
+1.000000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23
+
+2.000000
+Quantidade: 3
+largura(w): 1
+comprimento(l): 10
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 28
+
+2.000000
+Quantidade: 2
+largura(w): 5
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40
+
+2.000000
+Quantidade: 3
+largura(w): 9
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 63
+
+2.000000
+Quantidade: 3
+largura(w): 6
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 13
+
+2.000000
+Quantidade: 1
+largura(w): 4
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 10
+
+2.000000
+Quantidade: 2
+largura(w): 7
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 44
+
+1.000000
+Quantidade: 3
+largura(w): 3
+comprimento(l): 8
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 31
+
+3.000000
+Quantidade: 2
+largura(w): 4
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 60
+
+2.000000
+Quantidade: 2
+largura(w): 4
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 9
+
+2.000000
+Quantidade: 1
+largura(w): 8
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 79
+
+2.000000
+Quantidade: 3
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 52
+
+2.000000
+Quantidade: 2
+largura(w): 9
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 21
+
+1.000000
+Quantidade: 2
+largura(w): 3
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 7
+
+1.000000
+Quantidade: 3
+largura(w): 7
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 20
+
+1.000000
+Quantidade: 1
+largura(w): 1
+comprimento(l): 10
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 14
+
+1.000000
+Quantidade: 2
+largura(w): 4
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 11
+
+1.000000
+Quantidade: 3
+largura(w): 6
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 13
+
+2.000000
+Quantidade: 1
+largura(w): 8
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 71
+
+2.000000
+Quantidade: 2
+largura(w): 12
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 61
+
+1.000000
+Quantidade: 2
+largura(w): 15
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 34
+
+1.000000
+Quantidade: 1
+largura(w): 7
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27
+
+1.000000
+Quantidade: 1
+largura(w): 9
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 14
+
+3.000000
+Quantidade: 3
+largura(w): 12
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 72
+
+2.000000
+Quantidade: 1
+largura(w): 11
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 91
+
+1.000000
+Quantidade: 2
+largura(w): 10
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 34
+
+1.000000
+Quantidade: 1
+largura(w): 9
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 48
+
+1.000000
+Quantidade: 3
+largura(w): 12
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 37
+
+1.000000
+Quantidade: 3
+largura(w): 11
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 15
+
+1.000000
+Quantidade: 1
+largura(w): 2
+comprimento(l): 10
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 36
+
+2.000000
+Quantidade: 1
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 50
+
+2.000000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 74
+
+2.000000
+Quantidade: 1
+largura(w): 11
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 48
+
+1.000000
+Quantidade: 3
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 29
+
+1.000000
+Quantidade: 1
+largura(w): 2
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 11
+
+1.000000
+Quantidade: 2
+largura(w): 2
+comprimento(l): 8
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 30
+
+1.000000
+Quantidade: 1
+largura(w): 3
+comprimento(l): 8
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 46
+
+1.000000
+Quantidade: 1
+largura(w): 4
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 7
+
+1.000000
+Quantidade: 3
+largura(w): 6
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 32
+
+1.000000
+Quantidade: 1
+largura(w): 4
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 32
+
+2.000000
+Quantidade: 3
+largura(w): 1
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 26
+
+2.000000
+Quantidade: 1
+largura(w): 16
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 113
+
+2.000000
+Quantidade: 1
+largura(w): 18
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 127
+
+2.000000
+Quantidade: 1
+largura(w): 20
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 104
+
+1.000000
+Quantidade: 2
+largura(w): 3
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 4
+
+2.000000
+Quantidade: 1
+largura(w): 15
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 110
+
+2.000000
+Quantidade: 3
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93
+
+2.000000
+Quantidade: 2
+largura(w): 13
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 38
+
+2.000000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 144
+
+2.000000
+Quantidade: 3
+largura(w): 18
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 185
+
+1.000000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 78
+
+1.000000
+Quantidade: 1
+largura(w): 8
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 25
+
+2.000000
+Quantidade: 1
+largura(w): 1
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 10
+
+2.000000
+Quantidade: 3
+largura(w): 12
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 92
+
+2.000000
+Quantidade: 1
+largura(w): 7
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 166
+
+2.000000
+Quantidade: 1
+largura(w): 17
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 252
+
+1.000000
+Quantidade: 1
+largura(w): 14
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 45
+
+1.000000
+Quantidade: 2
+largura(w): 20
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 139
+
+1.000000
+Quantidade: 2
+largura(w): 11
+comprimento(l): 8
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 145
+
+1.000000
+Quantidade: 2
+largura(w): 11
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 123
+
+1.000000
+Quantidade: 2
+largura(w): 7
+comprimento(l): 14
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 161
+
+1.000000
+Quantidade: 3
+largura(w): 1
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 12
+
+2.000000
+Quantidade: 3
+largura(w): 1
+comprimento(l): 30
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 75
+
+1.000000
+Quantidade: 1
+largura(w): 25
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 279
+
+1.000000
+Quantidade: 3
+largura(w): 27
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 409
+
+1.000000
+Quantidade: 3
+largura(w): 30
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 65
+
+1.000000
+Quantidade: 3
+largura(w): 26
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 235
+
+2.000000
+Quantidade: 2
+largura(w): 14
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 254
+
+1.000000
+Quantidade: 3
+largura(w): 3
+comprimento(l): 23
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 118
+
+1.000000
+Quantidade: 1
+largura(w): 29
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 244
+
+1.000000
+Quantidade: 3
+largura(w): 21
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 81
+
+1.000000
+Quantidade: 3
+largura(w): 17
+comprimento(l): 11
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 371
+
+1.000000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 78
+
+1.000000
+Quantidade: 1
+largura(w): 21
+comprimento(l): 8
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 293
+
+2.000000
+Quantidade: 3
+largura(w): 6
+comprimento(l): 28
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 351
+
+2.000000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 10
+
+2.000000
+Quantidade: 3
+largura(w): 9
+comprimento(l): 11
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 240
+
+2.000000
+Quantidade: 1
+largura(w): 4
+comprimento(l): 30
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 265
+
+2.000000
+Quantidade: 1
+largura(w): 16
+comprimento(l): 13
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 507
+
+1.000000
+Quantidade: 1
+largura(w): 16
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 132
+
+1.000000
+Quantidade: 3
+largura(w): 24
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 29
+
+1.000000
+Quantidade: 3
+largura(w): 8
+comprimento(l): 23
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 275
+
+1.000000
+Quantidade: 2
+largura(w): 6
+comprimento(l): 26
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 259
+
+1.000000
+Quantidade: 2
+largura(w): 2
+comprimento(l): 30
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 110
+
+1.000000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 450
+
+1.000000
+Quantidade: 1
+largura(w): 17
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 570
+
+1.000000
+Quantidade: 1
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 49
+
+1.000000
+Quantidade: 1
+largura(w): 9
+comprimento(l): 15
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 166
+
+1.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 12
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 69
+
+0.000000
+Quantidade: 1
+largura(w): 16
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 92
+
+0.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 17
+
+1.000000
+Quantidade: 1
+largura(w): 22
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 828
+
+1.000000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 450
+
+1.000000
+Quantidade: 1
+largura(w): 11
+comprimento(l): 18
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 335
+
+1.000000
+Quantidade: 1
+largura(w): 17
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 570
+
+1.000000
+Quantidade: 1
+largura(w): 8
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 268
+
+1.000000
+Quantidade: 1
+largura(w): 9
+comprimento(l): 17
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 236
+
+1.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 18
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 128
+
+1.000000
+Quantidade: 1
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 49
+
+1.000000
+Quantidade: 1
+largura(w): 9
+comprimento(l): 15
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 166
+
+1.000000
+Quantidade: 1
+largura(w): 1
+comprimento(l): 19
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 22
+
+1.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 12
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 69
+
+1.000000
+Quantidade: 1
+largura(w): 22
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 530
+
+1.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 33
+
+0.000000
+Quantidade: 1
+largura(w): 16
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 92
+
+0.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 17
+
+1.000000
+Quantidade: 1
+largura(w): 17
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 153
+
+1.000000
+Quantidade: 4
+largura(w): 11
+comprimento(l): 19
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 209
+
+1.000000
+Quantidade: 3
+largura(w): 12
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 252
+
+1.000000
+Quantidade: 4
+largura(w): 14
+comprimento(l): 23
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 322
+
+1.000000
+Quantidade: 3
+largura(w): 24
+comprimento(l): 15
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 360
+
+1.000000
+Quantidade: 4
+largura(w): 25
+comprimento(l): 16
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 400
+
+1.000000
+Quantidade: 2
+largura(w): 27
+comprimento(l): 17
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 459
+
+1.000000
+Quantidade: 3
+largura(w): 18
+comprimento(l): 29
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 522
+
+1.000000
+Quantidade: 3
+largura(w): 21
+comprimento(l): 31
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 651
+
+1.000000
+Quantidade: 2
+largura(w): 32
+comprimento(l): 22
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 704
+
+1.000000
+Quantidade: 3
+largura(w): 23
+comprimento(l): 33
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 759
+
+1.000000
+Quantidade: 2
+largura(w): 34
+comprimento(l): 24
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 816
+
+1.000000
+Quantidade: 2
+largura(w): 35
+comprimento(l): 25
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 875
+
+1.000000
+Quantidade: 1
+largura(w): 36
+comprimento(l): 26
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 936
+
+1.000000
+Quantidade: 1
+largura(w): 37
+comprimento(l): 27
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 999
+
+1.000000
+Quantidade: 1
+largura(w): 38
+comprimento(l): 28
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1064
+
+1.000000
+Quantidade: 1
+largura(w): 39
+comprimento(l): 29
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1131
+
+1.000000
+Quantidade: 1
+largura(w): 41
+comprimento(l): 30
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1230
+
+1.000000
+Quantidade: 1
+largura(w): 43
+comprimento(l): 31
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1333
+
+0.000000
+Quantidade: 4
+largura(w): 31
+comprimento(l): 43
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 500
+
+0.000000
+Quantidade: 2
+largura(w): 30
+comprimento(l): 41
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 480
+
+0.000000
+Quantidade: 4
+largura(w): 29
+comprimento(l): 39
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 460
+
+0.000000
+Quantidade: 4
+largura(w): 28
+comprimento(l): 38
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 440
+
+0.000000
+Quantidade: 3
+largura(w): 27
+comprimento(l): 37
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 420
+
+0.000000
+Quantidade: 4
+largura(w): 26
+comprimento(l): 36
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 410
+
+0.000000
+Quantidade: 3
+largura(w): 25
+comprimento(l): 35
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 400
+
+0.000000
+Quantidade: 4
+largura(w): 24
+comprimento(l): 34
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 380
+
+0.000000
+Quantidade: 4
+largura(w): 33
+comprimento(l): 23
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 360
+
+0.000000
+Quantidade: 3
+largura(w): 22
+comprimento(l): 32
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 340
+
+0.000000
+Quantidade: 3
+largura(w): 31
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 320
+
+0.000000
+Quantidade: 3
+largura(w): 29
+comprimento(l): 18
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 300
+
+0.000000
+Quantidade: 2
+largura(w): 17
+comprimento(l): 27
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 280
+
+0.000000
+Quantidade: 2
+largura(w): 15
+comprimento(l): 24
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 240
+
+0.000000
+Quantidade: 4
+largura(w): 16
+comprimento(l): 25
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 260
+
+0.000000
+Quantidade: 1
+largura(w): 15
+comprimento(l): 24
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 240
+
+0.000000
+Quantidade: 4
+largura(w): 23
+comprimento(l): 14
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 220
+
+0.000000
+Quantidade: 3
+largura(w): 21
+comprimento(l): 12
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 180
+
+0.000000
+Quantidade: 4
+largura(w): 19
+comprimento(l): 11
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 160
+
+0.000000
+Quantidade: 1
+largura(w): 9
+comprimento(l): 17
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 140
+
+2.000000
+Quantidade: 5
+largura(w): 4
+comprimento(l): 90
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 838
+
+2.000000
+Quantidade: 3
+largura(w): 22
+comprimento(l): 80
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 4735
+
+2.000000
+Quantidade: 5
+largura(w): 1
+comprimento(l): 88
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 181
+
+2.000000
+Quantidade: 5
+largura(w): 6
+comprimento(l): 40
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 706
+
+2.000000
+Quantidade: 5
+largura(w): 100
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 2538
+
+2.000000
+Quantidade: 3
+largura(w): 46
+comprimento(l): 14
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 1349
+
+2.000000
+Quantidade: 3
+largura(w): 70
+comprimento(l): 27
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 5336
+
+2.000000
+Quantidade: 5
+largura(w): 2
+comprimento(l): 41
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 179
+
+2.000000
+Quantidade: 2
+largura(w): 36
+comprimento(l): 63
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 6668
+
+2.000000
+Quantidade: 4
+largura(w): 51
+comprimento(l): 24
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 3551
+
+1.000000
+Quantidade: 2
+largura(w): 22
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 521
+
+1.000000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 96
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1685
+
+1.000000
+Quantidade: 1
+largura(w): 57
+comprimento(l): 18
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1775
+
+1.000000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 84
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1131
+
+1.000000
+Quantidade: 5
+largura(w): 100
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 129
+
+2.000000
+Quantidade: 1
+largura(w): 42
+comprimento(l): 19
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1668
+
+2.000000
+Quantidade: 1
+largura(w): 6
+comprimento(l): 86
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1416
+
+2.000000
+Quantidade: 1
+largura(w): 58
+comprimento(l): 20
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3166
+
+2.000000
+Quantidade: 1
+largura(w): 9
+comprimento(l): 52
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1176
+
+2.000000
+Quantidade: 1
+largura(w): 100
+comprimento(l): 14
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3434
+
+2.000000
+Quantidade: 1
+largura(w): 42
+comprimento(l): 32
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4031
+
+2.000000
+Quantidade: 1
+largura(w): 17
+comprimento(l): 30
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1152
+
+2.000000
+Quantidade: 1
+largura(w): 11
+comprimento(l): 90
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2255
+
+2.000000
+Quantidade: 1
+largura(w): 26
+comprimento(l): 65
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3570
+
+2.000000
+Quantidade: 1
+largura(w): 11
+comprimento(l): 84
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1913
+
+2.000000
+Quantidade: 1
+largura(w): 17
+comprimento(l): 93
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3989
+
+2.000000
+Quantidade: 1
+largura(w): 77
+comprimento(l): 31
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4850
+
+2.000000
+Quantidade: 1
+largura(w): 1
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 12
+
+2.000000
+Quantidade: 1
+largura(w): 21
+comprimento(l): 26
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1214
+
+1.000000
+Quantidade: 1
+largura(w): 8
+comprimento(l): 81
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 953
+
+1.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 76
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 389
+
+1.000000
+Quantidade: 1
+largura(w): 6
+comprimento(l): 80
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 676
+
+1.000000
+Quantidade: 1
+largura(w): 41
+comprimento(l): 48
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3580
+
+1.000000
+Quantidade: 1
+largura(w): 99
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 537
+
+1.000000
+Quantidade: 1
+largura(w): 7
+comprimento(l): 53
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 676
+
+1.000000
+Quantidade: 1
+largura(w): 24
+comprimento(l): 54
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1408
+
+1.000000
+Quantidade: 1
+largura(w): 23
+comprimento(l): 77
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2362
+
+1.000000
+Quantidade: 1
+largura(w): 100
+comprimento(l): 11
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1552
+
+1.000000
+Quantidade: 1
+largura(w): 29
+comprimento(l): 81
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4559
+
+1.000000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 64
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 713
+
+1.000000
+Quantidade: 1
+largura(w): 25
+comprimento(l): 48
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1279
+
+1.000000
+Quantidade: 1
+largura(w): 3
+comprimento(l): 71
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 299
+
+1.000000
+Quantidade: 1
+largura(w): 89
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1577
+
+1.000000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 99
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2116
+
+1.000000
+Quantidade: 1
+largura(w): 33
+comprimento(l): 72
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2932
+
+2.000000
+Quantidade: 1
+largura(w): 3
+comprimento(l): 98
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 756
+
+2.000000
+Quantidade: 1
+largura(w): 34
+comprimento(l): 36
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2712
+
+2.000000
+Quantidade: 1
+largura(w): 100
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1633
+
+2.000000
+Quantidade: 1
+largura(w): 14
+comprimento(l): 56
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2187
+
+2.000000
+Quantidade: 1
+largura(w): 23
+comprimento(l): 95
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4947
+
+2.000000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 97
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2757
+
+2.000000
+Quantidade: 1
+largura(w): 41
+comprimento(l): 45
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4347
+
+2.000000
+Quantidade: 1
+largura(w): 13
+comprimento(l): 12
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 396
+
+2.000000
+Quantidade: 1
+largura(w): 19
+comprimento(l): 68
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3866
+
+2.000000
+Quantidade: 1
+largura(w): 50
+comprimento(l): 46
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 5447
+
+2.000000
+Quantidade: 1
+largura(w): 28
+comprimento(l): 82
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 6032
+
+2.000000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 65
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1799
+
+2.000000
+Quantidade: 1
+largura(w): 21
+comprimento(l): 96
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 5186
+
+2.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 84
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 953
+
+2.000000
+Quantidade: 1
+largura(w): 16
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1000
+
+2.000000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 89
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1102
+
+2.000000
+Quantidade: 1
+largura(w): 76
+comprimento(l): 30
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 5458
+
+1.000000
+Quantidade: 1
+largura(w): 49
+comprimento(l): 26
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2332
+
+1.000000
+Quantidade: 1
+largura(w): 100
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 470
+
+1.000000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 90
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1569
+
+1.000000
+Quantidade: 1
+largura(w): 50
+comprimento(l): 47
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4274
+
+1.000000
+Quantidade: 1
+largura(w): 23
+comprimento(l): 70
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2904
+
+1.000000
+Quantidade: 1
+largura(w): 9
+comprimento(l): 86
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 929
+
+1.000000
+Quantidade: 1
+largura(w): 19
+comprimento(l): 64
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2120
+
+1.000000
+Quantidade: 1
+largura(w): 21
+comprimento(l): 75
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1629
+
+1.000000
+Quantidade: 1
+largura(w): 45
+comprimento(l): 26
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2059
+
+1.000000
+Quantidade: 1
+largura(w): 19
+comprimento(l): 77
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2583
+
+1.000000
+Quantidade: 1
+largura(w): 23
+comprimento(l): 69
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2900
+
+1.000000
+Quantidade: 1
+largura(w): 22
+comprimento(l): 63
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2234
+
+1.000000
+Quantidade: 1
+largura(w): 41
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 458
+
+48.000000
+Quantidade: 3
+largura(w): 6
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 2040
+
+2.000000
+Quantidade: 1
+largura(w): 48
+comprimento(l): 48
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 5145
+
+2.000000
+Quantidade: 1
+largura(w): 100
+comprimento(l): 14
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2924
+
+2.000000
+Quantidade: 1
+largura(w): 17
+comprimento(l): 85
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3182
+
+2.000000
+Quantidade: 1
+largura(w): 69
+comprimento(l): 20
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2862
+
+2.000000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 48
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 531
+
+2.000000
+Quantidade: 3
+largura(w): 1
+comprimento(l): 97
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 249
+
+2.000000
+Quantidade: 2
+largura(w): 66
+comprimento(l): 36
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 6601
+
+2.000000
+Quantidade: 3
+largura(w): 29
+comprimento(l): 80
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 6228
+
+2.000000
+Quantidade: 1
+largura(w): 19
+comprimento(l): 77
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3362
+
+2.000000
+Quantidade: 2
+largura(w): 63
+comprimento(l): 37
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 6137
+
+2.000000
+Quantidade: 1
+largura(w): 34
+comprimento(l): 54
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4123
+
+2.000000
+Quantidade: 3
+largura(w): 62
+comprimento(l): 28
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 5004
+
+2.000000
+Quantidade: 1
+largura(w): 20
+comprimento(l): 71
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3143
+
+2.000000
+Quantidade: 3
+largura(w): 99
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 841
+
+2.000000
+Quantidade: 2
+largura(w): 56
+comprimento(l): 40
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 5898
+
+2.000000
+Quantidade: 1
+largura(w): 22
+comprimento(l): 93
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4411
+
+2.000000
+Quantidade: 3
+largura(w): 13
+comprimento(l): 99
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 3456
+
+2.000000
+Quantidade: 3
+largura(w): 7
+comprimento(l): 76
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 1406
+
+1.000000
+Quantidade: 2
+largura(w): 6
+comprimento(l): 85
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 874
+
+1.000000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 72
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1224
+
+1.000000
+Quantidade: 1
+largura(w): 15
+comprimento(l): 53
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1005
+
+1.000000
+Quantidade: 1
+largura(w): 97
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 907
+
+1.000000
+Quantidade: 2
+largura(w): 7
+comprimento(l): 57
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 473
+
+1.000000
+Quantidade: 1
+largura(w): 71
+comprimento(l): 14
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1556
+
+1.000000
+Quantidade: 3
+largura(w): 3
+comprimento(l): 76
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 313
+
+1.000000
+Quantidade: 2
+largura(w): 5
+comprimento(l): 91
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 581
+
+1.000000
+Quantidade: 1
+largura(w): 14
+comprimento(l): 87
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1999
+
+1.000000
+Quantidade: 1
+largura(w): 92
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 795
+
+1.000000
+Quantidade: 2
+largura(w): 10
+comprimento(l): 77
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 1460
+
+1.000000
+Quantidade: 2
+largura(w): 14
+comprimento(l): 44
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 1107
+
+1.000000
+Quantidade: 3
+largura(w): 100
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 280
+
+1.000000
+Quantidade: 1
+largura(w): 86
+comprimento(l): 14
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2096
+
+2.000000
+Quantidade: 4
+largura(w): 42
+comprimento(l): 19
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 1668
+
+2.000000
+Quantidade: 5
+largura(w): 6
+comprimento(l): 86
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 1416
+
+2.000000
+Quantidade: 5
+largura(w): 58
+comprimento(l): 20
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 3166
+
+2.000000
+Quantidade: 5
+largura(w): 9
+comprimento(l): 52
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 1176
+
+2.000000
+Quantidade: 4
+largura(w): 100
+comprimento(l): 14
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 3434
+
+2.000000
+Quantidade: 5
+largura(w): 42
+comprimento(l): 32
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 4031
+
+2.000000
+Quantidade: 5
+largura(w): 17
+comprimento(l): 30
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 1152
+
+2.000000
+Quantidade: 4
+largura(w): 11
+comprimento(l): 90
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 2255
+
+2.000000
+Quantidade: 2
+largura(w): 26
+comprimento(l): 65
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 3570
+
+2.000000
+Quantidade: 3
+largura(w): 11
+comprimento(l): 84
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 1913
+
+2.000000
+Quantidade: 4
+largura(w): 17
+comprimento(l): 93
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 3989
+
+2.000000
+Quantidade: 1
+largura(w): 77
+comprimento(l): 31
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4850
+
+2.000000
+Quantidade: 5
+largura(w): 1
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 12
+
+2.000000
+Quantidade: 5
+largura(w): 21
+comprimento(l): 26
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 1214
+
+1.000000
+Quantidade: 3
+largura(w): 8
+comprimento(l): 81
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 953
+
+1.000000
+Quantidade: 4
+largura(w): 5
+comprimento(l): 76
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 389
+
+1.000000
+Quantidade: 4
+largura(w): 6
+comprimento(l): 80
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 676
+
+1.000000
+Quantidade: 1
+largura(w): 41
+comprimento(l): 48
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 3580
+
+1.000000
+Quantidade: 5
+largura(w): 99
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 537
+
+1.000000
+Quantidade: 5
+largura(w): 7
+comprimento(l): 53
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 676
+
+1.000000
+Quantidade: 1
+largura(w): 24
+comprimento(l): 54
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1408
+
+1.000000
+Quantidade: 1
+largura(w): 23
+comprimento(l): 77
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 2362
+
+1.000000
+Quantidade: 1
+largura(w): 100
+comprimento(l): 11
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1552
+
+1.000000
+Quantidade: 1
+largura(w): 29
+comprimento(l): 81
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 4559
+
+1.000000
+Quantidade: 2
+largura(w): 10
+comprimento(l): 64
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 713
+
+1.000000
+Quantidade: 1
+largura(w): 25
+comprimento(l): 48
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 1279
+
+1.000000
+Quantidade: 5
+largura(w): 3
+comprimento(l): 71
+qtd min(P): 0
+qtd max(Q): 5
+valor da peca(v): 299
+
+1.000000
+Quantidade: 4
+largura(w): 89
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 4
+valor da peca(v): 1577
+
+1.000000
+Quantidade: 2
+largura(w): 12
+comprimento(l): 99
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 2116
+

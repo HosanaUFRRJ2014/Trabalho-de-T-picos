@@ -13,7 +13,7 @@
 
 R* criarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
-	int i = 0;
+	int i = 0,j = 0;
 	NO *aux;
 
 	aux = P->inicio;
@@ -24,11 +24,20 @@ R* criarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 		ou para cada peça em B, tentar adicionar a peça nova.P[i](aux) nos
 		pontos candidatos*/
 
+		for(i = 0;i < aux->peca->l,i++)
+		{
+			for(j = 0;j < aux->peca->w,j++)
+			{
+
+			}
+		}
+
 		if(a peça foi adicionada)
 		{
-			inserirPecaOrdenado(B, aux->peca); //B.Adiciona(nova.P[i])
+			PECA *peca = (PECA *) malloc (sizeof(PECA));
+			peca = removerPeca(P); //Esta linha é igual ao if-else abaixo:
+			inserirPecaOrdenado(B, peca); //B.Adiciona(nova.P[i])
 
-			removerPeca(P); //Esta linha é igual ao if-else abaixo:
 			/*
 			se(nova.P[i].quantidade == 1)
 			{
@@ -43,7 +52,10 @@ R* criarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 		else
 		{
 			i++;
+			aux = aux->proximo;
 		}
+
+		//aux = aux->proximo;
 	}
 
 	return nova;
