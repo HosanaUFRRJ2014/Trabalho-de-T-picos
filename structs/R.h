@@ -12,6 +12,9 @@ typedef struct             //comprimento L e largura W.
 	int W;
 	int L;
 	int **matriz;
+
+	//O elemento i,j da matriz corresponde se o ponto candidato i,j está presente em R. Se 1, está presente, 0 caso contrário.	
+	int **pontosCandidatos;
 	
 }R;
 
@@ -50,23 +53,24 @@ R * criarRetanguloR(int l, int w)
 
 	int i = 0; //Variável inutilizada "j" ---> linha 51.
 
-	
-		
-
 	if(r != NULL)
 	{
 		r->W = w;
 		r->L = l;
 
 		r->matriz = (int **) malloc(l * sizeof(int *));
+		r->pontosCandidatos = (int **) malloc(l * sizeof(int *));
    		
    		for (i = 0; i < l; i++)
    		{        
             r->matriz[i] = (int *) malloc(w * sizeof(int));
+            r->pontosCandidatos[i] = (int *) malloc(w * sizeof(int));
  		}
-
+   		
 		//preencher retângulo R com zeros
 		preencherComZeros(r->matriz,r->L,r->W);
+		preencherComZeros(r->pontosCandidatos,r->L,r->W);
+		r->pontosCandidatos[0][0] = 1;
 
 		//imprimirR(r->matriz,r->L,r->W); //COmentar esta parte da impressão
 
