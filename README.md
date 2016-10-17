@@ -1,8 +1,6 @@
 # Trabalho de Tópicos Especiais em Otimização
-## Universidade Federal Rural do Rio de Janeiro(UFRRJ)
 
 Repositório para o trabalho de Tópicos Especiais em Otimização
+Universidade Federal Rural do Rio de Janeiro(UFRRJ)
 
-Integrantes:
-Hosana Gomes Pinto
-Lívia de Azevedo da Silva
+Feito por: Hosana Gomes Pinto e Lívia de Azevedo da Silva
