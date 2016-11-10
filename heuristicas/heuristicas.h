@@ -13,7 +13,7 @@
 
 R* criarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
-	int i = 0,j = 0;
+	int i = 0,j = 0, inseriu = 0;
 	NO *aux;
 
 	aux = P->inicio;
@@ -24,15 +24,29 @@ R* criarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 		ou para cada peça em B, tentar adicionar a peça nova.P[i](aux) nos
 		pontos candidatos*/
 
-		for(i = 0;i < aux->peca->l,i++)
+		for (int i = 0; i < R->L; i++)
 		{
-			for(j = 0;j < aux->peca->w,j++)
+			for(int j = 0; j < R->W;j++)
 			{
+				if(R->pontosCandidatos[i][j] == 1)
+				{
+					if(R->pontosCandidatos[i][j + 1] == 0)
+					{
+						inseriu = preencherPecaRetangulo(aux->peca,R,i, j + 1);
+						break;
+					}
 
+					if(R->pontosCandidatos[i + 1][j] == 0)
+					{
+						inseriu = preencherPecaRetangulo(aux->peca,R,i + 1,j);
+						break;
+					}
+					
+				}
 			}
 		}
 
-		if(a peça foi adicionada)
+		if(inseriu) //a peça foi adicionada
 		{
 			PECA *peca = (PECA *) malloc (sizeof(PECA));
 			peca = removerPeca(P); //Esta linha é igual ao if-else abaixo:

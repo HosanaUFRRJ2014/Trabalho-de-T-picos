@@ -15,8 +15,11 @@ typedef struct             //comprimento L e largura W.
 
 	//O elemento i,j da matriz corresponde se o ponto candidato i,j está presente em R. Se 1, está presente, 0 caso contrário.	
 	int **pontosCandidatos;
+
+	//Contador de índice da peca em R. A variável será incrementada toda vez que for inserida uma peça em R.
+	unsigned int indicePeca;
 	
-}R;
+}R; //qtd de linhas: l e qtd de colunas: w;
 
 void preencherComZeros(int **matriz, int l, int w)
 {
@@ -72,6 +75,8 @@ R * criarRetanguloR(int l, int w)
 		preencherComZeros(r->pontosCandidatos,r->L,r->W);
 		r->pontosCandidatos[0][0] = 1;
 
+		r->indicePeca = 0;
+
 		//imprimirR(r->matriz,r->L,r->W); //COmentar esta parte da impressão
 
 	}
@@ -80,9 +85,49 @@ R * criarRetanguloR(int l, int w)
 }
 
 
-//criar funções de preencher retangulo
+/*-------------------Criar funções de preencher retangulo-----------------------------------*/
 
+int preencherPecaRetangulo(PECA *peca,R *r,int x, int y)
+{
+	int i,j;
 
+	if((x + peca->l > R->L) || (y + peca->w > R->W))
+		return 0;
+
+	for(i = x;i < x + peca->l;i++)
+	{
+		for(j = y;j < y + peca->w;j++)
+		{
+			r->matriz[i][j] = r->indicePeca;
+		}
+	}
+
+	r->indicePeca++;
+
+	//Adicionando os novos pontos candidatos no retângulo R.
+	r->pontosCandidatos[x][(y + peca->w) - 1] = 1; //Mais acima e direita
+	r->pontosCandidatos[(x + peca->l) - 1][y] = 1; //Mais abaixo e esquerda
+
+	return 1;
+};
+
+void excluirPecaRetangulo(PECA *peca,R *r,int x, int y)
+{
+	int i,j;
+
+	for(i = x;i < x + peca->l;i++)
+	{
+		for(j = y;j < y + peca->w;j++)
+		{
+			r->matriz[i][j] = 0;
+		}
+	}
+
+	//Removendo os pontos candidatos no retângulo R.
+	r->pontosCandidatos[x][(y + peca->w) - 1] = 0; //Mais acima e direita
+	r->pontosCandidatos[(x + peca->l) - 1][y] = 0; //Mais abaixo e esquerda
+};
+/*---------------------------------------------------------------------------------*/
 
 //se não funcionar, dar varrer a matriz dando free
 void apagarRetanguloR(R *r)
