@@ -83,7 +83,7 @@ int pecaMaior(PECA *a, PECA *b)
 void custoBeneficio(PECA *a)
 {
 	float f = (float) a->v/(a->l * a->w);
-	printf("%f\n", f);
+	printf("Custo beneficio da peça(v/l*w): %f\n", f);
 	
 }
 

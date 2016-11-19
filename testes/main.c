@@ -1,5 +1,5 @@
-#include "structs/R.h"
-#include "structs/lista.h"
+#include "includes.h"
+//#include "structs/lista.h"
 
 int main(int argc, char const *argv[])
 {
@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
 
 	for (i = 0; i < 10; i++)
 	{
-		p[i] = criarPeca((i+1) * 3.14, (i+1) * 1.1, i + 1 , (i+1) * 2 , (i+1) * (i+1), (i+1)*3);
+		p[i] = criarPeca((i+1) * 3.14 + i * i, (i+1) * 1.1, i + 1 , (i+1) * 2 , 59 * 12.88/(i+1), (i+1)*3);
 	}
 
 	/*for (i = 0; i < 10; i++)
@@ -20,16 +20,47 @@ int main(int argc, char const *argv[])
 
 	LISTA_LIGADA *l = criarLista();
 
-	inserirPecaOrdenado(l, p[0]);
-	inserirPecaOrdenado(l, p[5]);
-	inserirPecaOrdenado(l, p[3]);
-	inserirPecaOrdenado(l, p[7]);
+	inserirPeca(l, p[7]);
+	inserirPeca(l, p[3]);
+	inserirPeca(l, p[5]);
+	inserirPeca(l, p[2]);
+	inserirPeca(l, p[0]);
 
-	removerPeca(l);
-	removerPeca(l);
-	removerPeca(l);
+
+	printf("-----------------------Lista---------------------------\n");
 	imprimirLista(l);
+	printf("l->tamanho: %d\n", l->tamanho);
+
+	printf("-----------------------Lista ordenada---------------------------\n");
+	l = ordenarLista(l);
+	imprimirLista(l);
+	printf("l->tamanho: %d\n", l->tamanho);
+
+	
+	removerPeca(l);
+	removerPeca(l);
+	removerPeca(l);
+
+	printf("-----------------------Depois de algumas remoções---------------------------\n");
+
+	imprimirLista(l);
+
+	printf("l->tamanho: %d\n", l->tamanho);
 
 	//apagarRetanguloR(r);
 	return 0;
 }
+
+/*
+
+*O que já testei:
+inserção de peças iguais
+inserção de peças diferentes
+remoção de peças iguais
+remoção de peças diferentes
+remoção em número maior do que a quantidade de peças na lista
+"ordenação"
+coerência da variável tamanho de lista. Verificação da mesma nas três etapas(insersão, ordenação, remoção) realizadas acima
+
+
+*/

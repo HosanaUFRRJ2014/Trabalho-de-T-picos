@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "structs/lista.h"
+/*#include "structs/lista.h"
 #include "structs/peca.h"
 #include "structs/R.h"
 #include "arquivo.h"
-#include "heuristicas/heuristicas.h"
+#include "heuristicas/heuristicas.h"*/
 
+//Subistitui todos os includes acima
+#include "includes.h"
 int main(int argc, char const *argv[])
 {
 	FILE *inst = fopen("instancias-otimo.txt","r");
