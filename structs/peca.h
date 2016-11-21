@@ -80,6 +80,40 @@ int pecaMaior(PECA *a, PECA *b)
 
 }
 
+// //função para a verificação do limite inferior P. Note que , caso se deseje remover uma peça, o valor de qtdAsomar será negativo
+// int dentroDoLimiteInferior(PECA *peca, int qtdAsomar)
+// {
+
+// 	if(peca->quantidade + qtdAsomar >= peca->P)
+// 		return true;
+
+// 	printf("Limite inferior violado\n");
+
+// 	return false;
+
+// }
+
+// //função para a verificação do limite superior Q.
+// int dentroDoLimiteSuperior(PECA *peca, int qtdAsomar)
+// {
+// 	if(peca->quantidade + qtdAsomar <= peca->Q)
+// 		return true;
+
+// 	printf("Limite superior violado\n");
+
+// 	return false;
+
+// }
+
+// //futuramente, colocar tudo dentro dessa função. Não deixar mais separado.
+// int dentroDosLimites(PECA *peca, int qtdAsomar)
+// {
+// 	if(dentroDoLimiteInferior(peca, qtdAsomar) && dentroDoLimiteSuperior(peca, qtdAsomar))
+// 		return true;
+
+// 	return false;
+// }
+
 void custoBeneficio(PECA *a)
 {
 	float f = (float) a->v/(a->l * a->w);

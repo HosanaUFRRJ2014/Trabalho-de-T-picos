@@ -60,6 +60,7 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *peca)
 
 	if(pnovo != NULL)
 	{
+
 		pnovo->peca = peca;
 		pnovo->anterior = NULL;
         pnovo->proximo = NULL;
@@ -67,6 +68,7 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *peca)
         //se for o primeiro nó a ser inserido na lista:
 		if(lista->inicio == NULL) 
         {
+        	
         	
         	lista->inicio = pnovo;
         	lista->fim = pnovo;
@@ -82,12 +84,25 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *peca)
 	        while(aux != NULL)
 	        {
 
-			    //ver se as peças são iguais. Se sim, só somar sua quantidade. Não estou checando os limites!!
+			    //ver se as peças são iguais Se sim, verificar os limites.(No momento,optei por não verificar, pois não sei se é preciso mesmo)
 			    if(pecasIguais(aux->peca,peca))
 			    {
-			    	aux->peca->quantidade += peca->quantidade;
-			    	//break;
-			    	return true;
+			    	
+			    	//Se estiver dentro dos limites, somar as quantidades
+			    	// if(dentroDosLimites(aux->peca,peca->quantidade))
+			    	// {
+			    		aux->peca->quantidade += peca->quantidade;
+			    		return true;
+			    		//break;
+			    	// }
+			    	
+			    	// else
+			    	// {
+			    	// 	printf("Ocorreu um problema. Peça fora dos limites P ou Q\n");
+			    	// 	return false;
+
+			    	// }
+			    	
 
 			    }
 
@@ -96,7 +111,7 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *peca)
 
 	        }
 
-
+	      
 	        //se chegou ao fim de lista, significa que não tinha nenhuma peça igual. Nesse caso, inserir a nova peça no fim da lista.
 	         lista->fim->proximo = pnovo;
 	         pnovo->anterior = lista->fim;
@@ -238,7 +253,7 @@ PECA  *removerPeca(LISTA_LIGADA *lista)
 
 		//	printf("quantidade pecas pont retorno %d\n", retorno->quantidade);
 
-			aRemover->peca->quantidade --;
+			aRemover->peca->quantidade--;
 
 		//	printf("quantidade pecas pont aRemover %d\n", aRemover->peca->quantidade);
         }
