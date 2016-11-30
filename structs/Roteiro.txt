@@ -1,0 +1,34 @@
+Roteiro de implementação de PONTO_CANDIDATO e adicionar/remover em R:
+1) Definir a estrutura PONTO_CANDIDATO
+	- Inicialmente, x e y serão -1 para definir que não há pc
+	- Existem sempre dois pontos candidatos ao adicionar em R, exceto no caso em que o ponto ultrapassar a largura e/ou altura de R. Caso occora, mantê-lo como -1.
+
+	Definição de P2:
+		- Se uma peça tem largura w, o p1.y será o (primeiro valor i ocupado pela peça) + w, Sempre verificando se essa soma não ultrapassará W de R.
+		- Para p1.x, pegar o valor j de R que contém a parte superior da peça.
+
+	Definição de P1:	
+		- Se uma peça tem comprimento l, p1.x será o (primeiro valor j ocupado pela peça) + l, Sempre verificando se a soma não ultrapassará L de R.
+		- Se uma peça tem largura w, p1.y será o menor valor de i que a peça ocupa em R.
+
+
+2) Adicionar ou tentar adicionar a peça em R.
+	- fazer função de adicionar, respeitando l e w da peça.
+		- Verificar p1 e p2 da peça.(Se forem -1, é porque não existem)
+	- Sempre verificar a origem (0,0)
+		- adicionar a Peça em B
+		- Tirá-la de P
+		- definir p1 e p2
+	- Se não puder adicionar na origem:
+		- Varrer a lista B a procura de todos os pontos candidatos de cada peça contida nela.
+			- Caso ache uma peça com um ponto candidato (comparar com o primeiro factível).
+				- Se o o ponto for mais distante da origem, ignorar
+				- Se for mais próximo, salvá-lo e descartar o anterior, se houver.
+		- Caso B chegue ao fim e haja ponto factível disponível:
+				- adicionar a Peça em B
+				- Tirá-la de P
+				- definir p1 e p2		
+		- Caso B chegue ao fim e não adicionou nenhuma peça:
+			- Partir para o próximo nó em P.	
+
+IMPORTANTE: ao salvar o pt cand, não salvo uma posição na peça e sim onde a próxima peça poderá ser adicionada.				

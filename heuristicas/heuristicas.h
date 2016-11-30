@@ -3,78 +3,68 @@
 #include <math.h>
 #include <time.h>
 
-#include "structs/lista.h"
-#include "structs/peca.h"
-#include "structs/R.h"
-#include "arquivo.h"
+#include "includes.h"
 
 #ifndef HEURISTICA_H
 #define HEURISTICA_H
 
-R* criarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B)
+//Função do algoritmo 1
+R * criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
-	int i = 0,j = 0, inseriu = 0;
 	NO *aux;
 
 	aux = P->inicio;
 
-	while(i < P->tamanho)
+	LISTA_LIGADA *listaAuxliar = criarLista();
+
+	while(aux != NULL)
 	{
-		/*Tentar adicionar a peça nova.P[i](aux) ao ponto de origem do estoque
-		ou para cada peça em B, tentar adicionar a peça nova.P[i](aux) nos
-		pontos candidatos*/
+		inserirPeca(listaAuxliar, aux->peca);
 
-		for (int i = 0; i < R->L; i++)
-		{
-			for(int j = 0; j < R->W;j++)
-			{
-				if(R->pontosCandidatos[i][j] == 1)
-				{
-					if(R->pontosCandidatos[i][j + 1] == 0)
-					{
-						inseriu = preencherPecaRetangulo(aux->peca,R,i, j + 1);
-						break;
-					}
-
-					if(R->pontosCandidatos[i + 1][j] == 0)
-					{
-						inseriu = preencherPecaRetangulo(aux->peca,R,i + 1,j);
-						break;
-					}
-					
-				}
-			}
-		}
-
-		if(inseriu) //a peça foi adicionada
-		{
-			PECA *peca = (PECA *) malloc (sizeof(PECA));
-			peca = removerPeca(P); //Esta linha é igual ao if-else abaixo:
-			inserirPecaOrdenado(B, peca); //B.Adiciona(nova.P[i])
-
-			/*
-			se(nova.P[i].quantidade == 1)
-			{
-				Excluir(nova.P[i])
-			}
-			então
-			{
-				nova.P[i].quantidade--;
-			}
-			*/
-		}
-		else
-		{
-			i++;
-			aux = aux->proximo;
-		}
-
-		//aux = aux->proximo;
+		aux = aux->proximo;
 	}
 
-	return nova;
-};
+	aux = listaAuxliar->inicio;
+	while(aux != NULL)
+	{
+		int cont = 0;
+	
+		int qtdInicial = aux->peca->quantidade;
+	
+		while(cont < qtdInicial)
+		{
+						
+			int foiAdicionada = adicionarPecaAoRetangulo(solucaoNova, B , aux->peca);
 
+			if(foiAdicionada)
+			{
+				PECA *removida;
+				removida =  (PECA *) malloc (sizeof(PECA));
+			
+				removida = removerPeca(P);
+		
+
+			 	inserirPeca(B, aux->peca);
+			 	
+			 }
+			 else
+			 {
+			 	printf("Não foi adicionada!!!!\n");
+			 }
+
+			cont++;
+
+		}
+
+		aux = aux->proximo;
+	}
+//esse retorno não é necessário. Só o mantive para respeitar o formato de algoritmo que já estava aqui.
+	return solucaoNova;
+
+}
+
+//*********************************Comentei aqui só para tirar os erros de compilação
+/*
 R* trocarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
 	//Remover gamma da área de R;
@@ -92,9 +82,8 @@ int Simulated_Annealing(int T, int T_c, int It_max, double alpha, R *R, LISTA_LI
 
 	//A lista P recebida aqui já estará ordenada.
 
-	/*----------Heurística construtiva----------*/
 	criarSolucao(atual);
-	/*------------------------------------------*/
+	/*------------------------------------------*
 
 	melhor = atual;
 
@@ -105,9 +94,8 @@ int Simulated_Annealing(int T, int T_c, int It_max, double alpha, R *R, LISTA_LI
 		while(iterT > It_max)
 		{
 			iterT++;
-			/*------------Heurística da vizinhança(destruição)-------*/
 			nova = trocarSolucao(atual);
-			/*-------------------------------------------------------*/
+			/*-------------------------------------------------------*
 
 			delta = f(atual) - f(nova);
 
@@ -132,6 +120,6 @@ int Simulated_Annealing(int T, int T_c, int It_max, double alpha, R *R, LISTA_LI
 	}
 	return melhor;
 }
-
+*/
 
 #endif

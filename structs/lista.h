@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "peca.h"
+#include "arrayPontosCandidatos.h"
 
 #define true 1
 #define false 0
@@ -52,11 +53,16 @@ int vazia(LISTA_LIGADA *l)
 	return false;
 }
 
-int inserirPeca(LISTA_LIGADA *lista, PECA *peca)
+int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 {
+	
 	NO *pnovo = (NO *) malloc (sizeof(NO));
 
 	NO *aux;
+
+	 PECA *peca = (PECA *) malloc(sizeof(PECA));
+
+	 copiarPeca(peca, aInserir);
 
 	if(pnovo != NULL)
 	{
@@ -88,21 +94,10 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *peca)
 			    if(pecasIguais(aux->peca,peca))
 			    {
 			    	
-			    	//Se estiver dentro dos limites, somar as quantidades
-			    	// if(dentroDosLimites(aux->peca,peca->quantidade))
-			    	// {
-			    		aux->peca->quantidade += peca->quantidade;
-			    		return true;
-			    		//break;
-			    	// }
-			    	
-			    	// else
-			    	// {
-			    	// 	printf("Ocorreu um problema. Peça fora dos limites P ou Q\n");
-			    	// 	return false;
-
-			    	// }
-			    	
+		    		aux->peca->quantidade += peca->quantidade;
+		    		inserirPontoCandidato(aux->peca->p1, peca->p1->fim->ponto);
+	    	        inserirPontoCandidato(aux->peca->p2, peca->p2->fim->ponto);
+		    		return true;
 
 			    }
 
@@ -129,13 +124,15 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *peca)
 	return false;
 }
 
-int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *peca)
+int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
 {
 	NO *pnovo = (NO *) malloc (sizeof(NO));
 
 	NO *aux;
 
-//	lista->tamanho++;
+	PECA *peca = (PECA *) malloc(sizeof(PECA));
+	copiarPeca(peca, aInserir);
+
 
 	if(pnovo != NULL)
 	{
@@ -163,6 +160,10 @@ int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *peca)
 		    if(pecasIguais(aux->peca,peca))
 		    {
 		    	aux->peca->quantidade += peca->quantidade;
+		        inserirPontoCandidato(aux->peca->p1, peca->p1->fim->ponto);
+		    	inserirPontoCandidato(aux->peca->p2, peca->p2->fim->ponto);
+
+
 		    	return true;
 
 		    }
@@ -220,42 +221,44 @@ int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *peca)
 
 PECA  *removerPeca(LISTA_LIGADA *lista)
 {
+	//printf("linha 231\n");
 	if(!vazia(lista))
 	{
 		NO *aRemover = lista->inicio;
 
 		PECA *retorno =  (PECA *) malloc (sizeof(PECA));
-		*retorno =  *aRemover->peca; //copia do ponteiro aRemover->peca para o retorno;
 
 
-		
 		if(aRemover->peca->quantidade == 1)
 		{
 			lista->inicio = aRemover->proximo;
 
-			if(aRemover != lista->fim)
-	        	aRemover->proximo->anterior = aRemover->anterior;
-
-	        	else
-	        		lista->fim = aRemover->anterior;
 
 	        lista->tamanho--;
+			*retorno = *aRemover->peca;
 
-	 //       printf("Só uma peça, removendo o nó...");
-
+	        
 	        free(aRemover);
+
+            //não tirar esse return daqui!! :)
+			return retorno;
+
 
         }
 
-        else
+        if(aRemover->peca->quantidade > 1)
         {
-			retorno->quantidade  = 1;
 
-		//	printf("quantidade pecas pont retorno %d\n", retorno->quantidade);
+			retorno->quantidade  = 1;
+			
+			*retorno = *aRemover->peca;
+
+			removerPontoCandidato(aRemover->peca->p1);
+			removerPontoCandidato(aRemover->peca->p2);
 
 			aRemover->peca->quantidade--;
 
-		//	printf("quantidade pecas pont aRemover %d\n", aRemover->peca->quantidade);
+
         }
       
         return retorno;	
@@ -280,34 +283,6 @@ LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
 
 	return listaOrdenada;
 
-	//listaOrdenada = NULL;
-
-	// while(atual1->proximo != NULL)
-	// {
-	// 	atual2 = lista->inicio;
-	// 	while(i < lista->tamanho || atual2->proximo != NULL)
-	// 	{
-	// 		//printf("Contador : %d\n", contador);
-	// 		//se a pŕoxima peça for maior que a atual, realizar o swap
-	// 		if(pecaMaior(atual2->proximo->peca, atual2->peca))
-	// 		{
-	// 			//printf("Entrou no swap\n");
-	// 			aux = atual1;
-	// 			atual1 = atual2->proximo;
-	// 			atual2->proximo = aux;
-	// 		//	printf("Saiu do swap\n");
-	// 		}
-
-
-	// 		atual2 = atual2->proximo;
-	// 		i++;
-	// 	}
-	// 	//printf("Saiu do inner while\n");
-
-
-	// 	atual1 = atual1->proximo;
-	// 	contador++;
-	// }
 }
 
 void imprimirLista(LISTA_LIGADA *l)

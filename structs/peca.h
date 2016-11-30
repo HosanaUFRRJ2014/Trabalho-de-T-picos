@@ -1,48 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "arrayPontosCandidatos.h"
+#include "ponto.h"
 #define true 1
 #define false 0
 
 #ifndef PECA_H
 #define PECA_H
 
-typedef struct             //comprimento l e largura w, 
-{						   //v o valor da peça.
-	int l;				   //P e Q representam a quantidade mínima e máxima, respectivamente, de cada peça.
-	int w;
-	int P;
+
+//comprimento l e largura w, 
+//v o valor da peça.
+//P e Q representam a quantidade mínima e máxima, respectivamente, de cada peça.
+typedef struct             
+{						   
+	int l;	//na horizontal  (Não concordo, mas é como está no artigo.)
+	int w; //na vertical
+	int P; 
 	int Q;
-	int v;
+	float v;
 	int quantidade;   //quantidade existente da peça
+	ARRAY_PONTOS_CANDIDATOS *p1; //mais a direita e mais acima
+	ARRAY_PONTOS_CANDIDATOS *p2; //mais a esquerda e mais abaixo
+
 
 	
 	
 }PECA;
 
-//cria um tipo de peça. Para controlar a qtd min e  max de peças.
-/*PECA *criarTipoPeca(int l, int w, int P, int Q, int v, int id)
-{
-	PECA *i = (PECA *) malloc(sizeof(PECA));
-
-	if(i != NULL)
-	{
-		i->l = l;
-		i->w = w;
-		i->P = P;
-		i->Q = Q;
-		i->v = v;
-		i->id_peca = id;
-		i->quantidade = 0;
-	} 
-
-
-	return i;
-
-}*/
-
 //criar peca de um determinado tipo.
-PECA *criarPeca(int l, int w, int P, int Q, int v, int qtd)
+PECA *criarPeca(int l, int w, int P, int Q, float v, int qtd)
 {
 	PECA *i = (PECA *) malloc(sizeof(PECA));
 
@@ -53,6 +40,8 @@ PECA *criarPeca(int l, int w, int P, int Q, int v, int qtd)
 		i->P = P;
 		i->Q = Q;
 		i->v = v;
+		i->p1 = criarArrayPontosCandidatos();
+		i->p2 = criarArrayPontosCandidatos();
 		i->quantidade = qtd;
 	} 
 
@@ -121,6 +110,47 @@ void custoBeneficio(PECA *a)
 	
 }
 
+//função para copiar os falores de uma peca para a outra
+//Organizar tudo em seus devidos lugares!!!
+void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
+{
+	pecaDestino->l = pecaOrigem->l;
+	pecaDestino->w = pecaOrigem->w;
+	pecaDestino->P = pecaOrigem->P;
+	pecaDestino->Q = pecaOrigem->Q;
+	pecaDestino->v = pecaOrigem->v;
+	pecaDestino->p1 = criarArrayPontosCandidatos();
+	
+	//pertence a arrayPontoCandidato.h **
+	NO_Pt *aux_Pt1;
+	aux_Pt1 = pecaOrigem->p1->inicio;
+	while(aux_Pt1 != NULL)
+	{
+		PONTO_CANDIDATO *novo;
+		novo = criarPontoCandidato(aux_Pt1->ponto->x, aux_Pt1->ponto->y);
+		inserirPontoCandidato(pecaDestino->p1,novo);
+
+		aux_Pt1 = aux_Pt1->proximo;
+	}
+
+	pecaDestino->p2 = criarArrayPontosCandidatos();
+	NO_Pt *aux_Pt2;
+	aux_Pt2 = pecaOrigem->p2->inicio;
+	while(aux_Pt2 != NULL)
+	{
+		PONTO_CANDIDATO *novo;
+		novo = criarPontoCandidato(aux_Pt2->ponto->x, aux_Pt2->ponto->y);
+		inserirPontoCandidato(pecaDestino->p2,novo);
+
+		aux_Pt2 = aux_Pt2->proximo;
+	}
+
+	pecaDestino->quantidade = pecaOrigem->quantidade;
+
+	//**
+
+}
+
 void imprimirPeca(PECA *p)
 {
 	printf("Quantidade: %d\n", p->quantidade);
@@ -128,7 +158,11 @@ void imprimirPeca(PECA *p)
 	printf("comprimento(l): %d\n",p->w );
 	printf("qtd min(P): %d\n",p->P );
 	printf("qtd max(Q): %d\n",p->Q );
-	printf("valor da peca(v): %d\n",p->v);
+	printf("valor da peca(v): %f\n",p->v);
+	printf("pontos candidatos p1:\n");
+	imprimirArrayPontosCandidatos(p->p1);
+	printf("pontos candidatos p2:\n");
+	imprimirArrayPontosCandidatos(p->p2);
 	printf("\n");
 
 

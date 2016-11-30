@@ -63,7 +63,7 @@ remoção em número maior do que a quantidade de peças na lista
 coerência da variável tamanho de lista. Verificação da mesma nas três etapas(insersão, ordenação, remoção) realizadas acima
 
 verificação de limite superior
-falta fazer a verificação se o limite inferior funciona. No momento, optei por não usar essa notação, pois não sei se é de fato útil
+falta fazer a verificação se o limite inferior funcionar. No momento, optei por não usar essa notação, pois não sei se é de fato útil
 e não sei muito bem onde verificar isso. No artigo, ficou meio perdida essa notação. Eles só falam disso na pág. 2. Sinceramente, achei
 desnecessário e acho que poderíamos propor a solução do problema como irrestrito(sem limites inferior e superior).
 
