@@ -1,3 +1,4 @@
+Imprimindo lista P já ordenada,antes das peças serem adicionadas em B: 
 Custo beneficio da peça(v/l*w): 1.000000
 Quantidade: 5
 largura(w): 5
@@ -21,7 +22,7 @@ pontos candidatos p2:
 
 
 
-
+Imprimindo lista B :
 Custo beneficio da peça(v/l*w): 1.000000
 Quantidade: 5
 largura(w): 5
