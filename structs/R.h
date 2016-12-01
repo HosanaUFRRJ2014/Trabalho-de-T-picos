@@ -44,7 +44,7 @@ void imprimirR(int **matriz, int l, int w)
 	{
 		for (j = 0; j < w; j++)
 		{
-			printf("%d    ",matriz[i][j]);
+			printf("%-5d",matriz[i][j]);
 		}
 
 		printf("\n");
@@ -128,18 +128,18 @@ void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto)
 	//se não vai estourar o comprimento do retângulo 
 
 
-	if(j < r->L)
+	if(j <= r->L)
 	{
         
-        PONTO_CANDIDATO *p1 = criarPontoCandidato(j,ponto->y);
+        PONTO_CANDIDATO *p1 = criarPontoCandidato(j - 1, ponto->y);
 		inserirPontoCandidato(nova->p1,p1);
 	}
 
 
  //se não vai estourar a largura do retângulo R
-	if(i < r->W)
+	if(i <= r->W)
 	{
-		PONTO_CANDIDATO *p2 = criarPontoCandidato(j - nova->l,i);
+		PONTO_CANDIDATO *p2 = criarPontoCandidato(j - nova->l, i - 1);
 	
 		inserirPontoCandidato(nova->p2,p2);
 	
@@ -186,18 +186,20 @@ int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 
 			while(aux_pt1 != NULL && aux_pt2 != NULL)
 			{
+				PONTO_CANDIDATO *p1Ainserir = criarPontoCandidato(aux_pt1->ponto->x + 1,aux_pt1->ponto->y);
+				PONTO_CANDIDATO *p2Ainserir = criarPontoCandidato(aux_pt2->ponto->x, aux_pt2->ponto->y + 1);
 		//		printf("Enquanto existe pontos candidatos em uma peca em B\n");
-				if(ehPossivelAdicionar(r,nova,aux_pt1->ponto))
+				if(ehPossivelAdicionar(r,nova,p1Ainserir))
 				{
 					//comparar qual deles está mais pŕoximo da origem. O que está mais próximo é armazenado
-					atual = primeiroPontoFactivel(atual,aux_pt1->ponto);
+					atual = primeiroPontoFactivel(atual,p1Ainserir);
 			
 				}
 
-				if(ehPossivelAdicionar(r,nova,aux_pt2->ponto))
+				if(ehPossivelAdicionar(r,nova,p2Ainserir))
 				{
 					//comparar qual deles está mais pŕoximo da origem. O que está mais próximo é armazenado
-					atual = primeiroPontoFactivel(atual,aux_pt2->ponto);
+					atual = primeiroPontoFactivel(atual,p2Ainserir);
 				
 					
 				}

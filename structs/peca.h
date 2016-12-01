@@ -110,7 +110,7 @@ void custoBeneficio(PECA *a)
 	
 }
 
-//função para copiar os falores de uma peca para a outra
+//função para copiar os valores de uma peca para a outra, Sò que aqtd de destino é setada para 1
 //Organizar tudo em seus devidos lugares!!!
 void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
 {

@@ -38,13 +38,16 @@ R * criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 
 			if(foiAdicionada)
 			{
-				PECA *removida;
-				removida =  (PECA *) malloc (sizeof(PECA));
-			
-				removida = removerPeca(P);
+				
+				removerPeca(P);
 		
+				PECA *aInserir = (PECA *) malloc (sizeof(PECA));
 
-			 	inserirPeca(B, aux->peca);
+				copiarPeca(aInserir,aux->peca);
+
+				aInserir->quantidade = 1;
+
+			 	inserirPeca(B, aInserir);
 			 	
 			 }
 			 else

@@ -22,15 +22,18 @@ int main()
 
     inserirPeca(P,p[6]);
     inserirPeca(P,p[4]);
-	inserirPeca(P,p[8]);
 
+  //  Corrigir o erro de não poder adicionar a mesma peca duas vezes.
+//	inserirPeca(P,p[6]);
 
-	 P = ordenarLista(P);
-
+    
+	P = ordenarLista(P);
+	imprimirLista(P);
 
  	criarSolucao(r, P, B);
 
     printf("\n\n\n\n");
+    imprimirLista(B);
     imprimirR(r->matriz, r->L, r->W);
 
 }

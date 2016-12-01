@@ -54,7 +54,8 @@ int ehPontoCandidato(PONTO_CANDIDATO *p)
 //função para a verificação do ponto mais próximo da origem (0,0)
 PONTO_CANDIDATO * primeiroPontoFactivel(PONTO_CANDIDATO * a, PONTO_CANDIDATO *b)
 {
-    //conferindo isso em outra parte da aplicação
+	
+	
 	//otimizar esse trecho
 	// se nenhum dos dois é ponto candidato. Existem peças que podem não ter um pt. cand. ou não ter os dois.
 	if(!ehPontoCandidato(a) && !ehPontoCandidato(b)) // ( !(P || Q) ) equiv. a (!P && !Q) 

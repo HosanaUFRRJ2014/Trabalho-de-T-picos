@@ -60,7 +60,9 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 
 	NO *aux;
 
-	 PECA *peca = (PECA *) malloc(sizeof(PECA));
+	PECA *peca = (PECA *) malloc(sizeof(PECA));
+
+	//peca = criarPeca(aInserir->l, aInserir->w, aInserir->P,aInserir->Q, aInserir->v, aInserir->quantidade);
 
 	 copiarPeca(peca, aInserir);
 
@@ -75,7 +77,7 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 		if(lista->inicio == NULL) 
         {
         	
-        	
+        	//printf("label 1\n");
         	lista->inicio = pnovo;
         	lista->fim = pnovo;
 
@@ -86,17 +88,21 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
         else
         {
         	aux = lista->inicio;
-
+        	//printf("label 2\n");
 	        while(aux != NULL)
 	        {
-
+	        	//printf("label 3\n");
 			    //ver se as peças são iguais Se sim, verificar os limites.(No momento,optei por não verificar, pois não sei se é preciso mesmo)
 			    if(pecasIguais(aux->peca,peca))
 			    {
-			    	
+			    	//printf("label 4\n");
 		    		aux->peca->quantidade += peca->quantidade;
+		    		//printf("label 5\n");
+		    		//printf("%d\n", peca->p1->fim->ponto->x);
+		    		//printf("label 6\n");
 		    		inserirPontoCandidato(aux->peca->p1, peca->p1->fim->ponto);
 	    	        inserirPontoCandidato(aux->peca->p2, peca->p2->fim->ponto);
+	    	        //printf("label 7\n");
 		    		return true;
 
 			    }
@@ -106,7 +112,6 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 
 	        }
 
-	      
 	        //se chegou ao fim de lista, significa que não tinha nenhuma peça igual. Nesse caso, inserir a nova peça no fim da lista.
 	         lista->fim->proximo = pnovo;
 	         pnovo->anterior = lista->fim;
@@ -132,7 +137,7 @@ int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
 
 	PECA *peca = (PECA *) malloc(sizeof(PECA));
 	copiarPeca(peca, aInserir);
-
+	//peca = criarPeca(aInserir->l, aInserir->w, aInserir->P,aInserir->Q, aInserir->v, aInserir->quantidade);
 
 	if(pnovo != NULL)
 	{
