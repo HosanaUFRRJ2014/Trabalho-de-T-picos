@@ -45,7 +45,7 @@ int main(int argc, char const *argv[])
 		}
 
 		//Preenchido com os parâmetros que os autores do artigo que nos baseamos usaram.
-		resultados[num_inst] = Simulated_Annealing(10000,0.11,700,0.98,ret,P,B);
+		resultados[num_inst] = Simulated_Annealing(10000.0,0.11,700,0.98,ret,P,B);
 
 		//imprimirLista(lista);
 

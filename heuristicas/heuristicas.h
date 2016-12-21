@@ -78,12 +78,13 @@ R* trocarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
 	return nova;
 }
 
-int Simulated_Annealing(int T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B)
+int Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
 	//R *atual, *nova, *melhor;
 	R *nova,*melhor;
-	int temp = T, iterT = 0, delta;
+	int iterT = 0, delta; //temp = T
 	double x;
+	//float temp = T;
 
 	//A lista P recebida aqui já estará ordenada.
 
@@ -94,7 +95,7 @@ int Simulated_Annealing(int T, float T_c, int It_max, float alpha, R *atual, LIS
 
 	srand((double)time(NULL));
 
-	while(temp > T_c)
+	while(T > T_c)
 	{
 		while(iterT > It_max)
 		{
