@@ -55,7 +55,6 @@ int vazia(LISTA_LIGADA *l)
 
 int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 {
-	
 	NO *pnovo = (NO *) malloc (sizeof(NO));
 
 	NO *aux;
@@ -64,7 +63,7 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 
 	//peca = criarPeca(aInserir->l, aInserir->w, aInserir->P,aInserir->Q, aInserir->v, aInserir->quantidade);
 
-	 copiarPeca(peca, aInserir);
+	copiarPeca(peca, aInserir);
 
 	if(pnovo != NULL)
 	{
@@ -83,8 +82,7 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 
         
         }
-
-        ///se não for, a lista precisará ser percorrida
+        //se não for, a lista precisará ser percorrida
         else
         {
         	aux = lista->inicio;
@@ -100,8 +98,14 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 		    		//printf("label 5\n");
 		    		//printf("%d\n", peca->p1->fim->ponto->x);
 		    		//printf("label 6\n");
-		    		inserirPontoCandidato(aux->peca->p1, peca->p1->fim->ponto);
-	    	        inserirPontoCandidato(aux->peca->p2, peca->p2->fim->ponto);
+
+		    		if(peca->p1->fim != NULL && peca->p2->fim != NULL)
+		    		{
+		    			inserirPontoCandidato(aux->peca->p1, peca->p1->fim->ponto);
+	    	        	inserirPontoCandidato(aux->peca->p2, peca->p2->fim->ponto);
+		    		}
+
+
 	    	        //printf("label 7\n");
 		    		return true;
 
@@ -165,8 +169,12 @@ int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
 		    if(pecasIguais(aux->peca,peca))
 		    {
 		    	aux->peca->quantidade += peca->quantidade;
-		        inserirPontoCandidato(aux->peca->p1, peca->p1->fim->ponto);
-		    	inserirPontoCandidato(aux->peca->p2, peca->p2->fim->ponto);
+
+		    	if(peca->p1->fim != NULL && peca->p2->fim != NULL)
+		    	{
+		    		inserirPontoCandidato(aux->peca->p1, peca->p1->fim->ponto);
+		    		inserirPontoCandidato(aux->peca->p2, peca->p2->fim->ponto);
+		    	}
 
 
 		    	return true;
@@ -224,7 +232,7 @@ int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
 
 }
 
-PECA  *removerPeca(LISTA_LIGADA *lista)
+PECA *removerPeca(LISTA_LIGADA *lista)
 {
 	//printf("linha 231\n");
 	if(!vazia(lista))
@@ -254,7 +262,7 @@ PECA  *removerPeca(LISTA_LIGADA *lista)
         if(aRemover->peca->quantidade > 1)
         {
 
-			retorno->quantidade  = 1;
+			retorno->quantidade = 1;
 			
 			*retorno = *aRemover->peca;
 
@@ -271,6 +279,96 @@ PECA  *removerPeca(LISTA_LIGADA *lista)
 	}
 
 	return NULL;
+}
+
+/*Função feita por Lívia*/
+void removePeca(LISTA_LIGADA *lista,NO *aRemover,PONTO_CANDIDATO *ponto_aRemoverP1,PONTO_CANDIDATO *ponto_aRemoverP2)
+{
+	if(!vazia(lista))
+	{
+		/*
+		if(aRemover == lista->inicio)
+		{
+			removerPeca(lista);
+			return;
+		}
+		*/
+		
+		if(aRemover->peca->quantidade > 1)
+		{
+			removerPontoCandidatoDadoPontoCandidato(aRemover->peca->p1,aRemover->peca->p2,ponto_aRemoverP1,ponto_aRemoverP2);
+			aRemover->peca->quantidade--;
+			return;
+		}
+		
+		if(aRemover->peca->quantidade == 1)
+		{
+			if(aRemover == lista->inicio)
+				lista->inicio = aRemover->proximo;
+			else
+				aRemover->anterior->proximo = aRemover->proximo;
+			
+			
+			if(aRemover == lista->fim)
+				lista->fim = aRemover->anterior;
+			else
+				aRemover->proximo->anterior = aRemover->anterior;
+
+			lista->tamanho--;
+			//free(aRemover->peca);
+			free(aRemover);
+			return;
+
+			/*
+			aRemover->anterior->proximo = aRemover->proximo;
+
+			if(aRemover == lista->fim)
+			{
+				lista->fim = aRemover->anterior;
+				lista->tamanho--;
+				//free(aRemover->peca);
+				free(aRemover);
+				return;
+			}
+			else
+			{
+				//aRemover->anterior->proximo = aRemover->proximo;
+				aRemover->proximo->anterior = aRemover->anterior;
+				lista->tamanho--;
+				//free(aRemover->peca);
+				free(aRemover);
+				return;
+			}
+			*/
+		}
+	}
+
+	printf("Lista vazia...\n");
+	return;
+}
+
+/*Função feita por Lívia*/
+int removerPecaDadoPeca(LISTA_LIGADA *B, PECA *aRemover, PONTO_CANDIDATO *p1,PONTO_CANDIDATO *p2)
+{
+	NO *aux = B->inicio;
+
+	if(!vazia(B))
+	{
+		while(aux != NULL)
+		{
+			if(pecasIguais(aux->peca,aRemover))
+			{
+				removePeca(B,aux,p1,p2);
+				return true;
+			}
+
+			aux = aux->proximo;
+		}
+
+	}
+
+	//Se não tem essa peça na lista, retornamos NULL.
+	return false;
 }
 
 //Jeito muito muito feio de fazer isso, mas hoje é sexta feira(sexta é dia de maldade) e não estou com saco de consertar o algoritmo de ordenação.

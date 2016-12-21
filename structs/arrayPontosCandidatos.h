@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ponto.h"
+
 #define true 1
 #define false 0
 
@@ -58,7 +59,7 @@ int inserirPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array, PONTO_CANDIDATO *ponto
 
 	if(pnovo != NULL)
 	{
-	//	printf("label 5.1\n");
+		//printf("label 5.1\n");
 		pnovo->ponto = ponto;
 		pnovo->anterior = NULL;
         pnovo->proximo = NULL;
@@ -67,7 +68,7 @@ int inserirPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array, PONTO_CANDIDATO *ponto
 		if(array->inicio == NULL) 
         {
         	
-      //  	printf("label 5.2\n");
+        	//printf("label 5.2\n");
         	array->inicio = pnovo;
         	   //  array->fim = pnovo;
 
@@ -97,25 +98,96 @@ int removerPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array)
 	{
 		NO_Pt *aRemover = array->inicio;
 		
-	
-			array->inicio = aRemover->proximo;
+		array->inicio = aRemover->proximo;
 
-        	if(aRemover == array->fim)
-        		array->fim = aRemover->anterior;
+        if(aRemover == array->fim)
+        	array->fim = aRemover->anterior;
 
-	        array->tamanho--;
+	    array->tamanho--;
 
-	        free(aRemover);
+	    free(aRemover->ponto);
+	    free(aRemover);
 
-	        return true;
-
-       
-       
+	    return true;       
 	}
 
 	return false;
 }
+/*Função feita por Lívia*/
+void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,NO_Pt *aRemoverP1, NO_Pt *aRemoverP2)
+{
+	//Remover o ponto candidato no array de pontos candidatos.
+	if(aRemoverP1 == arrayP1->inicio && aRemoverP2 == arrayP2->inicio)
+	{
+		removerPontoCandidato(arrayP1);
+		removerPontoCandidato(arrayP2);
+		return;
+	}
 
+	aRemoverP1->anterior->proximo = aRemoverP1->proximo;
+	aRemoverP2->anterior->proximo = aRemoverP2->proximo;
+
+	if(aRemoverP1 == arrayP1->fim && aRemoverP2 == arrayP2->fim)
+	{
+		arrayP1->fim = aRemoverP1->anterior;
+		arrayP2->fim = aRemoverP2->anterior;
+	}
+	else if(aRemoverP1 != arrayP1->fim && aRemoverP2 != arrayP2->fim)
+	{
+		aRemoverP1->proximo->anterior = aRemoverP1->anterior;
+		aRemoverP2->proximo->anterior = aRemoverP2->anterior;
+	}
+
+	/*	
+	if(aRemoverP1 == arrayP1->fim && aRemoverP2 == arrayP2->fim)
+	{
+		arrayP1->fim = aRemoverP1->anterior;
+		arrayP2->fim = aRemoverP2->anterior;
+	}
+	else if(aRemoverP1 != arrayP1->fim && aRemoverP2 != arrayP2->fim)
+	{
+		//Fazer as alterações normais
+		aRemoverP1->anterior->proximo = aRemoverP1->proximo;
+		aRemoverP2->anterior->proximo = aRemoverP2->proximo;
+
+		aRemoverP1->proximo->anterior = aRemoverP1->anterior;
+		aRemoverP2->proximo->anterior = aRemoverP2->anterior;
+	}
+	*/
+
+	arrayP1->tamanho--;
+	arrayP2->tamanho--;
+
+	free(aRemoverP1->ponto);
+	free(aRemoverP1);
+	free(aRemoverP2->ponto);
+	free(aRemoverP2);
+	return;
+}
+/*Função feita por Lívia*/
+int removerPontoCandidatoDadoPontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,PONTO_CANDIDATO *pontoP1,PONTO_CANDIDATO *pontoP2)
+{
+	if(!vazio(arrayP1) && !vazio(arrayP2))
+	{
+		NO_Pt *auxP1 = arrayP1->inicio;
+		NO_Pt *auxP2 = arrayP2->inicio;
+
+		while(auxP1 != NULL && auxP2 != NULL)
+		{
+			if( (auxP1->ponto->x == pontoP1->x && auxP1->ponto->y == pontoP1->y) && (auxP2->ponto->x == pontoP2->x && auxP2->ponto->y == pontoP2->y))
+			{
+				removePontoCandidato(arrayP1,arrayP2,auxP1,auxP2);
+				return true;
+			}
+
+			auxP1 = auxP1->proximo;
+			auxP2 = auxP2->proximo;
+		}
+	}
+
+	//Não existe este ponto candidato para removê-lo
+	return false;
+}
 
 
 void imprimirArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS *p)
@@ -127,7 +199,6 @@ void imprimirArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS *p)
 		imprimirPontoCandidato(aux->ponto);
 		aux = aux->proximo;
 	}
-
 }
 
 

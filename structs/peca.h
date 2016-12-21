@@ -23,9 +23,10 @@ typedef struct
 	ARRAY_PONTOS_CANDIDATOS *p1; //mais a direita e mais acima
 	ARRAY_PONTOS_CANDIDATOS *p2; //mais a esquerda e mais abaixo
 
+	//SÓ PARA TESTES. RETIRAR DEPOIS!
+	//double distOrg;
+	//------------------------------
 
-	
-	
 }PECA;
 
 //criar peca de um determinado tipo.
@@ -43,6 +44,10 @@ PECA *criarPeca(int l, int w, int P, int Q, float v, int qtd)
 		i->p1 = criarArrayPontosCandidatos();
 		i->p2 = criarArrayPontosCandidatos();
 		i->quantidade = qtd;
+
+		//SÓ PARA TESTES. RETIRAR DEPOIS!
+		//i->distOrg = 0;
+		//-------------------------------
 	} 
 
 
@@ -110,7 +115,7 @@ void custoBeneficio(PECA *a)
 	
 }
 
-//função para copiar os valores de uma peca para a outra, Sò que aqtd de destino é setada para 1
+//função para copiar os valores de uma peca para a outra, Só que a qtd de destino é setada para 1
 //Organizar tudo em seus devidos lugares!!!
 void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
 {
@@ -164,8 +169,168 @@ void imprimirPeca(PECA *p)
 	printf("pontos candidatos p2:\n");
 	imprimirArrayPontosCandidatos(p->p2);
 	printf("\n");
+}
 
+/*Função feita por Lívia*/
+//Copia uma peça, mas deixa de copiaos arrays de pontos candidatos. Necessario para inserir esta peça em P novamente.
+//Usada na função "remocaoAleatoria" de R.h.
+void copiarPecaParaP(PECA *pecaDestino, PECA *pecaOrigem)
+{
+	pecaDestino->l = pecaOrigem->l;
+	pecaDestino->w = pecaOrigem->w;
+	pecaDestino->P = pecaOrigem->P;
+	pecaDestino->Q = pecaOrigem->Q;
+	pecaDestino->v = pecaOrigem->v;
+	
+	//if(pecaDestino->p1 == NULL && pecaDestino->p1 == NULL)
+	//{
+	//	pecaDestino->p1 = criarArrayPontosCandidatos();
+	//	pecaDestino->p2 = criarArrayPontosCandidatos();
+	//}
 
+	pecaDestino->quantidade = 1;
+}
+
+/*Função feita por Lívia.*/
+PONTO_CANDIDATO* coordenadaOrigemPeca(PECA *peca, PONTO_CANDIDATO *p1, PONTO_CANDIDATO *p2)
+{
+	PONTO_CANDIDATO *origemPeca = criarPontoCandidato(-1,-1);
+	/*
+	origemPeca->x = p2->y - (peca->w - 1);
+	origemPeca->y = p1->x - (peca->l - 1);
+	*/
+
+	origemPeca->x = p1->x - (peca->l - 1);
+	origemPeca->y = p1->y;
+
+	if(origemPeca->x >= 0 && origemPeca->y >= 0)
+		return origemPeca;
+	else
+	{
+		origemPeca->x = -1;
+		origemPeca->y = -1;
+		return origemPeca;
+	}
+}
+
+/*Função feita por Lívia.*/
+PONTO_CANDIDATO* coordenadaOrigemOpostaPeca(PECA *peca, PONTO_CANDIDATO *p1, PONTO_CANDIDATO *p2)
+{
+	//PONTO_CANDIDATO *origemPeca = coordenadaOrigemPeca(peca,p1,p2);
+	PONTO_CANDIDATO *origemOpostaPeca = criarPontoCandidato(-1,-1);
+
+	origemOpostaPeca->x = p1->x;
+	origemOpostaPeca->y = p1->y + (peca->w - 1);
+
+	//PONTO_CANDIDATO *origemOpostaPeca = criarPontoCandidato(origemPeca->x + (peca->l - 1),origemPeca->y + (peca->w - 1));
+
+	return origemOpostaPeca;
+}
+
+/*Função feita por Lívia.*/
+/*
+void definirPontoCandidato(PONTO_CANDIDATO *ondeInseriuP1,PONTO_CANDIDATO *ondeInseriuP2,PECA *pecaInserida,PONTO_CANDIDATO *destinoP1,PONTO_CANDIDATO *destinoP2)
+{
+	if(ondeInseriuP1 != NULL)
+	{
+		destinoP1->x = ondeInseriuP1->x + pecaInserida->l;
+		destinoP1->y = ondeInseriuP1->y;
+		destinoP2->x = ondeInseriuP1->x + 1;
+		destinoP2->y = ondeInseriuP1->y + (pecaInserida->w - 1);
+
+		return;
+	}
+	else if(ondeInseriuP2 != NULL)
+	{
+		destinoP1->x = ondeInseriuP2->x + (pecaInserida->l - 1);
+		destinoP1->y = ondeInseriuP2->y + 1;
+		destinoP2->x = ondeInseriuP2->x;
+		destinoP2->y = ondeInseriuP2->y + pecaInserida->w;
+
+		return;
+	}
+
+	printf("Os dois são null! Reveja os parâmetros.\n");
+	return;
+}
+*/
+
+//Função feita por Lívia.
+//Para ordenar as peças de acordo com a distância até a origem.
+void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim) 
+{
+	//aux_origemPeca = coordenadaOrigemPeca(aux->peca,aux_pt1->ponto,aux_pt2->ponto);
+	//sqrt(pow(aux_origemPeca->x,2) + pow(aux_origemPeca->y,2));
+
+    int i, j, k, metadeTamanho;
+    PECA *vetorTemp;
+
+    if(posicaoInicio == posicaoFim) 
+    	return;
+
+    // ordenacao recursiva das duas metades
+    metadeTamanho = (posicaoInicio + posicaoFim ) / 2;
+    mergeSort(vetor, posicaoInicio, metadeTamanho);
+    mergeSort(vetor, metadeTamanho + 1, posicaoFim);
+
+    // intercalacao no vetor temporario t
+    i = posicaoInicio;
+    j = metadeTamanho + 1;
+    k = 0;
+    vetorTemp = (PECA *) malloc(sizeof(PECA) * (posicaoFim - posicaoInicio + 1));
+    double distI, distJ;
+
+    while(i < metadeTamanho + 1 || j  < posicaoFim + 1) 
+    {
+    	// i passou do final da primeira metade, pegar v[j]
+        if (i == metadeTamanho + 1 ) 
+        { 
+            vetorTemp[k] = vetor[j];
+            j++;
+            k++;
+        }
+        else 
+        {
+        	// j passou do final da segunda metade, pegar v[i]
+            if (j == posicaoFim + 1) 
+            { 
+                vetorTemp[k] = vetor[i];
+                i++;
+                k++;
+            }
+            else 
+            {
+
+            	PONTO_CANDIDATO *aux_origemPecaI = coordenadaOrigemPeca(&vetor[i],vetor[i].p1->inicio->ponto,vetor[i].p2->inicio->ponto);
+            	PONTO_CANDIDATO *aux_origemPecaJ = coordenadaOrigemPeca(&vetor[j],vetor[j].p1->inicio->ponto,vetor[j].p2->inicio->ponto);
+            	//distI = sqrt(pow(aux_origemPecaI->x,2) + pow(aux_origemPecaI->y,2)); 
+            	//distJ = sqrt(pow(aux_origemPecaJ->x,2) + pow(aux_origemPecaJ->y,2));
+            	distI = distanciaEntreDoisPontos(aux_origemPecaI->x,aux_origemPecaI->y,0,0); 
+            	distJ = distanciaEntreDoisPontos(aux_origemPecaJ->x,aux_origemPecaJ->y,0,0);
+
+                if(distI < distJ) 
+                {
+                    vetorTemp[k] = vetor[i];
+                    i++;
+                    k++;
+                }
+                else 
+                {
+                    vetorTemp[k] = vetor[j];
+                    j++;
+                    k++;
+                }
+            }
+        }
+
+    }
+    // copia vetor intercalado para o vetor original
+    for(i = posicaoInicio; i <= posicaoFim; i++) 
+    {
+        vetor[i] = vetorTemp[i - posicaoInicio];
+    }
+
+    free(vetorTemp);
 }
 
 #endif

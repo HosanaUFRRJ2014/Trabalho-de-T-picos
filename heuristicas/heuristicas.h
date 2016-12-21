@@ -9,7 +9,7 @@
 #define HEURISTICA_H
 
 //Função do algoritmo 1
-R * criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
+R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
 	NO *aux;
 
@@ -32,8 +32,7 @@ R * criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 		int qtdInicial = aux->peca->quantidade;
 	
 		while(cont < qtdInicial)
-		{
-						
+		{		
 			int foiAdicionada = adicionarPecaAoRetangulo(solucaoNova, B , aux->peca);
 
 			if(foiAdicionada)
@@ -66,27 +65,30 @@ R * criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 
 }
 
-//*********************************Comentei aqui só para tirar os erros de compilação
-/*
-R* trocarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B)
+R* trocarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
 {
 	//Remover gamma da área de R;
 	//Adicionar peças removidas a P;
+	remocaoAleatoria(nova,P,B,gamma);
+
 	//Deslocar peças restantes para esquerda;
+	deslocarPecas(nova, B);
+	
 	criarSolucao(nova,P,B);
 	return nova;
 }
 
-int Simulated_Annealing(int T, int T_c, int It_max, double alpha, R *R, LISTA_LIGADA *P, LISTA_LIGADA *B)
+int Simulated_Annealing(int T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
-	R *atual, *nova, *melhor;
+	//R *atual, *nova, *melhor;
+	R *nova,*melhor;
 	int temp = T, iterT = 0, delta;
 	double x;
 
 	//A lista P recebida aqui já estará ordenada.
 
-	criarSolucao(atual);
-	/*------------------------------------------*
+	criarSolucao(atual,P,B);
+	//------------------------------------------*
 
 	melhor = atual;
 
@@ -97,16 +99,18 @@ int Simulated_Annealing(int T, int T_c, int It_max, double alpha, R *R, LISTA_LI
 		while(iterT > It_max)
 		{
 			iterT++;
-			nova = trocarSolucao(atual);
-			/*-------------------------------------------------------*
+			nova = trocarSolucao(atual,P,B,0.35);
+			//-------------------------------------------------------*
 
-			delta = f(atual) - f(nova);
+			//delta = f(atual) - f(nova);
+			delta = atual->valorUtilidadeTotal - nova->valorUtilidadeTotal;
 
 			if(delta < 0)
 			{
 				atual = nova;
 
-				if(f(nova) > f(melhor))
+				//if(f(nova) > f(melhor))
+				if(nova->valorUtilidadeTotal > atual->valorUtilidadeTotal)
 					melhor = atual;
 			}
 			else
@@ -121,8 +125,8 @@ int Simulated_Annealing(int T, int T_c, int It_max, double alpha, R *R, LISTA_LI
 		T = alpha * T;
 		iterT = 0;
 	}
-	return melhor;
+	return melhor->valorUtilidadeTotal;
 }
-*/
+//*/
 
 #endif
