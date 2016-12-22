@@ -46,6 +46,21 @@ inline void preencherComZeros(int **matriz, int l, int w)
 	}
 }
 
+//a matrizDestino devem, obrigatoriamente, ter W e L igual ao da origem
+inline void copiarMatriz(int **matrizDestino, int **matrizOrigem, int L, int W)
+{
+	int i,j;
+
+	for (i = 0; i < L; i++)
+	{
+		for (j = 0; j < W; j++)
+		{
+			matrizDestino[i][j] = matrizOrigem[i][j];
+		}
+	}
+
+}
+
 inline void imprimirR(int **matriz, int l, int w)
 {
 	int i, j;
@@ -229,6 +244,7 @@ inline void despreencherR(R* r,PECA *aRemover,PONTO_CANDIDATO *p1,PONTO_CANDIDAT
 	else
 	{
 		printf("Peca ou ponto inválido para ser removido.\n");
+		return;
 	}
 
 	/*
@@ -333,9 +349,6 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 		atual = prioridadeAdireita;
 	/*------------------------------------------------*/
 
-	//senão
-	//printf("Sem tratamento --  Erro meu!!!!\n"); comentei esse print porque já corrigi a minha parte
-
 	if(!ehPossivelAdicionar(r,nova,atual))
 		return false;
 
@@ -357,7 +370,7 @@ inline void remocaoAleatoria(R *r, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma
 
 	//printf("%f porcento de %d é = %lf\n",(gamma * 100),(r->L * r->W),areaSerRemovida);
 
-	srand((unsigned int)time(NULL));
+	//srand((unsigned int)time(NULL));
 
 	int indiceTipoPecaSerRemovida, indicePecaSerRemovida, count, iter = 0;
 
@@ -412,6 +425,8 @@ inline void remocaoAleatoria(R *r, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma
 		//Remove a peça de B.
 		removerPecaDadoPeca(B, aux_B->peca, aux_pt1->ponto,aux_pt2->ponto);
 	}
+
+	
 }
 
 //Função feita por Lívia.
@@ -596,7 +611,7 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 			//Inserindo a peça em B(que começou vazia).
 			//inserirPeca(B,&arrayPecas[count]);
 
-			printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
+			//printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
 		//	return;
 		}
 

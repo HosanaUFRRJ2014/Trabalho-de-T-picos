@@ -28,6 +28,8 @@ int main(int argc, char const *argv[])
 	valores_otimos = (int*)malloc(qtd_inst * sizeof(int));
 	resultados = (int*)malloc(qtd_inst * sizeof(int));
 
+	srand(time(NULL));
+
 	while(leitura_instancia(inst,&L, &W, &qtd_pecas, &valor_otimo) != EOF && num_iter != 1)
 	{
 
