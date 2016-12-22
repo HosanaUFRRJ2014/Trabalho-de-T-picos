@@ -1,0 +1,3 @@
+testando para ver se funciona o pull.
+Com o diretório configurado.
+ Testar o push
