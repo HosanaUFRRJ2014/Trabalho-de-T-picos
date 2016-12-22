@@ -54,7 +54,7 @@ inline void imprimirR(int **matriz, int l, int w)
 	{
 		for (j = 0; j < w; j++)
 		{
-			printf("%-5d",matriz[i][j]);
+			printf("%7d",matriz[i][j]);
 		}
 
 		printf("\n");
@@ -149,17 +149,25 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 		r->indicePeca++;
 	}
 
-	else //a peça já existe e vamos preenchê-la com o seu índice em R.
+
+	else if(indicePeca > 0)//a peça já existe e vamos preenchê-la com o seu índice em R.
 		fatorPreenchimento = indicePeca;
+
+	printf("label 1\n");
 
 	
 	for (i = ponto->y; i < ponto->y + nova->w; i++)
 	{
 		for (j = ponto->x; j < ponto->x + nova->l; j++)
 		{
+			if(i >= r->W || j>= r->L)
+				printf("ESTOUROU!!\n");
+
 			r->matriz[i][j] = fatorPreenchimento;
 		}
 	}
+
+	printf("label 2\n");
 
 
 	//definição dos pontos candidatos da peça nova
@@ -171,6 +179,8 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 		inserirPontoCandidato(nova->p1,p1);
 	}
 
+	printf("label 3\n");
+
 
  //se não vai estourar a largura do retângulo R
 	if(i <= r->W)
@@ -180,10 +190,14 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 	
 	}
 
+	printf("label 4\n");
+
 	//r->indicePeca++;
 	r->quantidade++;
 	r->valorUtilidadeTotal += nova->v;
 	//r->areaOcupada += (nova->l * nova->w);
+
+	printf("label 5\n");
 
 	return;
 
@@ -320,7 +334,13 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 	/*------------------------------------------------*/
 
 	//senão
-	preencherRcomPeca(r,nova,atual,-1);
+	//printf("Sem tratamento --  Erro meu!!!!\n"); comentei esse print porque já corrigi a minha parte
+
+	if(!ehPossivelAdicionar(r,nova,atual))
+		return false;
+
+	else
+		preencherRcomPeca(r,nova,atual,-1);
 
 	return true;
 
@@ -510,6 +530,7 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 	removerPontoCandidato(arrayPecas[0].p1);
 	removerPontoCandidato(arrayPecas[0].p2);
 
+	printf("Sem tratamento --  Erro da Lívia 1!!!!\n");
 	preencherRcomPeca(r,&arrayPecas[0],pontoEscolhido,indicePeca);
 
 	inserirPeca(B,&arrayPecas[0]);
@@ -614,6 +635,7 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 		removerPontoCandidato(arrayPecas[count].p2);
 
 		//Preenchendo no ponto escolhido e atualizando(dentro da função) o ponto candidato atual.
+		printf("Sem tratamento --  Erro da Lívia 2!!!!\n");
 		preencherRcomPeca(r,&arrayPecas[count],pontoEscolhido,indicePeca);
 
 		//Inserindo a peça em B(que começou vazia).

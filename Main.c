@@ -7,7 +7,7 @@
 #include "arquivo.h"
 #include "heuristicas/heuristicas.h"*/
 
-//Subistitui todos os includes acima
+//Substitui todos os includes acima
 #include "includes.h"
 #include "heuristicas/heuristicas.h"
 
@@ -30,8 +30,8 @@ int main(int argc, char const *argv[])
 
 	while(leitura_instancia(inst,&L, &W, &qtd_pecas, &valor_otimo) != EOF && num_iter != 1)
 	{
-		printf("-------------------------------Instancia %d--------------------------------------------\n\n",num_inst + 1);
 
+		printf("-------------------------------Instancia %d--------------------------------------------\n\n",num_inst + 1);
 		ret = criarRetanguloR(L,W);
 		valores_otimos[num_inst] = valor_otimo;
 

@@ -7,7 +7,8 @@ gcc FILE -o m -I /path/until/trabTop -lm
 
 Exemplo:
 
-gcc main -o m -I /home/hosana/git/trabTop -lm
+gcc Main.c -o Main -I /home/hosana/git/Trabalho-de-T-picos -lm
+
 
 A diretiva -I fará com que o arquivo includes.h seja incluido em qualquer outro arquivo dentro de qualquer pasta.
 Consulte: 

@@ -49,10 +49,11 @@ inline R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 			 	inserirPeca(B, aInserir);
 			 	
 			 }
-			 else
-			 {
-			 	printf("Não foi adicionada!!!!\n");
-			 }
+			 // else
+			 // {
+			 	
+			 // 	//printf("Não foi adicionada!!!!\n");
+			 // }
 
 			cont++;
 
@@ -97,7 +98,7 @@ inline int Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *a
 
 	while(T > T_c)
 	{
-		while(iterT > It_max)
+		while(/*iterT > It_max*/ iterT < It_max)
 		{
 			iterT++;
 			nova = trocarSolucao(atual,P,B,0.35);
@@ -111,7 +112,7 @@ inline int Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *a
 				atual = nova;
 
 				//if(f(nova) > f(melhor))
-				if(nova->valorUtilidadeTotal > atual->valorUtilidadeTotal)
+				if(nova->valorUtilidadeTotal > melhor->valorUtilidadeTotal)
 					melhor = atual;
 			}
 			else
