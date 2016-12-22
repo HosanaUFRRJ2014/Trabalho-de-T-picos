@@ -54,7 +54,7 @@ inline void imprimirR(int **matriz, int l, int w)
 	{
 		for (j = 0; j < w; j++)
 		{
-			printf("%7d",matriz[i][j]);
+			printf("%9d",matriz[i][j]);
 		}
 
 		printf("\n");
@@ -153,7 +153,7 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 	else if(indicePeca > 0)//a peça já existe e vamos preenchê-la com o seu índice em R.
 		fatorPreenchimento = indicePeca;
 
-	printf("label 1\n");
+	//printf("label 1\n");
 
 	
 	for (i = ponto->y; i < ponto->y + nova->w; i++)
@@ -167,7 +167,7 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 		}
 	}
 
-	printf("label 2\n");
+	//printf("label 2\n");
 
 
 	//definição dos pontos candidatos da peça nova
@@ -179,7 +179,7 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 		inserirPontoCandidato(nova->p1,p1);
 	}
 
-	printf("label 3\n");
+	//printf("label 3\n");
 
 
  //se não vai estourar a largura do retângulo R
@@ -190,14 +190,14 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 	
 	}
 
-	printf("label 4\n");
+	//printf("label 4\n");
 
 	//r->indicePeca++;
 	r->quantidade++;
 	r->valorUtilidadeTotal += nova->v;
 	//r->areaOcupada += (nova->l * nova->w);
 
-	printf("label 5\n");
+	//printf("label 5\n");
 
 	return;
 
@@ -371,7 +371,7 @@ inline void remocaoAleatoria(R *r, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma
 	//novaPeca->p1 = criarArrayPontosCandidatos();
 	//novaPeca->p2 = criarArrayPontosCandidatos();
 
-	while(areaJaRemovida < areaSerRemovida)
+	while(areaJaRemovida < areaSerRemovida && B->tamanho != 0)
 	{
 		aux_B = B->inicio;
 
@@ -462,60 +462,21 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 	}
 	
 	PONTO_CANDIDATO *aux_ponto,*aux_pontoOp;
-	/*
-	for (count = 0; count < r->quantidade; count++)
-	{
-		//SÓ PARAR TESTES. RETIRAR DEPOIS
-		aux_ponto = coordenadaOrigemPeca(&arrayPecas[count],arrayPecas[count].p1->inicio->ponto, arrayPecas[count].p2->inicio->ponto);
-		arrayPecas[count].distOrg = distanciaEntreDoisPontos(aux_ponto->x,aux_ponto->y,0,0);
-		//imprimirPeca(&arrayPecas[count]);
-		//printf("DistOrg = %lf\n\n",arrayPecas[count].distOrg);
-
-		//aux_origemOpostaPeca = coordenadaOrigemOpostaPeca(&arrayPecas[count - 1],arrayPecas[count - 1].p1->inicio->ponto,arrayPecas[count - 1].p2->inicio->ponto);
-		//aux_origemPeca = coordenadaOrigemPeca(&arrayPecas[count],arrayPecas[count].p1->inicio->ponto,arrayPecas[count].p2->inicio->ponto);
-
-	}
-	*/
-
-	//printf("-----------------------------------------------------------------------------\n\n");
 	
 	//Ordenação do vetor de acordo com a distância da origem da peça com (0,0).
 	mergeSort(arrayPecas,0,r->quantidade - 1);
-
-	 /*
-	for (count = 0; count < r->quantidade; count++)
-	{
-		imprimirPeca(&arrayPecas[count]);
-		//aux_ponto = coordenadaOrigemPeca(&arrayPecas[count],arrayPecas[count].p1->inicio->ponto, arrayPecas[count].p2->inicio->ponto);
-		//aux_pontoOp = coordenadaOrigemOpostaPeca(&arrayPecas[count],arrayPecas[count].p1->inicio->ponto,arrayPecas[count].p2->inicio->ponto);
-		//imprimirPontoCandidato(aux_ponto);
-		//printf("\n");
-		//imprimirPontoCandidato(aux_pontoOp);
-		printf("DistOrg = %lf\n\n",arrayPecas[count].distOrg);
-	}
-
-	printf("\n\n");
-	 */
 
 /*----------------------------------------------------------------------------------------------------*/
 
 	//Início do deslocamento das peças para esquerda e depois para cima.
 
 	//Criar a nova lista B que será considerada.
-	//LISTA_LIAGDA *novo_B = criarLista();
 	PONTO_CANDIDATO *pontoEscolhido,*aux_pontoEscolhido,*aux_origemPeca;//, *aux_origemPeca,*aux_origemOpostaPeca;
 	PECA *novaPecaB;
 	int countB, indicePeca;
-
-	//Guarda a menor distância da origem da peça até um ponto candidato.
-	//double menorDistOrigem;
-
-	//int iterTeste = 0;
-	//double distPC, distPE;
 	
 	pontoEscolhido = (PONTO_CANDIDATO*)malloc(sizeof(PONTO_CANDIDATO));
 	aux_pontoEscolhido = (PONTO_CANDIDATO*)malloc(sizeof(PONTO_CANDIDATO));
-	//aux_origemPeca = (PONTO_CANDIDATO*)malloc(sizeof(PONTO_CANDIDATO));
 
 	//Inicializando o ponto de origem.
 	pontoEscolhido->x = 0;
@@ -530,7 +491,8 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 	removerPontoCandidato(arrayPecas[0].p1);
 	removerPontoCandidato(arrayPecas[0].p2);
 
-	printf("Sem tratamento --  Erro da Lívia 1!!!!\n");
+	//Aqui NUNCA dará erro...estpi sempre inserindo a peça na origem 0,0.
+	//printf("Sem tratamento --  Erro da Lívia 1!!!!\n");
 	preencherRcomPeca(r,&arrayPecas[0],pontoEscolhido,indicePeca);
 
 	inserirPeca(B,&arrayPecas[0]);
@@ -546,26 +508,9 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 		//Verificar o ponto candidato mais próximo da origem dentre as peças anteriormente deslocadas na lista ordenada.
 		despreencherR(r,&arrayPecas[count],arrayPecas[count].p1->inicio->ponto,arrayPecas[count].p2->inicio->ponto);
 
-		//aux_origemPeca = coordenadaOrigemPeca(&arrayPecas[count],arrayPecas[count].p1->inicio->ponto,arrayPecas[count].p2->inicio->ponto);
-		//printf("Origem peça atual:\n");
-		//imprimirPontoCandidato(aux_origemPeca);
-
 		//Varrendo as peças anteriormente deslocadas.
 		for(countB = 0;countB < count;countB++)
 		{
-			/*----------------------------------------TESTES----------------------------------------------------------------------*/
-			//printf("---------------------------------------Caso %d----------------------------------------------------------\n\n",iterTeste);
-
-			//imprimirPontoCandidato(arrayPecas[countB].p1->inicio->ponto);
-			//printf("\n");
-
-			//distPC = distanciaEntreDoisPontos(arrayPecas[countB].p1->inicio->ponto->x,arrayPecas[countB].p1->inicio->ponto->y,0,0);
-			//distPE = distanciaEntreDoisPontos(pontoEscolhido->x,pontoEscolhido->y,0,0);
-
-			//printf("Distancia PC: %lf\n",distPC);
-			//printf("Distancia PE: %lf\n",distPE);
-			/*---------------------------------------------------------------------------------------------------------------------*/
-
 			//Testando o ponto candidato P1
 			//Se a distância do PC até a origem for menor que a já encontrada, este será o novo ponto onde a peça será inserida.
 			if(distanciaEntreDoisPontos(arrayPecas[countB].p1->inicio->ponto->x,arrayPecas[countB].p1->inicio->ponto->y,0,0) < 
@@ -585,17 +530,6 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 				}
 			}
 
-			/*---------------------------------------------------------------------------------------------------------------------*/
-			//imprimirPontoCandidato(arrayPecas[countB].p2->inicio->ponto);
-			//printf("\n");
-
-			//distPC = distanciaEntreDoisPontos(arrayPecas[countB].p2->inicio->ponto->x,arrayPecas[countB].p2->inicio->ponto->y,0,0);
-			//distPE = distanciaEntreDoisPontos(pontoEscolhido->x,pontoEscolhido->y,0,0);
-
-			//printf("Distancia PC: %lf\n",distPC);
-			//printf("Distancia PE: %lf\n",distPE);
-			/*---------------------------------------------------------------------------------------------------------------------*/
-
 			//Testando o ponto candidato P1
 			//Se a distância do PC até a origem for menor que a já encontrada, este será o novo ponto onde a peça será inserida.
 			if(distanciaEntreDoisPontos(arrayPecas[countB].p2->inicio->ponto->x,arrayPecas[countB].p2->inicio->ponto->y,0,0) < 
@@ -614,29 +548,57 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 					pontoEscolhido->y = aux_pontoEscolhido->y;
 				}
 			}
-
-			//Variavel de teste.
-			//iterTeste++;
-
-			/*---------------------------------------------------------------------------------------------------------------------*/
-			//printf("--------------------------------------------------------------------------------------------------------\n\n");
-			/*---------------------------------------------------------------------------------------------------------------------*/
 		}
 
 		//printf("\n");
 		//imprimirPontoCandidato(pontoEscolhido);
 		//printf("\n");
 
-		//Encontrado o ponto candidato mais próximo da origem, vamos inserir a peça atual neste ponto.
-		//if(ehPossivelAdicionar(r, &arrayPecas[count], pontoEscolhido)) //SEMPRE VERDADEIRO!
-		//{
+		/*
+		if(!ehPossivelAdicionar(r, &arrayPecas[count], pontoEscolhido))
+		{
+			imprimirPontoCandidato(pontoEscolhido);
+			printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
+		}
+		*/
+		aux_origemPeca = coordenadaOrigemPeca(&arrayPecas[count],arrayPecas[count].p1->inicio->ponto,
+											  arrayPecas[count].p2->inicio->ponto);
+
 		//Removendo os pontos desatualizados.
 		removerPontoCandidato(arrayPecas[count].p1);
 		removerPontoCandidato(arrayPecas[count].p2);
 
-		//Preenchendo no ponto escolhido e atualizando(dentro da função) o ponto candidato atual.
-		printf("Sem tratamento --  Erro da Lívia 2!!!!\n");
-		preencherRcomPeca(r,&arrayPecas[count],pontoEscolhido,indicePeca);
+		//Encontrado o ponto candidato mais próximo da origem, vamos inserir a peça atual neste ponto.
+		if(ehPossivelAdicionar(r, &arrayPecas[count], pontoEscolhido)) //SEMPRE VERDADEIRO!(ou não...)
+		{
+			//Removendo os pontos desatualizados.
+			//removerPontoCandidato(arrayPecas[count].p1);
+			//removerPontoCandidato(arrayPecas[count].p2);
+
+			//Preenchendo no ponto escolhido e atualizando(dentro da função) o ponto candidato atual.
+			//printf("Sem tratamento --  Erro da Lívia 2!!!!\n");
+			preencherRcomPeca(r,&arrayPecas[count],pontoEscolhido,indicePeca);
+
+			//Inserindo a peça em B(que começou vazia).
+			//inserirPeca(B,&arrayPecas[count]);
+
+			//Resetando o ponto escolhido
+			//pontoEscolhido->x = r->L + 1;
+			//pontoEscolhido->y = r->W + 1;
+
+		}
+		else
+		{
+			preencherRcomPeca(r,&arrayPecas[count],aux_origemPeca,indicePeca);
+
+			free(aux_origemPeca);
+
+			//Inserindo a peça em B(que começou vazia).
+			//inserirPeca(B,&arrayPecas[count]);
+
+			printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
+		//	return;
+		}
 
 		//Inserindo a peça em B(que começou vazia).
 		inserirPeca(B,&arrayPecas[count]);
@@ -645,12 +607,6 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 		pontoEscolhido->x = r->L + 1;
 		pontoEscolhido->y = r->W + 1;
 
-		//}
-		//else
-		//{
-		//	printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
-		//	return;
-		//}
 	}
 
 	free(pontoEscolhido);
