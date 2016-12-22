@@ -9,7 +9,7 @@
 #define HEURISTICA_H
 
 //Função do algoritmo 1
-R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
+inline R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
 	NO *aux;
 
@@ -65,7 +65,7 @@ R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 
 }
 
-R* trocarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
+inline R* trocarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
 {
 	//Remover gamma da área de R;
 	//Adicionar peças removidas a P;
@@ -78,7 +78,7 @@ R* trocarSolucao(R *nova, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
 	return nova;
 }
 
-int Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B)
+inline int Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
 	//R *atual, *nova, *melhor;
 	R *nova,*melhor;

@@ -22,7 +22,7 @@ typedef struct
 }PONTO_CANDIDATO;
 
 //criar struct ponto candidato. Inicialmente ao ser definido em peça, ele será (-1,-1), pois não estará definido em relação a R.
-PONTO_CANDIDATO *criarPontoCandidato(int x, int y)
+inline PONTO_CANDIDATO *criarPontoCandidato(int x, int y)
 {
 	PONTO_CANDIDATO *p = (PONTO_CANDIDATO *) malloc(sizeof(PONTO_CANDIDATO));
 
@@ -36,7 +36,7 @@ PONTO_CANDIDATO *criarPontoCandidato(int x, int y)
 }
 
 //função para a verificação de existencia de ponto. Para os casos em que podem não existir p1 ou p2 pois os mesmos ultrapassariam W e/ou L de R
-int ehPontoCandidato(PONTO_CANDIDATO *p)
+inline int ehPontoCandidato(PONTO_CANDIDATO *p)
 {
 	if(p != NULL)
 	{
@@ -48,7 +48,7 @@ int ehPontoCandidato(PONTO_CANDIDATO *p)
 }
 
 //função para a verificação do ponto mais próximo da origem (0,0)
-PONTO_CANDIDATO * primeiroPontoFactivel(PONTO_CANDIDATO * a, PONTO_CANDIDATO *b)
+inline PONTO_CANDIDATO * primeiroPontoFactivel(PONTO_CANDIDATO * a, PONTO_CANDIDATO *b)
 {
 	//otimizar esse trecho
 	// se nenhum dos dois é ponto candidato. Existem peças que podem não ter um pt. cand. ou não ter os dois.
@@ -71,7 +71,7 @@ PONTO_CANDIDATO * primeiroPontoFactivel(PONTO_CANDIDATO * a, PONTO_CANDIDATO *b)
 
 }
 
-void imprimirPontoCandidato(PONTO_CANDIDATO *p)
+inline void imprimirPontoCandidato(PONTO_CANDIDATO *p)
 {
 	if(p == NULL)
 	{
@@ -88,7 +88,7 @@ void imprimirPontoCandidato(PONTO_CANDIDATO *p)
 }
 
 //Função feita por Lívia.
-double distanciaEntreDoisPontos(int x1, int y1, int x2, int y2)
+inline double distanciaEntreDoisPontos(int x1, int y1, int x2, int y2)
 {
 	return (sqrt(pow((x1 - x2),2) + pow((y1 - y2),2)));
 }

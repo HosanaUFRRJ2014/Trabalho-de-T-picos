@@ -29,7 +29,7 @@ typedef struct{
 
 void imprimirLista(LISTA_LIGADA *l);
 
-LISTA_LIGADA *criarLista()
+inline LISTA_LIGADA *criarLista()
 {
 	LISTA_LIGADA *lista = (LISTA_LIGADA *) malloc(sizeof(LISTA_LIGADA));
 
@@ -45,7 +45,7 @@ LISTA_LIGADA *criarLista()
 }
 
 
-int vazia(LISTA_LIGADA *l)
+inline int vazia(LISTA_LIGADA *l)
 {
 	if(l->tamanho == 0)
 		return true;
@@ -53,7 +53,7 @@ int vazia(LISTA_LIGADA *l)
 	return false;
 }
 
-int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
+inline int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 {
 	NO *pnovo = (NO *) malloc (sizeof(NO));
 
@@ -133,7 +133,7 @@ int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 	return false;
 }
 
-int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
+inline int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
 {
 	NO *pnovo = (NO *) malloc (sizeof(NO));
 
@@ -232,7 +232,7 @@ int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
 
 }
 
-PECA *removerPeca(LISTA_LIGADA *lista)
+inline PECA *removerPeca(LISTA_LIGADA *lista)
 {
 	//printf("linha 231\n");
 	if(!vazia(lista))
@@ -282,7 +282,7 @@ PECA *removerPeca(LISTA_LIGADA *lista)
 }
 
 /*Função feita por Lívia*/
-void removePeca(LISTA_LIGADA *lista,NO *aRemover,PONTO_CANDIDATO *ponto_aRemoverP1,PONTO_CANDIDATO *ponto_aRemoverP2)
+inline void removePeca(LISTA_LIGADA *lista,NO *aRemover,PONTO_CANDIDATO *ponto_aRemoverP1,PONTO_CANDIDATO *ponto_aRemoverP2)
 {
 	if(!vazia(lista))
 	{
@@ -348,7 +348,7 @@ void removePeca(LISTA_LIGADA *lista,NO *aRemover,PONTO_CANDIDATO *ponto_aRemover
 }
 
 /*Função feita por Lívia*/
-int removerPecaDadoPeca(LISTA_LIGADA *B, PECA *aRemover, PONTO_CANDIDATO *p1,PONTO_CANDIDATO *p2)
+inline int removerPecaDadoPeca(LISTA_LIGADA *B, PECA *aRemover, PONTO_CANDIDATO *p1,PONTO_CANDIDATO *p2)
 {
 	NO *aux = B->inicio;
 
@@ -371,8 +371,7 @@ int removerPecaDadoPeca(LISTA_LIGADA *B, PECA *aRemover, PONTO_CANDIDATO *p1,PON
 	return false;
 }
 
-//Jeito muito muito feio de fazer isso, mas hoje é sexta feira(sexta é dia de maldade) e não estou com saco de consertar o algoritmo de ordenação.
-LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
+inline LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
 {
 	LISTA_LIGADA *listaOrdenada = criarLista();
 
@@ -388,7 +387,7 @@ LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
 
 }
 
-void imprimirLista(LISTA_LIGADA *l)
+inline void imprimirLista(LISTA_LIGADA *l)
 {
 	NO *aux = (NO *) malloc (sizeof(NO));
 
@@ -406,150 +405,3 @@ void imprimirLista(LISTA_LIGADA *l)
 }
 
 #endif
-
-/*FAVOR NÃO APAGAR, A NÃO SER QUE JÁ SEJA PARA ENTREGAR O CÓDIGO A ÁDRIA. NUNCA SE SABE SE ESSES CÓDIGOS SERÃO IMPORTANTES.*/
-
-/*int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *peca)
-{
-	NO *pnovo = (NO *) malloc (sizeof(NO));
-
-	NO *aux;
-
-	lista->tamanho++;
-
-	if(pnovo != NULL)
-	{
-		pnovo->peca = peca;
-		pnovo->anterior = NULL;
-        pnovo->proximo = NULL;
-
-        //se for o primeiro nó a ser inserido na lista:
-		if(lista->inicio == NULL) 
-        {
-        	
-        	lista->inicio = pnovo;
-        	lista->fim = pnovo;
-
-        	return true;
-        }
-
-        ///se não for, a lista precisará ser percorrida
-        aux = lista->inicio;
-
-        while(aux != NULL)
-        {
-
-		    //ver se as peças são iguais. Se sim, só somar sua quantidade. Não estou checando os limites!!
-		    if(pecasIguais(aux->peca,peca))
-		    {
-		    	aux->peca->quantidade += peca->quantidade;
-		    	return true;
-
-		    }
-
-		    //se são diferentes, verificar se a peca é maior que a contida em aux
-		    //se sim, há 2 possibilidades:
-		    if(pecaMaior(peca,aux->peca))
-		    {
-		    	//1: ser inserida no começo da lista
-		    	if(aux->anterior == NULL)
-		    	{
-		    		pnovo->proximo = aux;
-		    		aux->anterior = pnovo;
-		    		lista->inicio = pnovo;
-
-		    		return true;
-		    	}
-
-		    	//2: ser inserida numa posicao intermediária
-		    	else
-		    	{
-		    		pnovo->proximo = aux;
-		    		pnovo->anterior = aux->anterior;
-
-		    		aux->anterior->proximo = pnovo;
-		    		aux->anterior = pnovo;
-
-		    		return true;
-		    	}
-
-		    }
-
-		    //se não for maior , continuar percorrendo a lista
-		    aux = aux->proximo;
-
-        }
-
-        //se chegou no fim da lista, adicionar ao final
-        lista->fim->proximo = pnovo;
-        pnovo->anterior = lista->fim;
-        lista->fim = pnovo;
-        return true;
-
-		
-	}
-
-	//como incrementei o tamamnho da lista antes de de fato adicionar algum elemento, estou decrementando, caso não adicione
-	lista->tamanho--;
-	return false;
-
-}*/
-
-/*Remover sempre a primeira peça da lista*/
-//verificar se a qtd da peça será zerada
-	//se sim, remover o nó
-	//se não, só decrementar a quantidade dela
-/*PECA  *removerPeca(LISTA_LIGADA *lista)
-{
-	if(!vazia(lista))
-	{
-		NO *aRemover = lista->inicio;
-
-		PECA *retorno;
-		
-		if(aRemover->peca->quantidade == 1)
-		{
-			lista->inicio = aRemover->proximo;
-
-			if(aRemover != lista->fim)
-	        	aRemover->proximo->anterior = aRemover->anterior;
-
-	        	else
-	        		lista->fim = aRemover->anterior;
-
-	        lista->tamanho--;
-
-	        *retorno =  *aRemover->peca; //copia do ponteiro aRemover->peca para o retorno;
-
-	        retorno->quantidade = 1;
-
-
-	       
-
-	        free(aRemover);
-
-	        
-
-        }
-
-        else
-        {
-			retorno->peca->quantidade  = 1;
-
-			printf("quantidade pecas pont retorno %d\n", retorno->peca->quantidade);
-
-			aRemover->peca->quantidade --;
-
-			printf("quantidade pecas pont aRemover %d\n", aRemover->peca->quantidade);
-
-
-			
-        	
-        }
-      
-        return retorno->peca;	
-       
-	}
-
-	return NULL;
-}*/

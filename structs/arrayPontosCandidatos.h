@@ -23,7 +23,7 @@ typedef struct{
 }ARRAY_PONTOS_CANDIDATOS;
 
 
-ARRAY_PONTOS_CANDIDATOS *criarArrayPontosCandidatos()
+inline ARRAY_PONTOS_CANDIDATOS *criarArrayPontosCandidatos()
 {
 	ARRAY_PONTOS_CANDIDATOS *array = (ARRAY_PONTOS_CANDIDATOS *) malloc(sizeof(ARRAY_PONTOS_CANDIDATOS));
 
@@ -38,7 +38,7 @@ ARRAY_PONTOS_CANDIDATOS *criarArrayPontosCandidatos()
 	return array;
 }
 
-int vazio(ARRAY_PONTOS_CANDIDATOS *l)
+inline int vazio(ARRAY_PONTOS_CANDIDATOS *l)
 {
 	if(l->tamanho == 0)
 		return true;
@@ -46,7 +46,7 @@ int vazio(ARRAY_PONTOS_CANDIDATOS *l)
 	return false;
 }
 
-int inserirPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array, PONTO_CANDIDATO *ponto)
+inline int inserirPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array, PONTO_CANDIDATO *ponto)
 {
 	//printf("ponto 5.0.1\n");
 	NO_Pt *pnovo = (NO_Pt *) malloc (sizeof(NO_Pt));
@@ -92,7 +92,7 @@ int inserirPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array, PONTO_CANDIDATO *ponto
 	return false;
 }
 
-int removerPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array)
+inline int removerPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array)
 {
 	if(!vazio(array))
 	{
@@ -114,7 +114,7 @@ int removerPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array)
 	return false;
 }
 /*Função feita por Lívia*/
-void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,NO_Pt *aRemoverP1, NO_Pt *aRemoverP2)
+inline void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,NO_Pt *aRemoverP1, NO_Pt *aRemoverP2)
 {
 	//Remover o ponto candidato no array de pontos candidatos.
 	if(aRemoverP1 == arrayP1->inicio && aRemoverP2 == arrayP2->inicio)
@@ -165,7 +165,7 @@ void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDAT
 	return;
 }
 /*Função feita por Lívia*/
-int removerPontoCandidatoDadoPontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,PONTO_CANDIDATO *pontoP1,PONTO_CANDIDATO *pontoP2)
+inline int removerPontoCandidatoDadoPontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,PONTO_CANDIDATO *pontoP1,PONTO_CANDIDATO *pontoP2)
 {
 	if(!vazio(arrayP1) && !vazio(arrayP2))
 	{
@@ -190,7 +190,7 @@ int removerPontoCandidatoDadoPontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARR
 }
 
 
-void imprimirArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS *p)
+inline void imprimirArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS *p)
 {
 	NO_Pt *aux = p->inicio;
 

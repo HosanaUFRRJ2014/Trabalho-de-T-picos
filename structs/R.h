@@ -33,7 +33,7 @@ typedef struct             //comprimento L e largura W.
 	
 }R; //qtd de linhas: l e qtd de colunas: w;
 
-void preencherComZeros(int **matriz, int l, int w)
+inline void preencherComZeros(int **matriz, int l, int w)
 {
 	int i, j;
 
@@ -46,7 +46,7 @@ void preencherComZeros(int **matriz, int l, int w)
 	}
 }
 
-void imprimirR(int **matriz, int l, int w)
+inline void imprimirR(int **matriz, int l, int w)
 {
 	int i, j;
 
@@ -62,7 +62,7 @@ void imprimirR(int **matriz, int l, int w)
 }
 
 //Função feita por Lívia.
-void imprimirVariaveisR(R *r)
+inline void imprimirVariaveisR(R *r)
 {
 	printf("----------------Variáveis de R---------------------------\n");
 	printf("indicePeca atual: %d\n",r->indicePeca);
@@ -73,7 +73,7 @@ void imprimirVariaveisR(R *r)
 }
 
 
-R * criarRetanguloR(int l, int w)
+inline R * criarRetanguloR(int l, int w)
 {
 	R *r = (R *) malloc(sizeof(R));
 
@@ -112,7 +112,7 @@ R * criarRetanguloR(int l, int w)
 
 /*-------------------Criar funções de preencher retangulo-----------------------------------*/
 //verificar se é possível adicionar dada peca em R, em um determinado ponto candidato.
-int ehPossivelAdicionar(R *r, PECA *nova, PONTO_CANDIDATO *ponto)
+inline int ehPossivelAdicionar(R *r, PECA *nova, PONTO_CANDIDATO *ponto)
 {
 	int i, j;
 
@@ -137,40 +137,34 @@ int ehPossivelAdicionar(R *r, PECA *nova, PONTO_CANDIDATO *ponto)
 }
 
 //funcao para preencher R com a peça, de fato.
-
-void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indicePeca)
+inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indicePeca)
 {
 	int i, j;
 
+	int fatorPreenchimento;
+
 	if(indicePeca == -1) //Preenche com o próximo índice salvo em R.
 	{
-		for (i = ponto->y; i < ponto->y + nova->w; i++)
-		{
-			for (j = ponto->x; j < ponto->x + nova->l; j++)
-			{
-				r->matriz[i][j] = r->indicePeca;
-			}
-		}
-
+		fatorPreenchimento = r->indicePeca;
 		r->indicePeca++;
-
 	}
+
 	else //a peça já existe e vamos preenchê-la com o seu índice em R.
+		fatorPreenchimento = indicePeca;
+
+	
+	for (i = ponto->y; i < ponto->y + nova->w; i++)
 	{
-		for (i = ponto->y; i < ponto->y + nova->w; i++)
+		for (j = ponto->x; j < ponto->x + nova->l; j++)
 		{
-			for (j = ponto->x; j < ponto->x + nova->l; j++)
-			{
-				r->matriz[i][j] = indicePeca;
-			}
+			r->matriz[i][j] = fatorPreenchimento;
 		}
 	}
+
 
 	//definição dos pontos candidatos da peça nova
 	//lembrete: as noções de L e W são invertidas, na minha opinião, mas respeitei o artigo.
 	//se não vai estourar o comprimento do retângulo 
-
-
 	if(j <= r->L)
 	{
         PONTO_CANDIDATO *p1 = criarPontoCandidato(j - 1, ponto->y);
@@ -196,7 +190,7 @@ void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indicePeca)
 }
 
 /*Função feita por Lívia*/
-void despreencherR(R* r,PECA *aRemover,PONTO_CANDIDATO *p1,PONTO_CANDIDATO *p2)
+inline void despreencherR(R* r,PECA *aRemover,PONTO_CANDIDATO *p1,PONTO_CANDIDATO *p2)
 {
 	int i, j;
 	//Definindo a coordenada de ínicio da peça em R. Poderia ser feito com p2 tbm, mas defini como padrão usando apenas o ponto 
@@ -248,7 +242,7 @@ void despreencherR(R* r,PECA *aRemover,PONTO_CANDIDATO *p1,PONTO_CANDIDATO *p2)
 }
 
 //linha 3 do algoritmo 1 do artigo
-int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
+inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 {
 	//verificando primeiro a origem
 	PONTO_CANDIDATO *origem = criarPontoCandidato(0,0);
@@ -297,7 +291,8 @@ int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 					//comparar qual deles está mais pŕoximo da origem. O que está mais próximo é armazenado
 					atual = primeiroPontoFactivel(atual,p1Ainserir);
 			
-				}else if(ehPossivelAdicionar(r,nova,p2Ainserir))
+				}
+				else if(ehPossivelAdicionar(r,nova,p2Ainserir))
 				{
 					//comparar qual deles está mais pŕoximo da origem. O que está mais próximo é armazenado
 					atual = primeiroPontoFactivel(atual,p2Ainserir);				
@@ -333,7 +328,7 @@ int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 }
 
 //Função feita por Lívia.
-void remocaoAleatoria(R *r, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
+inline void remocaoAleatoria(R *r, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
 {
 	//srand((unsigned int)time(NULL));
 	//x = rand() % 10
@@ -402,7 +397,7 @@ void remocaoAleatoria(R *r, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
 //Função feita por Lívia.
 /*Esta função ordena as peças presentes em R em uma lista ordenada pela distância da origem da peça em R até a origem e desloca-as
 para o ponto candidato factível mais próximo da origem de R, dentre as peças já deslocadas.*/
-void deslocarPecas(R *r, LISTA_LIGADA *B)
+inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 {
 	//Será ordenado de acordo com a distância mais próxima da origem.
 	PECA *arrayPecas = (PECA *) malloc(sizeof(PECA) * r->quantidade);
@@ -644,7 +639,7 @@ void deslocarPecas(R *r, LISTA_LIGADA *B)
 }
 //*/
 //se não funcionar, dar varrer a matriz dando free
-void apagarRetanguloR(R *r)
+inline void apagarRetanguloR(R *r)
 {
 	free(r->matriz);
 	/*free(r->W);

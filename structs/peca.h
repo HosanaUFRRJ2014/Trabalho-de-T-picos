@@ -30,7 +30,7 @@ typedef struct
 }PECA;
 
 //criar peca de um determinado tipo.
-PECA *criarPeca(int l, int w, int P, int Q, float v, int qtd)
+inline PECA *criarPeca(int l, int w, int P, int Q, float v, int qtd)
 {
 	PECA *i = (PECA *) malloc(sizeof(PECA));
 
@@ -56,7 +56,7 @@ PECA *criarPeca(int l, int w, int P, int Q, float v, int qtd)
 }
 
 //verificar se são peças iguais. Se sim, retornar true. Caso contrário, retornar false.
-int pecasIguais(PECA *x, PECA *y)
+inline int pecasIguais(PECA *x, PECA *y)
 {
 	if(x->l == y->l && x->w == y->w && x->P == y->P && x->Q == y->Q && x->v == y->v)
 		return true;
@@ -65,7 +65,7 @@ int pecasIguais(PECA *x, PECA *y)
 }
 
 //dado uma peca a, verificar se esta é maior que a peca b, seguindo os critérios de majoritariedade do artigo 
-int pecaMaior(PECA *a, PECA *b)
+inline int pecaMaior(PECA *a, PECA *b)
 {
 	if(( (float)a->v/(a->l * a->w) ) > ( (float)b->v/(b->l * b->w) ) )
 		return true;
@@ -108,7 +108,7 @@ int pecaMaior(PECA *a, PECA *b)
 // 	return false;
 // }
 
-void custoBeneficio(PECA *a)
+inline void custoBeneficio(PECA *a)
 {
 	float f = (float) a->v/(a->l * a->w);
 	printf("Custo beneficio da peça(v/l*w): %f\n", f);
@@ -117,7 +117,7 @@ void custoBeneficio(PECA *a)
 
 //função para copiar os valores de uma peca para a outra, Só que a qtd de destino é setada para 1
 //Organizar tudo em seus devidos lugares!!!
-void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
+inline void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
 {
 	pecaDestino->l = pecaOrigem->l;
 	pecaDestino->w = pecaOrigem->w;
@@ -156,7 +156,7 @@ void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
 
 }
 
-void imprimirPeca(PECA *p)
+inline void imprimirPeca(PECA *p)
 {
 	printf("Quantidade: %d\n", p->quantidade);
 	printf("largura(w): %d\n", p->l);
@@ -174,7 +174,7 @@ void imprimirPeca(PECA *p)
 /*Função feita por Lívia*/
 //Copia uma peça, mas deixa de copiaos arrays de pontos candidatos. Necessario para inserir esta peça em P novamente.
 //Usada na função "remocaoAleatoria" de R.h.
-void copiarPecaParaP(PECA *pecaDestino, PECA *pecaOrigem)
+inline void copiarPecaParaP(PECA *pecaDestino, PECA *pecaOrigem)
 {
 	pecaDestino->l = pecaOrigem->l;
 	pecaDestino->w = pecaOrigem->w;
@@ -192,7 +192,7 @@ void copiarPecaParaP(PECA *pecaDestino, PECA *pecaOrigem)
 }
 
 /*Função feita por Lívia.*/
-PONTO_CANDIDATO* coordenadaOrigemPeca(PECA *peca, PONTO_CANDIDATO *p1, PONTO_CANDIDATO *p2)
+inline PONTO_CANDIDATO* coordenadaOrigemPeca(PECA *peca, PONTO_CANDIDATO *p1, PONTO_CANDIDATO *p2)
 {
 	PONTO_CANDIDATO *origemPeca = criarPontoCandidato(-1,-1);
 	/*
@@ -214,7 +214,7 @@ PONTO_CANDIDATO* coordenadaOrigemPeca(PECA *peca, PONTO_CANDIDATO *p1, PONTO_CAN
 }
 
 /*Função feita por Lívia.*/
-PONTO_CANDIDATO* coordenadaOrigemOpostaPeca(PECA *peca, PONTO_CANDIDATO *p1, PONTO_CANDIDATO *p2)
+inline PONTO_CANDIDATO* coordenadaOrigemOpostaPeca(PECA *peca, PONTO_CANDIDATO *p1, PONTO_CANDIDATO *p2)
 {
 	//PONTO_CANDIDATO *origemPeca = coordenadaOrigemPeca(peca,p1,p2);
 	PONTO_CANDIDATO *origemOpostaPeca = criarPontoCandidato(-1,-1);
@@ -257,7 +257,7 @@ void definirPontoCandidato(PONTO_CANDIDATO *ondeInseriuP1,PONTO_CANDIDATO *ondeI
 
 //Função feita por Lívia.
 //Para ordenar as peças de acordo com a distância até a origem.
-void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim) 
+inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim) 
 {
 	//aux_origemPeca = coordenadaOrigemPeca(aux->peca,aux_pt1->ponto,aux_pt2->ponto);
 	//sqrt(pow(aux_origemPeca->x,2) + pow(aux_origemPeca->y,2));
