@@ -371,6 +371,46 @@ inline int removerPecaDadoPeca(LISTA_LIGADA *B, PECA *aRemover, PONTO_CANDIDATO 
 	return false;
 }
 
+/*Função feita por Lívia.*/
+inline void apagarLista(LISTA_LIGADA *lista)
+{
+	while(!vazia(lista))
+		removerPeca(lista);
+}
+
+/*Função feita por Lívia.*/
+inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
+{
+	//copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
+
+	NO *aux = origem->inicio;
+
+	if(vazia(destino)) //Não há necessidade de apagar a lista destino!
+	{
+		if(!vazia(origem))
+		{
+			while(aux != NULL)
+			{
+				inserirPeca(destino, aux->peca);
+				aux = aux->proximo;
+			}
+		}
+	}
+	else //Apaga-se a lista destino e depois adiciona os elementos de origem.
+	{
+		apagarLista(destino);
+
+		if(!vazia(origem))
+		{
+			while(aux != NULL)
+			{
+				inserirPeca(destino, aux->peca);
+				aux = aux->proximo;
+			}
+		}
+	}
+}
+
 inline LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
 {
 	LISTA_LIGADA *listaOrdenada = criarLista();
@@ -399,9 +439,8 @@ inline void imprimirLista(LISTA_LIGADA *l)
 		imprimirPeca(aux->peca);
 		aux = aux->proximo;
 	}
-
-
-
 }
+
+
 
 #endif

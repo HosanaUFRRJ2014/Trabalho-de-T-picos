@@ -611,7 +611,7 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 			//Inserindo a peça em B(que começou vazia).
 			//inserirPeca(B,&arrayPecas[count]);
 
-			//printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
+			printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
 		//	return;
 		}
 
@@ -634,9 +634,17 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 //se não funcionar, dar varrer a matriz dando free
 inline void apagarRetanguloR(R *r)
 {
+	int i = 0;
+
+	for (i = 0; i < r->L; i++)
+	{
+		free(r->matriz[i]);
+	}
+
 	free(r->matriz);
 	/*free(r->W);
 	free(r->L);*/
+
 
 	free(r);
 

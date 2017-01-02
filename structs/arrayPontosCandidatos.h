@@ -123,9 +123,11 @@ inline void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_C
 		removerPontoCandidato(arrayP2);
 		return;
 	}
-
-	aRemoverP1->anterior->proximo = aRemoverP1->proximo;
-	aRemoverP2->anterior->proximo = aRemoverP2->proximo;
+	else if(aRemoverP1 != arrayP1->inicio && aRemoverP2 != arrayP2->inicio)
+	{
+		aRemoverP1->anterior->proximo = aRemoverP1->proximo;
+		aRemoverP2->anterior->proximo = aRemoverP2->proximo;
+	}
 
 	if(aRemoverP1 == arrayP1->fim && aRemoverP2 == arrayP2->fim)
 	{

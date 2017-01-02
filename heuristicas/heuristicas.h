@@ -78,39 +78,70 @@ inline void copiarSolucao(R *destino, R *origem)
 
 }
 
-inline R* trocarSolucao(R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
+inline void trocarSolucao(R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma) //retornava R*
 {
 	//copiar a solução para não sobrescrever
-	R *nova = criarRetanguloR(atual->L, atual->W);
+	//R *nova = criarRetanguloR(atual->L, atual->W);
 
-	copiarSolucao(nova,atual);
+	//copiarSolucao(nova,atual);
 
 	//Remover gamma da área de R;
 	//Adicionar peças removidas a P;
-	remocaoAleatoria(nova,P,B,gamma);
+	remocaoAleatoria(atual,P,B,gamma); //nova
 	//Deslocar peças restantes para esquerda;
-	deslocarPecas(nova, B);
+	deslocarPecas(atual, B); //nova
 	
-	criarSolucao(nova,P,B);
+	criarSolucao(atual,P,B); //nova
 
 
-	return nova;
+	//return nova;
 }
 
-inline int Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B)
+inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
 	//R *atual, *nova, *melhor;
-	R *nova,*melhor;
+	R *nova,*melhor,*atualAlg;
+
+	/*-----Criando as listas P e B de cada ret do algoritmo------------------*/
+
+	LISTA_LIGADA *P_nova = criarLista(), *B_nova = criarLista();
+	LISTA_LIGADA *P_melhor = criarLista(), *B_melhor = criarLista();
+	LISTA_LIGADA *P_atualAlg = criarLista(), *B_atualAlg = criarLista();
+
+	/*-----------------------------------------------------------------------*/
+
+
 	int iterT = 0, delta; //temp = T
 	double x;
 	//float temp = T;
+	float aux_result;
 
 	//A lista P recebida aqui já estará ordenada.
 
 	criarSolucao(atual,P,B);
 	//------------------------------------------*
 
-	melhor = atual;
+	//Inicializando "nova" e "melhor"
+	nova = criarRetanguloR(atual->L, atual->W);
+	melhor = criarRetanguloR(atual->L, atual->W);
+	atualAlg = criarRetanguloR(atual->L, atual->W);
+
+	/*------Copiando as listas recebidas como parâmetro----------------------*/
+	copiarLista(P_nova,P);
+	copiarLista(B_nova,B);
+	copiarLista(P_melhor,P);
+	copiarLista(B_melhor,B);
+	copiarLista(P_atualAlg,P);
+	copiarLista(B_atualAlg,B);
+	/*-----------------------------------------------------------------------*/
+
+	copiarSolucao(atualAlg,atual);
+
+	//melhor = atual; //LINHA ANTIGA
+	copiarSolucao(melhor,atual);
+
+	//Inicializando a matriz "nova" como atual.
+	copiarSolucao(nova,atual);
 
 //	srand((double)time(NULL));
 
@@ -119,7 +150,11 @@ inline int Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *a
 		while(iterT < It_max)
 		{
 			iterT++;
-			nova = trocarSolucao(atual,P,B,0.35);
+			//nova = trocarSolucao(atual,P,B,0.35); //LINHA ANTIGA
+			copiarSolucao(nova,atualAlg);
+			copiarLista(P_nova,P_atualAlg);
+			copiarLista(B_nova,B_atualAlg);
+			trocarSolucao(nova,P_nova,B_nova,0.35);
 			// printf("solucaoNova: \n");
 			// imprimirVariaveisR(nova);
 			// imprimirR(nova->matriz,nova->L, nova->W);
@@ -129,47 +164,86 @@ inline int Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *a
 			//-------------------------------------------------------*
 
 			//delta = f(atual) - f(nova);
-			delta = atual->valorUtilidadeTotal - nova->valorUtilidadeTotal;
+			delta = atualAlg->valorUtilidadeTotal - nova->valorUtilidadeTotal;
 
 			printf("delta = %d\n",delta);
 
 			if(delta < 0)
 			{
-				atual = nova;
+				//atual = nova; //LINHA ANTIGA
+				copiarSolucao(atualAlg,nova);
+				copiarLista(P_atualAlg,P_nova);
+				copiarLista(B_atualAlg,B_nova);
 
-				printf("DELTA é negativo!\n");
+				//printf("DELTA é negativo!\n");
 
 				//if(f(nova) > f(melhor))
 				if(nova->valorUtilidadeTotal > melhor->valorUtilidadeTotal)
 				{	
 					printf("Foi melhor!!!\n");
-					melhor = atual;
+					//melhor = atual; //LINHA ANTIGA
+					copiarSolucao(melhor,nova);
+					copiarLista(P_melhor,P_nova);
+					copiarLista(B_melhor,B_nova);
 				}
 			}
 			else
 			{	
 				//Gerar números aleátórios entre 0 e 1.
     			x = ((double)(rand())/RAND_MAX);
-    			printf("Não foi\n");
+    			//printf("Não foi\n");
 			//	printf("valor entre O e 1: %f\n",x);
 
 				if(x < exp(-1 * (delta/T)))
 				{
-					printf("REALIMENTOU\n");
-					atual = nova;
+			//		printf("REALIMENTOU\n");
+					//atual = nova; //LINHA ANTIGA
+					copiarSolucao(atualAlg,nova);
+					copiarLista(P_atualAlg,P_nova);
+					copiarLista(B_atualAlg,B_nova);
 				}
 
-				else
-				{
-					printf("NÃO REALIMENTOU\n");
+				//else
+				//{
+			//		printf("NÃO REALIMENTOU\n");
 
-				}
+				//}
 			}
 		}
+
 		T = alpha * T;
 		iterT = 0;
 	}
-	return melhor->valorUtilidadeTotal;
+
+	//printf("VU de atual: %2.f\n",atual->valorUtilidadeTotal);
+	//printf("VU de melhor: %2.f\n",melhor->valorUtilidadeTotal);
+
+	copiarLista(P,P_melhor);
+	copiarLista(B,B_melhor);
+	copiarSolucao(atual,melhor);
+	aux_result = melhor->valorUtilidadeTotal;
+
+	//Liberando memória
+	apagarRetanguloR(nova);
+	apagarLista(P_nova);
+	free(P_nova);
+	apagarLista(B_nova);
+	free(B_nova);
+
+	apagarRetanguloR(melhor);
+	apagarLista(P_melhor);
+	free(P_melhor);
+	apagarLista(B_melhor);
+	free(B_melhor);
+
+	apagarRetanguloR(atualAlg);
+	apagarLista(P_atualAlg);
+	free(P_atualAlg);
+	apagarLista(B_atualAlg);
+	free(B_atualAlg);
+
+	//return melhor->valorUtilidadeTotal;
+	return aux_result;
 }
 //*/
 

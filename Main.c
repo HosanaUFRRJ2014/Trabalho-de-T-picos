@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
 	LISTA_LIGADA *P = criarLista(), *B = criarLista();
 	int qtd_inst, qtd_pecas, valor_otimo, i = 0, num_inst = 0, L, W;
 	int *valores_otimos;
-	int *resultados;
+	float *resultados; //ERA INT
 	//teste.
 	int num_iter = 0;
 
@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
 	fscanf(inst," %d\n", &qtd_inst);
 
 	valores_otimos = (int*)malloc(qtd_inst * sizeof(int));
-	resultados = (int*)malloc(qtd_inst * sizeof(int));
+	resultados = (float*)malloc(qtd_inst * sizeof(float));
 
 	srand(time(NULL));
 
@@ -52,12 +52,23 @@ int main(int argc, char const *argv[])
 		//imprimirLista(lista);
 
 		imprimirR(ret->matriz,ret->L,ret->W);
-		printf("Solução encontrada: %d\n",resultados[num_inst]);
+		imprimirVariaveisR(ret);
+		printf("Solução encontrada: %.2f\n",resultados[num_inst]);
 		printf("Solução ótima: %d\n\n",valores_otimos[num_inst]);
+
+		/*===================PARA TESTES===============*/
+		imprimirLista(P);
+		printf("------------------------------------------------------------------------------\n");
+		imprimirLista(B);
+		/*=============================================*/
 
 		/*-----------------------------Reinício das variáveis---------------------------------------------------*/
 		apagarRetanguloR(ret);
 
+		apagarLista(P);
+		apagarLista(B);
+		
+		/*
 		while(!vazia(P))
 		{
 			removerPeca(P);
@@ -67,6 +78,7 @@ int main(int argc, char const *argv[])
 		{
 			removerPeca(B);
 		}
+		*/
 		/*-------------------------------------------------------------------------------------------------------*/
 
 
