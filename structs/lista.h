@@ -55,6 +55,7 @@ inline int vazia(LISTA_LIGADA *l)
 
 inline int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 {
+
 	NO *pnovo = (NO *) malloc (sizeof(NO));
 
 	NO *aux;
@@ -411,6 +412,27 @@ inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
 	}
 }
 
+//sugestão :)
+// inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
+// {
+// 	//copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
+
+// 	NO *aux = origem->inicio;
+
+// 	if(!vazia(destino))  //Apaga-se a lista destino e depois adiciona os elementos de origem.
+// 		apagarLista(destino);
+	
+
+// 	if(!vazia(origem))
+// 	{
+// 		while(aux != NULL)
+// 		{
+// 			inserirPeca(destino, aux->peca);
+// 			aux = aux->proximo;
+// 		}
+// 	}
+// }
+
 inline LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
 {
 	LISTA_LIGADA *listaOrdenada = criarLista();
@@ -432,7 +454,7 @@ inline void imprimirLista(LISTA_LIGADA *l)
 	NO *aux = (NO *) malloc (sizeof(NO));
 
 	aux = l->inicio;
-
+	printf("Tamanho da lista: %d\n",l->tamanho);
 	while(aux != NULL)
 	{
 		custoBeneficio(aux->peca);

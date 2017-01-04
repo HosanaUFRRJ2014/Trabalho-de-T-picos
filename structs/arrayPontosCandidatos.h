@@ -113,6 +113,7 @@ inline int removerPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array)
 
 	return false;
 }
+
 /*Função feita por Lívia*/
 inline void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,NO_Pt *aRemoverP1, NO_Pt *aRemoverP2)
 {

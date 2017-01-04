@@ -127,6 +127,7 @@ inline R * criarRetanguloR(int l, int w)
 
 /*-------------------Criar funções de preencher retangulo-----------------------------------*/
 //verificar se é possível adicionar dada peca em R, em um determinado ponto candidato.
+//verficando também se o limite superior Q não estourou
 inline int ehPossivelAdicionar(R *r, PECA *nova, PONTO_CANDIDATO *ponto)
 {
 	int i, j;
@@ -147,7 +148,47 @@ inline int ehPossivelAdicionar(R *r, PECA *nova, PONTO_CANDIDATO *ponto)
 	}
 
 
+
 	return true;
+
+}
+
+//função para a verificação do limite superior Q.
+inline int dentroDoLimiteSuperior(LISTA_LIGADA * B, PECA * nova ,int qtdAsomar)
+{
+	//verificar se a peça já existe em B, para o tratamento do limite superior
+    NO *temp = B->inicio;
+	PECA *pecaJaExistenteEmR;
+
+
+	while(temp != NULL)
+	{
+		if(pecasIguais(temp->peca,nova))
+		{
+
+			pecaJaExistenteEmR = temp->peca;
+			//printf("PECA JA EXISTENTE\n");
+			break;
+		}
+
+		temp = temp->proximo;
+	}
+
+	if(temp == NULL) //significa que a peça nem está em R. Logo, não ultrapassa o limite superior
+		return true;
+
+	// printf("pecaJaEmR->Q: %d\n", pecaJaEmR->Q);
+	// printf("pecaJaEmR->quantidade + qtdAsomar: %d\n", pecaJaEmR->quantidade + 1);
+
+	if(pecaJaExistenteEmR->quantidade + qtdAsomar <= pecaJaExistenteEmR->Q)
+	{
+		// printf("RETORNA -- VERDADE --\n");
+		return true;
+	}
+
+	// printf("RETORNA -- FALSE --\n");
+
+	return false;
 
 }
 
@@ -274,13 +315,20 @@ inline void despreencherR(R* r,PECA *aRemover,PONTO_CANDIDATO *p1,PONTO_CANDIDAT
 //linha 3 do algoritmo 1 do artigo
 inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 {
+	//verificar se a peça já existe em B, para o tratamento do limite superior
+    if(!dentroDoLimiteSuperior(B, nova ,1))
+    	return false;
+
+    //se está dentro do limite superior, o algoritmo continua
+
 	//verificando primeiro a origem
 	PONTO_CANDIDATO *origem = criarPontoCandidato(0,0);
-	if(ehPossivelAdicionar(r, nova, origem))
+	if(ehPossivelAdicionar(r, nova, origem) /*&& dentroDoLimiteSuperior(pecaJaExistenteEmR, 1)*/)
 	{
 		preencherRcomPeca(r, nova, origem, -1);
 		return true;
 	}
+
 	
 	//se não, verificar cada ponto candidato de cada peça em B
 	NO *aux = B->inicio;
@@ -342,19 +390,30 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 
 	//Se não foi encontrado nenhum ponto candidato que permitisse a peça ser adicionada, o "atual" nunca foi modificado desde sua alocação.
 	if(!ehPontoCandidato(atual) || atual == NULL)
+	{
+		//printf("RETORNOU FALSE!! Linha 370 em R.h\n");
 		return false;
+	}
 
 	/*------------------------------------------------*/
 	if(ehPontoCandidato(prioridadeAdireita))
 		atual = prioridadeAdireita;
 	/*------------------------------------------------*/
 
-	if(!ehPossivelAdicionar(r,nova,atual))
+	//printf("pecaJaExistenteEmR->Q: %d\n",pecaJaExistenteEmR->Q);
+
+	if(!ehPossivelAdicionar(r,nova,atual)/* || !dentroDoLimiteSuperior(pecaJaExistenteEmR, 1)*/)
+	{
+	//	printf("RETORNOU FALSE!! Linha 381 em R.h\n");
 		return false;
+	}
 
 	else
 		preencherRcomPeca(r,nova,atual,-1);
 
+
+
+	//printf("VERDADE VERDADEIRA\n");
 	return true;
 
 
@@ -538,7 +597,7 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 				pontoEscolhido->y = arrayPecas[countB].p1->inicio->ponto->y;
 
 				//Reseta a variável com o último ponto escolhido.
-				if(!(ehPossivelAdicionar(r, &arrayPecas[count], pontoEscolhido)) )
+				if(!(ehPossivelAdicionar(r, &arrayPecas[count], pontoEscolhido)))
 				{
 					pontoEscolhido->x = aux_pontoEscolhido->x;
 					pontoEscolhido->y = aux_pontoEscolhido->y;
@@ -611,7 +670,7 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 			//Inserindo a peça em B(que começou vazia).
 			//inserirPeca(B,&arrayPecas[count]);
 
-			printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
+		//	printf("Parece que existiu um caso que invalidou sua ideia...Triste fim de algo brilhante :(\n\n");
 		//	return;
 		}
 

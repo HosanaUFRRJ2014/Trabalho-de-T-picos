@@ -8,6 +8,8 @@
 #ifndef HEURISTICA_H
 #define HEURISTICA_H
 
+inline void imprimirSolucao(R *solucao,LISTA_LIGADA *B);
+
 //Função do algoritmo 1
 inline R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 {
@@ -30,9 +32,13 @@ inline R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 		int cont = 0;
 	
 		int qtdInicial = aux->peca->quantidade;
-	
+		/****************************/
+		//aux->peca->quantidade = 1;
+		/****************************/
 		while(cont < qtdInicial)
-		{		
+		{	
+			//printf("aux->peca->Q: %d\n",aux->peca->Q);
+
 			int foiAdicionada = adicionarPecaAoRetangulo(solucaoNova, B , aux->peca);
 
 			if(foiAdicionada)
@@ -90,9 +96,12 @@ inline void trocarSolucao(R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamm
 	remocaoAleatoria(atual,P,B,gamma); //nova
 	//Deslocar peças restantes para esquerda;
 	deslocarPecas(atual, B); //nova
+//	printf("--------Solucao com peças deslocadas--------\n");
+//	imprimirSolucao(atual,B);
 	
 	criarSolucao(atual,P,B); //nova
-
+//	printf("--------Nova solucao--------\n");
+//	imprimirSolucao(atual,B);
 
 	//return nova;
 }
@@ -166,7 +175,7 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 			//delta = f(atual) - f(nova);
 			delta = atualAlg->valorUtilidadeTotal - nova->valorUtilidadeTotal;
 
-			printf("delta = %d\n",delta);
+		//	printf("delta = %d\n",delta);
 
 			if(delta < 0)
 			{
@@ -180,7 +189,7 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 				//if(f(nova) > f(melhor))
 				if(nova->valorUtilidadeTotal > melhor->valorUtilidadeTotal)
 				{	
-					printf("Foi melhor!!!\n");
+		//			printf("Foi melhor!!!\n");
 					//melhor = atual; //LINHA ANTIGA
 					copiarSolucao(melhor,nova);
 					copiarLista(P_melhor,P_nova);
@@ -246,5 +255,13 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 	return aux_result;
 }
 //*/
+
+inline void imprimirSolucao(R *solucao,LISTA_LIGADA *B)
+{
+	imprimirR(solucao->matriz, solucao->L, solucao->W);
+	imprimirVariaveisR(solucao);
+	imprimirLista(B);
+
+}
 
 #endif

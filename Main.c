@@ -38,7 +38,7 @@ int main(int argc, char const *argv[])
 		valores_otimos[num_inst] = valor_otimo;
 
 		printf("L = %d e W = %d\n",ret->L,ret->W);
-		printf("Quantidade de peças: %d\n",qtd_pecas);
+		printf("Quantidade de peças disponíveis: %d\n",qtd_pecas);
 		//printf("Valor ótimo: %d\n\n",valor_otimo);
 
 		for(i = 0;i < qtd_pecas;i++)
@@ -47,7 +47,11 @@ int main(int argc, char const *argv[])
 		}
 
 		//Preenchido com os parâmetros que os autores do artigo que nos baseamos usaram.
+		//resultados[num_inst] = Simulated_Annealing(10000.0,0.11,700,0.98,ret,P,B);
+
+		//valores de entrada temporários para testes mais rápidos e concluentes
 		resultados[num_inst] = Simulated_Annealing(10000.0,0.11,700,0.98,ret,P,B);
+ 
 
 		//imprimirLista(lista);
 
@@ -57,8 +61,9 @@ int main(int argc, char const *argv[])
 		printf("Solução ótima: %d\n\n",valores_otimos[num_inst]);
 
 		/*===================PARA TESTES===============*/
+		printf("--------------------------------------Lista P----------------------------------------\n");
 		imprimirLista(P);
-		printf("------------------------------------------------------------------------------\n");
+		printf("--------------------------------------Lista B----------------------------------------\n");
 		imprimirLista(B);
 		/*=============================================*/
 

@@ -16,8 +16,8 @@ typedef struct
 {						   
 	int l;	//na horizontal  (Não concordo, mas é como está no artigo.)
 	int w; //na vertical
-	int P; 
-	int Q;
+	int P; //qtd mínima
+	int Q; //qtd máxima
 	float v;
 	int quantidade;   //quantidade existente da peça
 	ARRAY_PONTOS_CANDIDATOS *p1; //mais a direita e mais acima
@@ -74,39 +74,6 @@ inline int pecaMaior(PECA *a, PECA *b)
 
 }
 
-// //função para a verificação do limite inferior P. Note que , caso se deseje remover uma peça, o valor de qtdAsomar será negativo
-// int dentroDoLimiteInferior(PECA *peca, int qtdAsomar)
-// {
-
-// 	if(peca->quantidade + qtdAsomar >= peca->P)
-// 		return true;
-
-// 	printf("Limite inferior violado\n");
-
-// 	return false;
-
-// }
-
-// //função para a verificação do limite superior Q.
-// int dentroDoLimiteSuperior(PECA *peca, int qtdAsomar)
-// {
-// 	if(peca->quantidade + qtdAsomar <= peca->Q)
-// 		return true;
-
-// 	printf("Limite superior violado\n");
-
-// 	return false;
-
-// }
-
-// //futuramente, colocar tudo dentro dessa função. Não deixar mais separado.
-// int dentroDosLimites(PECA *peca, int qtdAsomar)
-// {
-// 	if(dentroDoLimiteInferior(peca, qtdAsomar) && dentroDoLimiteSuperior(peca, qtdAsomar))
-// 		return true;
-
-// 	return false;
-// }
 
 inline void custoBeneficio(PECA *a)
 {
@@ -261,59 +228,67 @@ inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
 {
 	//aux_origemPeca = coordenadaOrigemPeca(aux->peca,aux_pt1->ponto,aux_pt2->ponto);
 	//sqrt(pow(aux_origemPeca->x,2) + pow(aux_origemPeca->y,2));
-
     int i, j, k, metadeTamanho;
     PECA *vetorTemp;
 
     if(posicaoInicio == posicaoFim) 
     	return;
-
+   
     // ordenacao recursiva das duas metades
     metadeTamanho = (posicaoInicio + posicaoFim ) / 2;
+   
     mergeSort(vetor, posicaoInicio, metadeTamanho);
     mergeSort(vetor, metadeTamanho + 1, posicaoFim);
+
 
     // intercalacao no vetor temporario t
     i = posicaoInicio;
     j = metadeTamanho + 1;
     k = 0;
+
     vetorTemp = (PECA *) malloc(sizeof(PECA) * (posicaoFim - posicaoInicio + 1));
     double distI, distJ;
 
+
+
     while(i < metadeTamanho + 1 || j  < posicaoFim + 1) 
     {
-    	// i passou do final da primeira metade, pegar v[j]
+        // i passou do final da primeira metade, pegar v[j]
         if (i == metadeTamanho + 1 ) 
         { 
             vetorTemp[k] = vetor[j];
             j++;
             k++;
         }
+
         else 
         {
-        	// j passou do final da segunda metade, pegar v[i]
+            // j passou do final da segunda metade, pegar v[i]
             if (j == posicaoFim + 1) 
             { 
                 vetorTemp[k] = vetor[i];
                 i++;
                 k++;
             }
+        
             else 
             {
 
-            	PONTO_CANDIDATO *aux_origemPecaI = coordenadaOrigemPeca(&vetor[i],vetor[i].p1->inicio->ponto,vetor[i].p2->inicio->ponto);
+                PONTO_CANDIDATO *aux_origemPecaI = coordenadaOrigemPeca(&vetor[i],vetor[i].p1->inicio->ponto,vetor[i].p2->inicio->ponto);
             	PONTO_CANDIDATO *aux_origemPecaJ = coordenadaOrigemPeca(&vetor[j],vetor[j].p1->inicio->ponto,vetor[j].p2->inicio->ponto);
             	//distI = sqrt(pow(aux_origemPecaI->x,2) + pow(aux_origemPecaI->y,2)); 
             	//distJ = sqrt(pow(aux_origemPecaJ->x,2) + pow(aux_origemPecaJ->y,2));
-            	distI = distanciaEntreDoisPontos(aux_origemPecaI->x,aux_origemPecaI->y,0,0); 
+                distI = distanciaEntreDoisPontos(aux_origemPecaI->x,aux_origemPecaI->y,0,0); 
             	distJ = distanciaEntreDoisPontos(aux_origemPecaJ->x,aux_origemPecaJ->y,0,0);
 
+            
                 if(distI < distJ) 
                 {
                     vetorTemp[k] = vetor[i];
                     i++;
                     k++;
                 }
+                
                 else 
                 {
                     vetorTemp[k] = vetor[j];
@@ -324,11 +299,15 @@ inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
         }
 
     }
+
+   
     // copia vetor intercalado para o vetor original
     for(i = posicaoInicio; i <= posicaoFim; i++) 
     {
         vetor[i] = vetorTemp[i - posicaoInicio];
     }
+
+   
 
     free(vetorTemp);
 }

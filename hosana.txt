@@ -1,0 +1,94 @@
+-------------------------------Instancia 1--------------------------------------------
+
+L = 10 e W = 10
+Quantidade de peças disponíveis: 5
+     1757     1757     1757     1757     1757     1757     1757     1757        0        0
+     1757     1757     1757     1757     1757     1757     1757     1757        0        0
+     1756     1756     1756     1756     1756     1758     1758     1758     1758     1758
+     1756     1756     1756     1756     1756     1758     1758     1758     1758     1758
+     1756     1756     1756     1756     1756     1758     1758     1758     1758     1758
+     1756     1756     1756     1756     1756     1758     1758     1758     1758     1758
+     1759     1759     1759     1759     1759        0        0        0        0        0
+     1759     1759     1759     1759     1759        0        0        0        0        0
+     1759     1759     1759     1759     1759        0        0        0        0        0
+     1759     1759     1759     1759     1759        0        0        0        0        0
+----------------Variáveis de R---------------------------
+indicePeca atual: 1760
+Quantidade de peças presentes: 6
+Valor de utilidade total: 176.00
+Área de R: 100
+---------------------------------------------------------
+Solução encontrada: 176.00
+Solução ótima: 164
+
+--------------------------------------Lista P----------------------------------------
+Tamanho da lista: 1
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 4
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+--------------------------------------Lista B----------------------------------------
+Tamanho da lista: 3
+Custo beneficio da peça(v/l*w): 2.500000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40.000000
+pontos candidatos p1:
+x: 7
+y: 0
+x: 7
+y: 0
+pontos candidatos p2:
+x: 0
+y: 1
+x: 0
+y: 1
+
+Custo beneficio da peça(v/l*w): 1.350000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27.000000
+pontos candidatos p1:
+x: 9
+y: 0
+pontos candidatos p2:
+x: 0
+y: 1
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+x: 4
+y: 2
+x: 9
+y: 2
+x: 4
+y: 6
+pontos candidatos p2:
+x: 0
+y: 5
+x: 5
+y: 5
+x: 0
+y: 9
+
+
+hosana3.txt linha 6647 é onde começa as duplicatas
+
