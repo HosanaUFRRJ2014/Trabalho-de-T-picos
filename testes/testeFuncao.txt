@@ -1,0 +1,326 @@
+---------------Lista P inst ----------------------------
+Tamanho da lista: 5
+Custo beneficio da peça(v/l*w): 2.500000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.388889
+Quantidade: 2
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 43.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.666667
+Quantidade: 2
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 35.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.350000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+--------------------------------------------------------
+---------------Lista B inst ----------------------------
+Tamanho da lista: 0
+--------------------------------------------------------
+
+  1  1  1  1  1  1  1  1  3  3
+  1  1  1  1  1  1  1  1  3  3
+  2  2  2  2  2  2  2  2  3  3
+  2  2  2  2  2  2  2  2  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  0  0  0  0  0  0  0  0  3  3
+  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 5
+Quantidade de peças presentes: 4
+Valor de utilidade total: 146.00
+Área de R: 100
+---------------------------------------------------------
+---------------Lista P criarSolucao----------------------------
+Tamanho da lista: 3
+Custo beneficio da peça(v/l*w): 1.666667
+Quantidade: 2
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 35.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.350000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+---------------------------------------------------------------
+---------------Lista B criarSolucao----------------------------
+Tamanho da lista: 3
+Custo beneficio da peça(v/l*w): 2.500000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40.000000
+pontos candidatos p1:
+x: 7
+y: 0
+x: 7
+y: 2
+pontos candidatos p2:
+x: 0
+y: 1
+x: 0
+y: 3
+
+Custo beneficio da peça(v/l*w): 2.388889
+Quantidade: 1
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 43.000000
+pontos candidatos p1:
+x: 9
+y: 0
+pontos candidatos p2:
+x: 8
+y: 8
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+x: 4
+y: 4
+pontos candidatos p2:
+x: 0
+y: 7
+
+-------------------------------------------------------------
+
+-----------------------INICIO TESTE CORRETO!--------------------------------------
+
+---------------Lista P inst ----------------------------
+Tamanho da lista: 5
+Custo beneficio da peça(v/l*w): 2.500000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.388889
+Quantidade: 2
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 43.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.666667
+Quantidade: 2
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 35.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.350000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+--------------------------------------------------------
+---------------Lista B inst ----------------------------
+Tamanho da lista: 0
+--------------------------------------------------------
+
+  1  1  1  1  1  1  1  1  3  3
+  1  1  1  1  1  1  1  1  3  3
+  2  2  2  2  2  2  2  2  3  3
+  2  2  2  2  2  2  2  2  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  0  0  0  0  0  0  0  0  3  3
+  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 5
+Quantidade de peças presentes: 4
+Valor de utilidade total: 146.00
+Área de R: 100
+---------------------------------------------------------
+---------------Lista P criarSolucao----------------------------
+Tamanho da lista: 4
+Custo beneficio da peça(v/l*w): 2.388889
+Quantidade: 1
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 43.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.666667
+Quantidade: 2
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 35.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.350000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 2
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+---------------------------------------------------------------
+---------------Lista B criarSolucao----------------------------
+Tamanho da lista: 3
+Custo beneficio da peça(v/l*w): 2.500000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40.000000
+pontos candidatos p1:
+x: 7
+y: 0
+x: 7
+y: 2
+pontos candidatos p2:
+x: 0
+y: 1
+x: 0
+y: 3
+
+Custo beneficio da peça(v/l*w): 2.388889
+Quantidade: 1
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 43.000000
+pontos candidatos p1:
+x: 9
+y: 0
+pontos candidatos p2:
+x: 8
+y: 8
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+x: 4
+y: 4
+pontos candidatos p2:
+x: 0
+y: 7
+
+-------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+

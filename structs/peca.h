@@ -180,7 +180,8 @@ inline PONTO_CANDIDATO* coordenadaOrigemPeca(PECA *peca, PONTO_CANDIDATO *p1, PO
 	}
 }
 
-/*Função feita por Lívia.*/
+
+/*Função feita por Lívia.
 inline PONTO_CANDIDATO* coordenadaOrigemOpostaPeca(PECA *peca, PONTO_CANDIDATO *p1, PONTO_CANDIDATO *p2)
 {
 	//PONTO_CANDIDATO *origemPeca = coordenadaOrigemPeca(peca,p1,p2);
@@ -193,6 +194,7 @@ inline PONTO_CANDIDATO* coordenadaOrigemOpostaPeca(PECA *peca, PONTO_CANDIDATO *
 
 	return origemOpostaPeca;
 }
+*/
 
 /*Função feita por Lívia.*/
 /*
@@ -311,5 +313,6 @@ inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
 
     free(vetorTemp);
 }
+
 
 #endif

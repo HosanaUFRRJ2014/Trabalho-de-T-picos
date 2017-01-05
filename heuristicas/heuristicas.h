@@ -44,7 +44,8 @@ inline R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 			if(foiAdicionada)
 			{
 				
-				removerPeca(P);
+				//removerPeca(P);
+				removerPecaDadoPeca(P,aux->peca,NULL,NULL);
 		
 				PECA *aInserir = (PECA *) malloc (sizeof(PECA));
 

@@ -386,6 +386,20 @@ inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
 
 	NO *aux = origem->inicio;
 
+	if(!vazia(destino))
+		apagarLista(destino);
+
+
+	if(!vazia(origem))
+	{
+		while(aux != NULL)
+		{
+			inserirPeca(destino, aux->peca);
+			aux = aux->proximo;
+		}
+	}
+
+	/*
 	if(vazia(destino)) //Não há necessidade de apagar a lista destino!
 	{
 		if(!vazia(origem))
@@ -410,7 +424,10 @@ inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
 			}
 		}
 	}
+	*/
 }
+
+//Ok,eu aceitarei :)
 
 //sugestão :)
 // inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)

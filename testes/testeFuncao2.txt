@@ -1,0 +1,762 @@
+  1  1  1  1  1  1  1  1  3  3
+  1  1  1  1  1  1  1  1  3  3
+  2  2  2  2  2  2  2  2  3  3
+  2  2  2  2  2  2  2  2  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  4  4  4  4  4  0  0  0  3  3
+  0  0  0  0  0  0  0  0  3  3
+  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 5
+Quantidade de peças presentes: 4
+Valor de utilidade total: 146.00
+Área de R: 100
+---------------------------------------------------------
+  1  1  1  1  1  1  1  1  0  0
+  1  1  1  1  1  1  1  1  0  0
+  2  2  2  2  2  2  2  2  0  0
+  2  2  2  2  2  2  2  2  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 5
+Quantidade de peças presentes: 2
+Valor de utilidade total: 80.00
+Área de R: 100
+---------------------------------------------------------
+---------------Lista P remocaoAleatoria----------------------------
+Tamanho da lista: 4
+Custo beneficio da peça(v/l*w): 2.388889
+Quantidade: 2
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 43.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.666667
+Quantidade: 2
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 35.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.350000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+-------------------------------------------------------------------
+---------------Lista B remocaoAleatoria----------------------------
+Tamanho da lista: 1
+Custo beneficio da peça(v/l*w): 2.500000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40.000000
+pontos candidatos p1:
+x: 7
+y: 0
+x: 7
+y: 2
+pontos candidatos p2:
+x: 0
+y: 1
+x: 0
+y: 3
+
+-----------------------------------------------------------------
+
+  1  1  1  1  1  1  1  1  0  0
+  1  1  1  1  1  1  1  1  0  0
+  2  2  2  2  2  2  2  2  0  0
+  2  2  2  2  2  2  2  2  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 5
+Quantidade de peças presentes: 2
+Valor de utilidade total: 80.00
+Área de R: 100
+---------------------------------------------------------
+---------------Lista P deslocarPecas-------------------------------
+Tamanho da lista: 4
+Custo beneficio da peça(v/l*w): 2.388889
+Quantidade: 2
+largura(w): 2
+comprimento(l): 9
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 43.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.666667
+Quantidade: 2
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 35.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.350000
+Quantidade: 1
+largura(w): 10
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 27.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.150000
+Quantidade: 3
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 23.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+-------------------------------------------------------------------
+---------------Lista B deslocarPecas-------------------------------
+Tamanho da lista: 1
+Custo beneficio da peça(v/l*w): 2.500000
+Quantidade: 2
+largura(w): 8
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 40.000000
+pontos candidatos p1:
+x: 7
+y: 0
+x: 7
+y: 2
+pontos candidatos p2:
+x: 0
+y: 1
+x: 0
+y: 3
+
+-----------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------
+
+-------------------criarSolucao()---------------------------
+  1  1  1  1  1  1  1  1  1  1  1  1  1  3  3  3  3  3  3  0
+  2  2  2  2  2  2  2  2  2  2  2  2  2  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  0  0  0  0  0
+  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  0  0  0  0  0
+  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 9
+Quantidade de peças presentes: 8
+Valor de utilidade total: 753.00
+Área de R: 400
+---------------------------------------------------------
+-------------------remocaoAleatoria()---------------------------
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 9
+Quantidade de peças presentes: 3
+Valor de utilidade total: 381.00
+Área de R: 400
+---------------------------------------------------------
+---------------Lista P remocaoAleatoria----------------------------
+Tamanho da lista: 6
+Custo beneficio da peça(v/l*w): 2.055556
+Quantidade: 3
+largura(w): 18
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 185.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.625000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 78.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.041667
+Quantidade: 1
+largura(w): 8
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 25.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 2
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.444444
+Quantidade: 1
+largura(w): 15
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 110.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.923077
+Quantidade: 2
+largura(w): 13
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 38.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+-------------------------------------------------------------------
+---------------Lista B remocaoAleatoria----------------------------
+Tamanho da lista: 2
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 1
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+x: 5
+y: 2
+pontos candidatos p2:
+x: 0
+y: 7
+
+Custo beneficio da peça(v/l*w): 2.571429
+Quantidade: 2
+largura(w): 8
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 144.000000
+pontos candidatos p1:
+x: 7
+y: 8
+x: 15
+y: 8
+pontos candidatos p2:
+x: 0
+y: 14
+x: 8
+y: 14
+
+-----------------------------------------------------------------
+
+-------------------deslocarPecas()---------------------------
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 9
+Quantidade de peças presentes: 3
+Valor de utilidade total: 381.00
+Área de R: 400
+---------------------------------------------------------
+---------------Lista P deslocarPecas-------------------------------
+Tamanho da lista: 6
+Custo beneficio da peça(v/l*w): 2.055556
+Quantidade: 3
+largura(w): 18
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 185.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.625000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 78.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.041667
+Quantidade: 1
+largura(w): 8
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 25.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 2
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.444444
+Quantidade: 1
+largura(w): 15
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 110.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.923077
+Quantidade: 2
+largura(w): 13
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 38.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+-------------------------------------------------------------------
+---------------Lista B deslocarPecas-------------------------------
+Tamanho da lista: 2
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 1
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+x: 5
+y: 0
+pontos candidatos p2:
+x: 0
+y: 5
+
+Custo beneficio da peça(v/l*w): 2.571429
+Quantidade: 2
+largura(w): 8
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 144.000000
+pontos candidatos p1:
+x: 7
+y: 6
+x: 15
+y: 6
+pontos candidatos p2:
+x: 0
+y: 12
+x: 8
+y: 12
+
+-----------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------
+
+-------------------criarSolucao()---------------------------
+  1  1  1  1  1  1  1  1  1  1  1  1  1  3  3  3  3  3  3  0
+  2  2  2  2  2  2  2  2  2  2  2  2  2  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  3  3  3  3  3  3  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  6  6  6  6  6  6  6  6  7  7  7  7  7  7  7  7  0  0  0  0
+  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  0  0  0  0  0
+  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  0  0  0  0  0
+  8  8  8  8  8  8  8  8  8  8  8  8  8  8  8  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 9
+Quantidade de peças presentes: 8
+Valor de utilidade total: 753.00
+Área de R: 400
+---------------------------------------------------------
+-------------------remocaoAleatoria()---------------------------
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  4  4  4  4  4  4  5  5  5  5  5  5  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  7  7  7  7  7  7  7  7  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 9
+Quantidade de peças presentes: 3
+Valor de utilidade total: 330.00
+Área de R: 400
+---------------------------------------------------------
+---------------Lista P remocaoAleatoria----------------------------
+Tamanho da lista: 7
+Custo beneficio da peça(v/l*w): 2.055556
+Quantidade: 3
+largura(w): 18
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 185.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.625000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 78.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.041667
+Quantidade: 1
+largura(w): 8
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 25.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.923077
+Quantidade: 2
+largura(w): 13
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 38.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 1
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.571429
+Quantidade: 1
+largura(w): 8
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 144.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.444444
+Quantidade: 1
+largura(w): 15
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 110.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+-------------------------------------------------------------------
+---------------Lista B remocaoAleatoria----------------------------
+Tamanho da lista: 2
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 2
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+x: 5
+y: 2
+x: 11
+y: 2
+pontos candidatos p2:
+x: 0
+y: 7
+x: 6
+y: 7
+
+Custo beneficio da peça(v/l*w): 2.571429
+Quantidade: 1
+largura(w): 8
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 144.000000
+pontos candidatos p1:
+x: 15
+y: 8
+pontos candidatos p2:
+x: 8
+y: 14
+
+-----------------------------------------------------------------
+
+-------------------deslocarPecas()---------------------------
+  4  4  4  4  4  4  7  7  7  7  7  7  7  7  0  0  0  0  0  0
+  4  4  4  4  4  4  7  7  7  7  7  7  7  7  0  0  0  0  0  0
+  4  4  4  4  4  4  7  7  7  7  7  7  7  7  0  0  0  0  0  0
+  4  4  4  4  4  4  7  7  7  7  7  7  7  7  0  0  0  0  0  0
+  4  4  4  4  4  4  7  7  7  7  7  7  7  7  0  0  0  0  0  0
+  4  4  4  4  4  4  7  7  7  7  7  7  7  7  0  0  0  0  0  0
+  5  5  5  5  5  5  7  7  7  7  7  7  7  7  0  0  0  0  0  0
+  5  5  5  5  5  5  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  5  5  5  5  5  5  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  5  5  5  5  5  5  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  5  5  5  5  5  5  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  5  5  5  5  5  5  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 9
+Quantidade de peças presentes: 3
+Valor de utilidade total: 330.00
+Área de R: 400
+---------------------------------------------------------
+---------------Lista P deslocarPecas-------------------------------
+Tamanho da lista: 7
+Custo beneficio da peça(v/l*w): 2.055556
+Quantidade: 3
+largura(w): 18
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 185.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.625000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 78.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 1.041667
+Quantidade: 1
+largura(w): 8
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 25.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.923077
+Quantidade: 2
+largura(w): 13
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 38.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 1
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.571429
+Quantidade: 1
+largura(w): 8
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 144.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+Custo beneficio da peça(v/l*w): 2.444444
+Quantidade: 1
+largura(w): 15
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 110.000000
+pontos candidatos p1:
+pontos candidatos p2:
+
+-------------------------------------------------------------------
+---------------Lista B deslocarPecas-------------------------------
+Tamanho da lista: 2
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 2
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+x: 5
+y: 0
+x: 5
+y: 6
+pontos candidatos p2:
+x: 0
+y: 5
+x: 0
+y: 11
+
+Custo beneficio da peça(v/l*w): 2.571429
+Quantidade: 1
+largura(w): 8
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 144.000000
+pontos candidatos p1:
+x: 13
+y: 0
+pontos candidatos p2:
+x: 6
+y: 6
+
+-----------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------
+
