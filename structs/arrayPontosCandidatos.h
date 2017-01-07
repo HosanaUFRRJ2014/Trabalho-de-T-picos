@@ -48,18 +48,12 @@ inline int vazio(ARRAY_PONTOS_CANDIDATOS *l)
 
 inline int inserirPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array, PONTO_CANDIDATO *ponto)
 {
-	//printf("ponto 5.0.1\n");
 	NO_Pt *pnovo = (NO_Pt *) malloc (sizeof(NO_Pt));
 
 
-	if(array == NULL)
-	{
-		printf("O array é nulo!!\n");
-	}
-
 	if(pnovo != NULL)
 	{
-		//printf("label 5.1\n");
+		
 		pnovo->ponto = ponto;
 		pnovo->anterior = NULL;
         pnovo->proximo = NULL;
@@ -68,14 +62,14 @@ inline int inserirPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array, PONTO_CANDIDATO
 		if(array->inicio == NULL) 
         {
         	
-        	//printf("label 5.2\n");
+        	
         	array->inicio = pnovo;
         	   //  array->fim = pnovo;
 
         
         }
         else
-        { //  printf("label 5.3\n");
+        { 
 	         array->fim->proximo = pnovo;
 	         pnovo->anterior = array->fim;
 	       //  array->fim = pnovo;
@@ -186,7 +180,11 @@ inline int removerPontoCandidatoDadoPontoCandidato(ARRAY_PONTOS_CANDIDATOS *arra
 			auxP1 = auxP1->proximo;
 			auxP2 = auxP2->proximo;
 		}
+
+		// free(auxP1);
+	 //    free(auxP2);
 	}
+
 
 	//Não existe este ponto candidato para removê-lo
 	return false;
@@ -202,6 +200,8 @@ inline void imprimirArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS *p)
 		imprimirPontoCandidato(aux->ponto);
 		aux = aux->proximo;
 	}
+
+	//free(aux);
 }
 
 

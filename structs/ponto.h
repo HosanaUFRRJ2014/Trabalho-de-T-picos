@@ -38,12 +38,14 @@ inline PONTO_CANDIDATO *criarPontoCandidato(int x, int y)
 //função para a verificação de existencia de ponto. Para os casos em que podem não existir p1 ou p2 pois os mesmos ultrapassariam W e/ou L de R
 inline int ehPontoCandidato(PONTO_CANDIDATO *p)
 {
-	if(p != NULL)
-	{
-		if(p->x != -1 && p->y != -1)
-			return true;
-    }
+
+if(p != NULL)
+{
+	if(p->x != -1 && p->y != -1)
+		return true;
+}
     
+
 	return false;
 }
 

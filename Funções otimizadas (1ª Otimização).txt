@@ -1,0 +1,32 @@
+Funções otimizadas (1ª Otimização)
+*Em peca.h
+	-custoBenefício (1)
+	-copiarPeca (1)
+
+	*candidata a otimização:
+	-coordenadaOrigemPeca
+
+*arrayPontosCandidatos.h
+    -removerPontoCandidatoDadoPontoCandidato -
+    -imprimirArrayPontosCandidatos -
+
+*ponto.h
+	-ehPontoCandidato -
+
+*lista.h
+	-ordenarLista -
+	-imprimirLista -	
+
+*R.h
+	-dentroDoLimiteSuperior -
+	-despreencherRcomPeca(1)
+	-
+
+
+
+	*candidatas:
+	imprimirR  (colocar como entrada o R e misturar com a função imprimir variáveis de R)
+
+
+*heuristicas.h
+	- criarSolucao

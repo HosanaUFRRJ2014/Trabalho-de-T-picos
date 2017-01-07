@@ -16,17 +16,11 @@ typedef struct             //comprimento L e largura W.
 	int L;
 	int **matriz;
 
-	//O elemento i,j da matriz corresponde se o ponto candidato i,j está presente em R. Se 1, está presente, 0 caso contrário.	
-	//int **pontosCandidatos;
-
 	//Contador de índice da peca em R. A variável será incrementada toda vez que for inserida uma peça em R.
 	unsigned int indicePeca;
 
 	//Quantidade de peças em R
 	int quantidade;
-
-	//Área já preenchida de R.
-	//int areaOcupada;
 
 	//Valor total das peças contidas em R.
 	float valorUtilidadeTotal;
@@ -100,24 +94,19 @@ inline R * criarRetanguloR(int l, int w)
 		r->L = l;
 
 		r->matriz = (int **) malloc(l * sizeof(int *));
-		//r->pontosCandidatos = (int **) malloc(l * sizeof(int *));
    		
    		for (i = 0; i < l; i++)
    		{        
             r->matriz[i] = (int *) malloc(w * sizeof(int));
-            //r->pontosCandidatos[i] = (int *) malloc(w * sizeof(int));
+   
  		}
    		
 		//preencher retângulo R com zeros
 		preencherComZeros(r->matriz,r->L,r->W);
-		//preencherComZeros(r->pontosCandidatos,r->L,r->W);
-		//r->pontosCandidatos[0][0] = 1;
 
 		r->indicePeca = 1;
 		r->quantidade = 0;
 		r->valorUtilidadeTotal = 0;
-		//r->areaOcupada = 0;
-
 
 	}
 
@@ -165,7 +154,6 @@ inline int dentroDoLimiteSuperior(LISTA_LIGADA *B, PECA *nova ,int qtdAsomar)
 		if(pecasIguais(temp->peca,nova))
 		{
 			pecaJaExistenteEmR = temp->peca;
-			//printf("PECA JA EXISTENTE\n");
 			break;
 		}
 
@@ -175,16 +163,12 @@ inline int dentroDoLimiteSuperior(LISTA_LIGADA *B, PECA *nova ,int qtdAsomar)
 	if(temp == NULL) //significa que a peça nem está em R. Logo, não ultrapassa o limite superior
 		return true;
 
-	// printf("pecaJaEmR->Q: %d\n", pecaJaEmR->Q);
-	// printf("pecaJaEmR->quantidade + qtdAsomar: %d\n", pecaJaEmR->quantidade + 1);
 
 	if(pecaJaExistenteEmR->quantidade + qtdAsomar <= pecaJaExistenteEmR->Q)
 	{
-		// printf("RETORNA -- VERDADE --\n");
 		return true;
 	}
 
-	// printf("RETORNA -- FALSE --\n");
 
 	return false;
 
@@ -207,21 +191,17 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 	else if(indicePeca > 0)//a peça já existe e vamos preenchê-la com o seu índice em R.
 		fatorPreenchimento = indicePeca;
 
-	//printf("label 1\n");
 
 	
 	for (i = ponto->y; i < ponto->y + nova->w; i++)
 	{
 		for (j = ponto->x; j < ponto->x + nova->l; j++)
 		{
-			if(i >= r->W || j>= r->L)
-				printf("ESTOUROU!!\n");
 
 			r->matriz[i][j] = fatorPreenchimento;
 		}
 	}
 
-	//printf("label 2\n");
 
 
 	//definição dos pontos candidatos da peça nova
@@ -233,7 +213,6 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 		inserirPontoCandidato(nova->p1,p1);
 	}
 
-	//printf("label 3\n");
 
 
  //se não vai estourar a largura do retângulo R
@@ -244,14 +223,9 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 	
 	}
 
-	//printf("label 4\n");
-
-	//r->indicePeca++;
 	r->quantidade++;
 	r->valorUtilidadeTotal += nova->v;
-	//r->areaOcupada += (nova->l * nova->w);
 
-	//printf("label 5\n");
 
 	return;
 
@@ -261,53 +235,25 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 inline void despreencherRcomPeca(R* r,PECA *aRemover,PONTO_CANDIDATO *p1,PONTO_CANDIDATO *p2)
 {
 	int i, j;
-	//Definindo a coordenada de ínicio da peça em R. Poderia ser feito com p2 tbm, mas defini como padrão usando apenas o ponto 
-	//p1(Mais a direita e acima)
-	//int origem_peca_em_R_x = p2->y - (aRemover->w - 1);
-	//int origem_peca_em_R_y = p1->x - (aRemover->l - 1);
 
 	PONTO_CANDIDATO *origemPeca = coordenadaOrigemPeca(aRemover,p1,p2);
 
-	//imprimirPontoCandidato(origemPeca);
-
-	if(ehPontoCandidato(origemPeca))
-	{
-		for (i = origemPeca->y; i < origemPeca->y + aRemover->w; i++)
-		{
-			for (j = origemPeca->x; j < origemPeca->x + aRemover->l; j++)
-			{
-				r->matriz[i][j] = 0;
-			}
-		}
-	}
-	else
-	{
-		printf("Peca ou ponto inválido para ser removido.\n");
+	if(!ehPontoCandidato(origemPeca))
 		return;
-	}
 
-	/*
-	if(origem_peca_em_R_x >= 0 && origem_peca_em_R_y >= 0)
+
+	for (i = origemPeca->y; i < origemPeca->y + aRemover->w; i++)
 	{
-		for (i = origem_peca_em_R_x; i < origem_peca_em_R_x + aRemover->w; i++)
+		for (j = origemPeca->x; j < origemPeca->x + aRemover->l; j++)
 		{
-			for (j = origem_peca_em_R_y; j < origem_peca_em_R_y + aRemover->l; j++)
-			{
-				r->matriz[i][j] = 0;
-			}
+			r->matriz[i][j] = 0;
 		}
 	}
-	else
-	{
-		printf("Peca ou ponto inválido para ser removido.\n");
-	}
-	*/
 
-	//Retirar os pontos candidatos
 
 	r->quantidade--;
 	r->valorUtilidadeTotal -= aRemover->v;
-	//r->areaOcupada -= (aRemover->l * aRemover->w);
+
 }
 
 //linha 3 do algoritmo 1 do artigo
@@ -318,11 +264,10 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
     	return false;
 
     //se está dentro do limite superior, o algoritmo continua
-
 	//verificando primeiro a origem
 	PONTO_CANDIDATO *origem = criarPontoCandidato(0,0);
 
-	if(ehPossivelAdicionar(r, nova, origem) /*&& dentroDoLimiteSuperior(pecaJaExistenteEmR, 1)*/)
+	if(ehPossivelAdicionar(r, nova, origem))
 	{
 		preencherRcomPeca(r, nova, origem, -1);
 		return true;
@@ -343,10 +288,8 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 
 	while(aux != NULL)
 	{
-		//printf("Varrendo lista B---> nós\n");
 		for(cont = 0;cont < aux->peca->quantidade;cont++) //while(cont < aux->peca->quantidade)
 		{
-		//	printf("Lendo peca a peca\n");
 			//varrer o array de pontos candidatos e, para cada ponto,
 			//conferir se dá para adicionar em p1 e p2 e salvar o mais próximo da origem
 			NO_Pt *aux_pt1, *aux_pt2;
@@ -380,7 +323,6 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 				aux_pt2 = aux_pt2->proximo;
 			}
 
-			//cont++;
 		}
 
 		aux = aux->proximo;
@@ -389,7 +331,6 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 	//Se não foi encontrado nenhum ponto candidato que permitisse a peça ser adicionada, o "atual" nunca foi modificado desde sua alocação.
 	if(!ehPontoCandidato(atual) || atual == NULL)
 	{
-		//printf("RETORNOU FALSE!! Linha 370 em R.h\n");
 		return false;
 	}
 
@@ -398,9 +339,8 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 		atual = prioridadeAdireita;
 	/*------------------------------------------------*/
 
-	//printf("pecaJaExistenteEmR->Q: %d\n",pecaJaExistenteEmR->Q);
 
-	if(!ehPossivelAdicionar(r,nova,atual)/* || !dentroDoLimiteSuperior(pecaJaExistenteEmR, 1)*/)
+	if(!ehPossivelAdicionar(r,nova,atual))
 	{
 	//	printf("RETORNOU FALSE!! Linha 381 em R.h\n");
 		return false;
@@ -408,7 +348,7 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 	else
 		preencherRcomPeca(r,nova,atual,-1);
 
-	//printf("VERDADE VERDADEIRA\n");
+
 	return true;
 }
 
@@ -438,21 +378,13 @@ inline void removerPecaDoRetangulo(R *r,LISTA_LIGADA *P,LISTA_LIGADA *B, PECA *a
 //Função feita por Lívia.
 inline void remocaoAleatoria(R *r, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma)
 {
-	//srand((unsigned int)time(NULL));
-	//x = rand() % 10
 
 	float areaSerRemovida = ((r->L * r->W) * gamma), areaJaRemovida = 0.0;
-	//srand((unsigned int)time(NULL));
 
 	int indiceTipoPecaSerRemovida, indicePecaSerRemovida, count, iter = 0;
 
 	NO *aux_B;
 	NO_Pt *aux_pt1, *aux_pt2;
-	//PECA *novaPeca = criarPeca(0,0,0,0,0.0,0);
-	
-	//Evitar que aloquemos vários espaços de memórias desnecessários...
-	//novaPeca->p1 = criarArrayPontosCandidatos();
-	//novaPeca->p2 = criarArrayPontosCandidatos();
 
 	while(areaJaRemovida < areaSerRemovida && B->tamanho != 0)
 	{
@@ -680,7 +612,7 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 	free(aux_pontoEscolhido);
 }
 
-//se não funcionar, dar varrer a matriz dando free
+//se não funcionar, varrer a matriz dando free
 inline void apagarRetanguloR(R *r)
 {
 	int i = 0;

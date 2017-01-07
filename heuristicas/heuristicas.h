@@ -56,11 +56,6 @@ inline R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 			 	inserirPeca(B, aInserir);
 			 	
 			 }
-			 // else
-			 // {
-			 	
-			 // 	//printf("Não foi adicionada!!!!\n");
-			 // }
 
 			cont++;
 
@@ -68,7 +63,12 @@ inline R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 
 		aux = aux->proximo;
 	}
-//esse retorno não é necessário. Só o mantive para respeitar o formato de algoritmo que já estava aqui.
+
+	free(aux);
+	apagarLista(listaAuxliar);
+	free(listaAuxliar);
+    
+    //esse retorno não é necessário. Só o mantive para respeitar o formato de algoritmo que já estava aqui.
 	return solucaoNova;
 
 }
@@ -87,14 +87,11 @@ inline void copiarSolucao(R *destino, R *origem)
 
 inline void trocarSolucao(R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamma) //retornava R*
 {
-	//copiar a solução para não sobrescrever
-	//R *nova = criarRetanguloR(atual->L, atual->W);
-
-	//copiarSolucao(nova,atual);
 
 	//Remover gamma da área de R;
 	//Adicionar peças removidas a P;
 	remocaoAleatoria(atual,P,B,gamma); //nova
+	
 	//Deslocar peças restantes para esquerda;
 	deslocarPecas(atual, B); //nova
 //	printf("--------Solucao com peças deslocadas--------\n");

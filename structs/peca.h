@@ -23,9 +23,6 @@ typedef struct
 	ARRAY_PONTOS_CANDIDATOS *p1; //mais a direita e mais acima
 	ARRAY_PONTOS_CANDIDATOS *p2; //mais a esquerda e mais abaixo
 
-	//SÓ PARA TESTES. RETIRAR DEPOIS!
-	//double distOrg;
-	//------------------------------
 
 }PECA;
 
@@ -45,9 +42,6 @@ inline PECA *criarPeca(int l, int w, int P, int Q, float v, int qtd)
 		i->p2 = criarArrayPontosCandidatos();
 		i->quantidade = qtd;
 
-		//SÓ PARA TESTES. RETIRAR DEPOIS!
-		//i->distOrg = 0;
-		//-------------------------------
 	} 
 
 
@@ -77,8 +71,7 @@ inline int pecaMaior(PECA *a, PECA *b)
 
 inline void custoBeneficio(PECA *a)
 {
-	float f = (float) a->v/(a->l * a->w);
-	printf("Custo beneficio da peça(v/l*w): %f\n", f);
+	printf("Custo beneficio da peça(v/l*w): %f\n", (float) a->v/(a->l * a->w));
 	
 }
 
@@ -91,35 +84,35 @@ inline void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
 	pecaDestino->P = pecaOrigem->P;
 	pecaDestino->Q = pecaOrigem->Q;
 	pecaDestino->v = pecaOrigem->v;
-	pecaDestino->p1 = criarArrayPontosCandidatos();
 	
 	//pertence a arrayPontoCandidato.h **
+	//cópia dos pontos candidatos de pecaOrigem para pecaDestino
 	NO_Pt *aux_Pt1;
+	pecaDestino->p1 = criarArrayPontosCandidatos();
 	aux_Pt1 = pecaOrigem->p1->inicio;
-	while(aux_Pt1 != NULL)
-	{
-		PONTO_CANDIDATO *novo;
-		novo = criarPontoCandidato(aux_Pt1->ponto->x, aux_Pt1->ponto->y);
-		inserirPontoCandidato(pecaDestino->p1,novo);
 
-		aux_Pt1 = aux_Pt1->proximo;
-	}
-
-	pecaDestino->p2 = criarArrayPontosCandidatos();
 	NO_Pt *aux_Pt2;
+	pecaDestino->p2 = criarArrayPontosCandidatos();
 	aux_Pt2 = pecaOrigem->p2->inicio;
-	while(aux_Pt2 != NULL)
-	{
-		PONTO_CANDIDATO *novo;
-		novo = criarPontoCandidato(aux_Pt2->ponto->x, aux_Pt2->ponto->y);
-		inserirPontoCandidato(pecaDestino->p2,novo);
 
+	while(aux_Pt1 != NULL && aux_Pt2 != NULL)
+	{
+		inserirPontoCandidato(pecaDestino->p1, criarPontoCandidato(aux_Pt1->ponto->x, aux_Pt1->ponto->y) );
+		aux_Pt1 = aux_Pt1->proximo;
+
+		inserirPontoCandidato(pecaDestino->p2, criarPontoCandidato(aux_Pt2->ponto->x, aux_Pt2->ponto->y) );
 		aux_Pt2 = aux_Pt2->proximo;
+
+		
 	}
 
 	pecaDestino->quantidade = pecaOrigem->quantidade;
 
+	
+	free(aux_Pt1);
+	free(aux_Pt2);
 	//**
+
 
 }
 
@@ -315,45 +308,5 @@ inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
     free(vetorTemp);
 }
 
-// inline void swap(PECA *p1, PECA *p2)
-// {
-// 	PECA *aux =  criarPeca(0,0,0,0,0,0);
-// 	copiarPeca(aux,p1);
-// 	copiarPeca(p1,p2);
-// 	copiarPeca(p2,aux);
-// }
-
-// inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
-// {
-// 	int tamanho = posicaoFim - posicaoInicio + 1;
-// 	int i = 0;
-// 	int n = tamanho;
-
-// 	int swapped;
-// 	do
-// 	{
-// 		swapped = false;
-// 		for (i = 1; i < n; i++)
-// 		{    
-// 			//printf("label 1\n");
-// 			PONTO_CANDIDATO *aux_origemPecaI = coordenadaOrigemPeca(&vetor[i-1],vetor[i-1].p1->inicio->ponto,vetor[i-1].p2->inicio->ponto);
-// 			//printf("label 2\n");
-// 			//imprimirPeca(&vetor[1]);
-// 			PONTO_CANDIDATO *aux_origemPecaII = coordenadaOrigemPeca(&vetor[i],vetor[i].p1->inicio->ponto,vetor[i].p2->inicio->ponto);
-// 			int d1 = distanciaEntreDoisPontos(aux_origemPecaI->x,aux_origemPecaI->y,0,0);
-// 			int d2 = distanciaEntreDoisPontos(aux_origemPecaII->x,aux_origemPecaII->y,0,0);
-			
-// 			if(d1 > d2)
-// 			{
-// 				swap(&vetor[i-1],&vetor[i]);
-// 				swapped = true;
-// 			}
-// 		}
-
-// 		n = n -1;
-
-// 	}while(swapped == false);
-
-// }
 
 #endif

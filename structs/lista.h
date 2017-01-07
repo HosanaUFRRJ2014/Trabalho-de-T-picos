@@ -427,29 +427,6 @@ inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
 	*/
 }
 
-//Ok,eu aceitarei :)
-
-//sugestão :)
-// inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
-// {
-// 	//copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
-
-// 	NO *aux = origem->inicio;
-
-// 	if(!vazia(destino))  //Apaga-se a lista destino e depois adiciona os elementos de origem.
-// 		apagarLista(destino);
-	
-
-// 	if(!vazia(origem))
-// 	{
-// 		while(aux != NULL)
-// 		{
-// 			inserirPeca(destino, aux->peca);
-// 			aux = aux->proximo;
-// 		}
-// 	}
-// }
-
 inline LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
 {
 	LISTA_LIGADA *listaOrdenada = criarLista();
@@ -462,6 +439,7 @@ inline LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
 		aux = aux->proximo;
 	}
 
+    //free(aux);
 	return listaOrdenada;
 
 }
@@ -478,6 +456,8 @@ inline void imprimirLista(LISTA_LIGADA *l)
 		imprimirPeca(aux->peca);
 		aux = aux->proximo;
 	}
+
+	//free(aux);
 }
 
 
