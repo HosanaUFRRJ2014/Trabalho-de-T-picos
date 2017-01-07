@@ -13,7 +13,12 @@
 
 int main(int argc, char const *argv[])
 {
-	FILE *inst = fopen("instancias-otimo.txt","r");
+	FILE *inst = fopen(argv[1],"r");
+	if(inst == NULL)
+	{
+		printf("Arquivo %s não encontrado\n", argv[1]);
+		exit(1);
+	}
 	R *ret = NULL;
 	LISTA_LIGADA *P = criarLista(), *B = criarLista();
 	int qtd_inst, qtd_pecas, valor_otimo, i = 0, num_inst = 0, L, W;
@@ -50,7 +55,7 @@ int main(int argc, char const *argv[])
 		//resultados[num_inst] = Simulated_Annealing(10000.0,0.11,700,0.98,ret,P,B);
 
 		//valores de entrada temporários para testes mais rápidos e concluentes
-		resultados[num_inst] = Simulated_Annealing(10000.0,0.11,700,0.98,ret,P,B);
+		resultados[num_inst] = Simulated_Annealing(10000.0,0.11,20,0.98,ret,P,B);
  
 
 		//imprimirLista(lista);

@@ -550,9 +550,11 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 	}
 	
 	PONTO_CANDIDATO *aux_ponto,*aux_pontoOp;
+
 	
 	//Ordenação do vetor de acordo com a distância da origem da peça com (0,0).
-	mergeSort(arrayPecas,0,r->quantidade - 1);
+	if(r->quantidade > 1)
+	  mergeSort(arrayPecas,0,r->quantidade - 1);
 
 //----------------------------------------------------------------------------------------------------
 

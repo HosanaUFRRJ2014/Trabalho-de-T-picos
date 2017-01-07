@@ -1,0 +1,113 @@
+hosana@hosana-NtLinux:~/git/Trabalho-de-T-picos/testes$ ./tt inst13.txt
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  1  1  1  1  1  1  1  1  1  1  1  1  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  0
+  3  3  3  3  3  3  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  5  5  5  5  5  0  0  0
+  3  3  3  3  3  3  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  5  5  5  5  5  0  0  0
+  3  3  3  3  3  3  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  5  5  5  5  5  0  0  0
+  3  3  3  3  3  3  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  5  5  5  5  5  0  0  0
+  3  3  3  3  3  3  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  0  0  0  0  0  0  0  0
+  3  3  3  3  3  3  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  4  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 6
+Quantidade de peças presentes: 5
+Valor de utilidade total: 1178.00
+Área de R: 900
+---------------------------------------------------------
+Solução encontrada: 1178.00
+Solução ótima: 1178
+
+-------Lista B------
+Tamanho da lista: 5
+Custo beneficio da peça(v/l*w): 1.785714
+Quantidade: 1
+largura(w): 12
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 450.000000
+pontos candidatos p1:
+x: 11
+y: 0
+pontos candidatos p2:
+x: 0
+y: 20
+
+Custo beneficio da peça(v/l*w): 1.596639
+Quantidade: 1
+largura(w): 17
+comprimento(l): 21
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 570.000000
+pontos candidatos p1:
+x: 28
+y: 0
+pontos candidatos p2:
+x: 12
+y: 20
+
+Custo beneficio da peça(v/l*w): 1.361111
+Quantidade: 1
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 49.000000
+pontos candidatos p1:
+x: 5
+y: 21
+pontos candidatos p2:
+x: 0
+y: 26
+
+Custo beneficio da peça(v/l*w): 0.958333
+Quantidade: 1
+largura(w): 16
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 92.000000
+pontos candidatos p1:
+x: 21
+y: 21
+pontos candidatos p2:
+x: 6
+y: 26
+
+Custo beneficio da peça(v/l*w): 0.850000
+Quantidade: 1
+largura(w): 5
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 17.000000
+pontos candidatos p1:
+x: 26
+y: 21
+pontos candidatos p2:
+x: 22
+y: 24
+
+--------------------------------------------------------------------------------------------------------------------

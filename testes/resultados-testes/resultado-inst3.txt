@@ -1,0 +1,94 @@
+hosana@hosana-NtLinux:~/git/Trabalho-de-T-picos/testes$ ./tt inst3.txt
+
+329329329329332332332333333333
+329329329329332332332333333333
+329329329329325325325333333333
+329329329329325325325333333333
+329329329329325325325333333333
+334334334334325325325333333333
+334334334334325325325333333333
+334334334334325325325336336336
+334334334334325325325336336336
+334334334334335335335335  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 337
+Quantidade de peças presentes: 7
+Valor de utilidade total: 247.00
+Área de R: 100
+---------------------------------------------------------
+Solução encontrada: 247.00
+Solução ótima: 247
+
+-------Lista B------
+Tamanho da lista: 4
+Custo beneficio da peça(v/l*w): 3.000000
+Quantidade: 2
+largura(w): 4
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 60.000000
+pontos candidatos p1:
+x: 3
+y: 0
+x: 3
+y: 5
+pontos candidatos p2:
+x: 0
+y: 4
+x: 0
+y: 9
+
+Custo beneficio da peça(v/l*w): 1.166667
+Quantidade: 2
+largura(w): 3
+comprimento(l): 2
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 7.000000
+pontos candidatos p1:
+x: 6
+y: 0
+x: 9
+y: 7
+pontos candidatos p2:
+x: 4
+y: 1
+x: 7
+y: 8
+
+Custo beneficio da peça(v/l*w): 2.476191
+Quantidade: 2
+largura(w): 3
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 52.000000
+pontos candidatos p1:
+x: 6
+y: 2
+x: 9
+y: 0
+pontos candidatos p2:
+x: 4
+y: 8
+x: 7
+y: 6
+
+Custo beneficio da peça(v/l*w): 2.250000
+Quantidade: 1
+largura(w): 4
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 9.000000
+pontos candidatos p1:
+x: 7
+y: 9
+pontos candidatos p2:
+x: 4
+y: 9
+
+--------------------------------------------------------------------------------------------------------------------
+
+

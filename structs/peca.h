@@ -242,7 +242,6 @@ inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
     mergeSort(vetor, posicaoInicio, metadeTamanho);
     mergeSort(vetor, metadeTamanho + 1, posicaoFim);
 
-
     // intercalacao no vetor temporario t
     i = posicaoInicio;
     j = metadeTamanho + 1;
@@ -277,6 +276,8 @@ inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
             {
 
                 PONTO_CANDIDATO *aux_origemPecaI = coordenadaOrigemPeca(&vetor[i],vetor[i].p1->inicio->ponto,vetor[i].p2->inicio->ponto);
+                if(vetor[j].quantidade == 0)
+                	imprimirPeca(&vetor[j]);
             	PONTO_CANDIDATO *aux_origemPecaJ = coordenadaOrigemPeca(&vetor[j],vetor[j].p1->inicio->ponto,vetor[j].p2->inicio->ponto);
             	//distI = sqrt(pow(aux_origemPecaI->x,2) + pow(aux_origemPecaI->y,2)); 
             	//distJ = sqrt(pow(aux_origemPecaJ->x,2) + pow(aux_origemPecaJ->y,2));
@@ -314,5 +315,45 @@ inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
     free(vetorTemp);
 }
 
+// inline void swap(PECA *p1, PECA *p2)
+// {
+// 	PECA *aux =  criarPeca(0,0,0,0,0,0);
+// 	copiarPeca(aux,p1);
+// 	copiarPeca(p1,p2);
+// 	copiarPeca(p2,aux);
+// }
+
+// inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
+// {
+// 	int tamanho = posicaoFim - posicaoInicio + 1;
+// 	int i = 0;
+// 	int n = tamanho;
+
+// 	int swapped;
+// 	do
+// 	{
+// 		swapped = false;
+// 		for (i = 1; i < n; i++)
+// 		{    
+// 			//printf("label 1\n");
+// 			PONTO_CANDIDATO *aux_origemPecaI = coordenadaOrigemPeca(&vetor[i-1],vetor[i-1].p1->inicio->ponto,vetor[i-1].p2->inicio->ponto);
+// 			//printf("label 2\n");
+// 			//imprimirPeca(&vetor[1]);
+// 			PONTO_CANDIDATO *aux_origemPecaII = coordenadaOrigemPeca(&vetor[i],vetor[i].p1->inicio->ponto,vetor[i].p2->inicio->ponto);
+// 			int d1 = distanciaEntreDoisPontos(aux_origemPecaI->x,aux_origemPecaI->y,0,0);
+// 			int d2 = distanciaEntreDoisPontos(aux_origemPecaII->x,aux_origemPecaII->y,0,0);
+			
+// 			if(d1 > d2)
+// 			{
+// 				swap(&vetor[i-1],&vetor[i]);
+// 				swapped = true;
+// 			}
+// 		}
+
+// 		n = n -1;
+
+// 	}while(swapped == false);
+
+// }
 
 #endif

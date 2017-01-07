@@ -1,0 +1,75 @@
+hosana@hosana-NtLinux:~/git/Trabalho-de-T-picos/testes$ ./tt inst2.txt
+
+  1 13 13 13 13 13 13  0  0  0
+  1 15 15 15 15 15 15 15 15 15
+  1 15 15 15 15 15 15 15 15 15
+  1 15 15 15 15 15 15 15 15 15
+  1 16 16 16 16 16 16 16 16 16
+  1 16 16 16 16 16 16 16 16 16
+  1 16 16 16 16 16 16 16 16 16
+  1 17 17 17 17 17 17 17 17 17
+  1 17 17 17 17 17 17 17 17 17
+  1 17 17 17 17 17 17 17 17 17
+----------------Variáveis de R---------------------------
+indicePeca atual: 18
+Quantidade de peças presentes: 5
+Valor de utilidade total: 230.00
+Área de R: 100
+---------------------------------------------------------
+Solução encontrada: 230.00
+Solução ótima: 230
+
+-------Lista B------
+Tamanho da lista: 3
+Custo beneficio da peça(v/l*w): 2.800000
+Quantidade: 1
+largura(w): 1
+comprimento(l): 10
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 28.000000
+pontos candidatos p1:
+x: 0
+y: 0
+pontos candidatos p2:
+x: 0
+y: 9
+
+Custo beneficio da peça(v/l*w): 2.166667
+Quantidade: 1
+largura(w): 6
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 13.000000
+pontos candidatos p1:
+x: 6
+y: 0
+pontos candidatos p2:
+x: 1
+y: 0
+
+Custo beneficio da peça(v/l*w): 2.333333
+Quantidade: 3
+largura(w): 9
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 63.000000
+pontos candidatos p1:
+x: 9
+y: 1
+x: 9
+y: 4
+x: 9
+y: 7
+pontos candidatos p2:
+x: 1
+y: 3
+x: 1
+y: 6
+x: 1
+y: 9
+
+--------------------------------------------------------------------------------------------------------------------
+

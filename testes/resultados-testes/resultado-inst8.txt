@@ -1,0 +1,126 @@
+hosana@hosana-NtLinux:~/git/Trabalho-de-T-picos/testes$ ./tt inst8.txt
+186186186186186186194194194194194194194194194194194194194  0
+186186186186186186196196196196196196196196199199199199199199
+186186186186186186196196196196196196196196199199199199199199
+186186186186186186196196196196196196196196199199199199199199
+186186186186186186196196196196196196196196199199199199199199
+186186186186186186196196196196196196196196199199199199199199
+185185185185185185196196196196196196196196199199199199199199
+185185185185185185196196196196196196196196  0  0  0  0  0  0
+185185185185185185198198198198198198198198198198198198  0  0
+185185185185185185198198198198198198198198198198198198  0  0
+185185185185185185198198198198198198198198198198198198  0  0
+185185185185185185198198198198198198198198198198198198  0  0
+195195195195195195195195195195195195195195195195195195  0  0
+195195195195195195195195195195195195195195195195195195  0  0
+195195195195195195195195195195195195195195195195195195  0  0
+195195195195195195195195195195195195195195195195195195  0  0
+195195195195195195195195195195195195195195195195195195  0  0
+197197197197197197197197197197197197197197197  0  0  0  0  0
+197197197197197197197197197197197197197197197  0  0  0  0  0
+197197197197197197197197197197197197197197197  0  0  0  0  0
+----------------Variáveis de R---------------------------
+indicePeca atual: 200
+Quantidade de peças presentes: 8
+Valor de utilidade total: 834.00
+Área de R: 400
+---------------------------------------------------------
+Solução encontrada: 834.00
+Solução ótima: 834
+
+-------Lista B------
+Tamanho da lista: 6
+Custo beneficio da peça(v/l*w): 2.583333
+Quantidade: 3
+largura(w): 6
+comprimento(l): 6
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 93.000000
+pontos candidatos p1:
+x: 5
+y: 0
+x: 5
+y: 6
+x: 19
+y: 1
+pontos candidatos p2:
+x: 0
+y: 5
+x: 0
+y: 11
+x: 14
+y: 6
+
+Custo beneficio da peça(v/l*w): 2.923077
+Quantidade: 1
+largura(w): 13
+comprimento(l): 1
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 38.000000
+pontos candidatos p1:
+x: 18
+y: 0
+pontos candidatos p2:
+x: 6
+y: 0
+
+Custo beneficio da peça(v/l*w): 2.055556
+Quantidade: 1
+largura(w): 18
+comprimento(l): 5
+qtd min(P): 0
+qtd max(Q): 3
+valor da peca(v): 185.000000
+pontos candidatos p1:
+x: 17
+y: 12
+pontos candidatos p2:
+x: 0
+y: 16
+
+Custo beneficio da peça(v/l*w): 2.571429
+Quantidade: 1
+largura(w): 8
+comprimento(l): 7
+qtd min(P): 0
+qtd max(Q): 2
+valor da peca(v): 144.000000
+pontos candidatos p1:
+x: 13
+y: 1
+pontos candidatos p2:
+x: 6
+y: 7
+
+Custo beneficio da peça(v/l*w): 2.444444
+Quantidade: 1
+largura(w): 15
+comprimento(l): 3
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 110.000000
+pontos candidatos p1:
+x: 14
+y: 17
+pontos candidatos p2:
+x: 0
+y: 19
+
+Custo beneficio da peça(v/l*w): 1.625000
+Quantidade: 1
+largura(w): 12
+comprimento(l): 4
+qtd min(P): 0
+qtd max(Q): 1
+valor da peca(v): 78.000000
+pontos candidatos p1:
+x: 17
+y: 8
+pontos candidatos p2:
+x: 6
+y: 11
+
+--------------------------------------------------------------------------------------------------------------------
+
