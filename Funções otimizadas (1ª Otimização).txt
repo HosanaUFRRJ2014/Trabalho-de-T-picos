@@ -7,26 +7,25 @@ Funções otimizadas (1ª Otimização)
 	-coordenadaOrigemPeca
 
 *arrayPontosCandidatos.h
-    -removerPontoCandidatoDadoPontoCandidato -
-    -imprimirArrayPontosCandidatos -
-
-*ponto.h
-	-ehPontoCandidato -
+    -removerPontoCandidatoDadoPontoCandidato
+    -imprimirArrayPontosCandidatos
 
 *lista.h
-	-ordenarLista -
-	-imprimirLista -	
+	-ordenarLista
+	-imprimirLista
+	-inserirPeca (x)
+	-inserirPecaOrdenado (x)	
+	-apagarLista(1)
 
 *R.h
-	-dentroDoLimiteSuperior -
 	-despreencherRcomPeca(1)
-	-
-
-
-
-	*candidatas:
-	imprimirR  (colocar como entrada o R e misturar com a função imprimir variáveis de R)
+	-imprimirR(1)
+	-adicionarPecaAoRetangulo
+	-deslocarPecas
 
 
 *heuristicas.h
 	- criarSolucao
+
+OBS: As funções assinaladas com um (1) indicam que houve alguma modificação no código. Sem o (1), as funções apenas ganharam free em alguns ponteiros.	
+As funções que tem um (x) ao lado, indicam que tentou-se dar free nos ponteiros, porém ocorreu algum erro de execução.

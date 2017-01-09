@@ -76,7 +76,6 @@ inline void custoBeneficio(PECA *a)
 }
 
 //função para copiar os valores de uma peca para a outra, Só que a qtd de destino é setada para 1
-//Organizar tudo em seus devidos lugares!!!
 inline void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
 {
 	pecaDestino->l = pecaOrigem->l;
@@ -116,11 +115,17 @@ inline void copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
 
 }
 
+inline void apagarPeca(PECA **p)
+{
+	//apagarArrayPontosCandidatos( &p->(&p1),&p.(&p2) );
+	free(*p);
+}
+
 inline void imprimirPeca(PECA *p)
 {
 	printf("Quantidade: %d\n", p->quantidade);
-	printf("largura(w): %d\n", p->l);
-	printf("comprimento(l): %d\n",p->w );
+	printf("largura(w): %d\n", p->w);
+	printf("comprimento(l): %d\n",p->l);
 	printf("qtd min(P): %d\n",p->P );
 	printf("qtd max(Q): %d\n",p->Q );
 	printf("valor da peca(v): %f\n",p->v);
@@ -306,6 +311,7 @@ inline void mergeSort(PECA *vetor, int posicaoInicio, int posicaoFim)
    
 
     free(vetorTemp);
+    vetorTemp = NULL;
 }
 
 

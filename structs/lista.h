@@ -125,11 +125,11 @@ inline int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
     	}
 
    		lista->tamanho++;
+   		// free(aux);
+   		// aux = NULL;
     	return true;
 		
 	}
-
-	printf("NAO INSERIU\n");
 
 	return false;
 }
@@ -222,13 +222,13 @@ inline int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
         pnovo->anterior = lista->fim;
         lista->fim = pnovo;
         lista->tamanho++;
+        // free(aux);
+        // aux = NULL;
         return true;
 
 		
 	}
 
-	//como incrementei o tamamnho da lista antes de de fato adicionar algum elemento, estou decrementando, caso não adicione
-//	lista->tamanho--;
 	return false;
 
 }
@@ -372,12 +372,37 @@ inline int removerPecaDadoPeca(LISTA_LIGADA *B, PECA *aRemover, PONTO_CANDIDATO 
 	return false;
 }
 
-/*Função feita por Lívia.*/
-inline void apagarLista(LISTA_LIGADA *lista)
+// /*Função feita por Lívia.*/ 
+inline void apagarLista(LISTA_LIGADA **lista)
 {
-	while(!vazia(lista))
-		removerPeca(lista);
+	while(!vazia(*lista))
+		removerPeca(*lista);
 }
+
+void apagarNo(NO *no) 
+{
+	apagarPeca(&no->peca);
+	free(no);
+}
+
+// void apagarLista(LISTA_LIGADA **lista) 
+// {
+// 	NO *paux;
+// 	paux = (*lista)->inicio;
+// 	NO *prem;
+// 	prem = NULL;
+
+// 	while(paux != NULL) 
+// 	{
+// 		prem = paux;
+// 		paux = paux->proximo;
+// 		//apagarNo(prem);
+// 	}
+
+// 	//free(*lista);
+// 	//*lista=NULL;
+
+// }
 
 /*Função feita por Lívia.*/
 inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
@@ -387,7 +412,7 @@ inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
 	NO *aux = origem->inicio;
 
 	if(!vazia(destino))
-		apagarLista(destino);
+		apagarLista(&destino);
 
 
 	if(!vazia(origem))
@@ -439,7 +464,10 @@ inline LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
 		aux = aux->proximo;
 	}
 
-    //free(aux);
+    free(aux);
+    free(lista);
+    aux = NULL;
+    lista = NULL;
 	return listaOrdenada;
 
 }
@@ -457,7 +485,8 @@ inline void imprimirLista(LISTA_LIGADA *l)
 		aux = aux->proximo;
 	}
 
-	//free(aux);
+	free(aux);
+	aux = NULL;
 }
 
 

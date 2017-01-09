@@ -181,13 +181,43 @@ inline int removerPontoCandidatoDadoPontoCandidato(ARRAY_PONTOS_CANDIDATOS *arra
 			auxP2 = auxP2->proximo;
 		}
 
-		// free(auxP1);
-	 //    free(auxP2);
+		 free(auxP1);
+	     free(auxP2);
 	}
 
 
 	//Não existe este ponto candidato para removê-lo
 	return false;
+}
+
+inline void apagarNoPt(NO_Pt *no)
+{
+	apagarPonto(&no->ponto);
+	free(no);
+}
+
+//Função para apagar os arrays p1 e p2 simultaneamente (Econoniza tempo e gasto de loop se apagar ambos os arrays juntos)
+inline void apagarArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS **p1, ARRAY_PONTOS_CANDIDATOS **p2)
+{
+	NO_Pt *paux1 = (*p1)->inicio;
+	NO_Pt *prem1 = NULL;
+	NO_Pt *paux2 = (*p2)->inicio;
+	NO_Pt *prem2 = NULL;
+
+	while(paux1 != NULL || paux2 != NULL) 
+	{
+		prem1 = paux1;
+		paux1 = paux1->proximo;
+		apagarNoPt(prem1);
+
+		prem2 = paux2;
+		paux2 = paux2->proximo;
+		apagarNoPt(prem2);
+	}
+
+	free(*p1);
+	free(*p2);
+
 }
 
 
@@ -201,7 +231,7 @@ inline void imprimirArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS *p)
 		aux = aux->proximo;
 	}
 
-	//free(aux);
+	free(aux);
 }
 
 

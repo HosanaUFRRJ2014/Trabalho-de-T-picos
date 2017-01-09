@@ -60,8 +60,8 @@ int main(int argc, char const *argv[])
 
 		//imprimirLista(lista);
 
-		imprimirR(ret->matriz,ret->L,ret->W);
-		imprimirVariaveisR(ret);
+		imprimirR(ret);
+		//imprimirVariaveisR(ret);
 		printf("Solução encontrada: %.2f\n",resultados[num_inst]);
 		printf("Solução ótima: %d\n\n",valores_otimos[num_inst]);
 
@@ -75,8 +75,8 @@ int main(int argc, char const *argv[])
 		/*-----------------------------Reinício das variáveis---------------------------------------------------*/
 		apagarRetanguloR(ret);
 
-		apagarLista(P);
-		apagarLista(B);
+		apagarLista(&P);
+		apagarLista(&B);
 		
 		/*
 		while(!vazia(P))

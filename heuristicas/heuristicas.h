@@ -65,8 +65,10 @@ inline R* criarSolucao(R *solucaoNova, LISTA_LIGADA *P, LISTA_LIGADA *B)
 	}
 
 	free(aux);
-	apagarLista(listaAuxliar);
+	aux = NULL;
+	apagarLista(&listaAuxliar);
 	free(listaAuxliar);
+	listaAuxliar = NULL;
     
     //esse retorno não é necessário. Só o mantive para respeitar o formato de algoritmo que já estava aqui.
 	return solucaoNova;
@@ -91,8 +93,8 @@ inline void trocarSolucao(R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamm
 	//Remover gamma da área de R;
 	//Adicionar peças removidas a P;
 	remocaoAleatoria(atual,P,B,gamma); //nova
-	
-	//Deslocar peças restantes para esquerda;
+
+		//Deslocar peças restantes para esquerda;
 	deslocarPecas(atual, B); //nova
 //	printf("--------Solucao com peças deslocadas--------\n");
 //	imprimirSolucao(atual,B);
@@ -164,10 +166,10 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 			trocarSolucao(nova,P_nova,B_nova,0.35);
 			// printf("solucaoNova: \n");
 			// imprimirVariaveisR(nova);
-			// imprimirR(nova->matriz,nova->L, nova->W);
+			// imprimirR(nova);
 			// printf("\n\nSolucao atual: \n");
 			// imprimirVariaveisR(atual);
-			// imprimirR(atual->matriz,atual->L,atual->W);
+			// imprimirR(atual);
 			//-------------------------------------------------------*
 
 			//delta = f(atual) - f(nova);
@@ -232,21 +234,21 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 
 	//Liberando memória
 	apagarRetanguloR(nova);
-	apagarLista(P_nova);
+	apagarLista(&P_nova);
 	free(P_nova);
-	apagarLista(B_nova);
+	apagarLista(&B_nova);
 	free(B_nova);
 
 	apagarRetanguloR(melhor);
-	apagarLista(P_melhor);
+	apagarLista(&P_melhor);
 	free(P_melhor);
-	apagarLista(B_melhor);
+	apagarLista(&B_melhor);
 	free(B_melhor);
 
 	apagarRetanguloR(atualAlg);
-	apagarLista(P_atualAlg);
+	apagarLista(&P_atualAlg);
 	free(P_atualAlg);
-	apagarLista(B_atualAlg);
+	apagarLista(&B_atualAlg);
 	free(B_atualAlg);
 
 	//return melhor->valorUtilidadeTotal;
@@ -254,12 +256,12 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 }
 //*/
 
-inline void imprimirSolucao(R *solucao,LISTA_LIGADA *B)
-{
-	imprimirR(solucao->matriz, solucao->L, solucao->W);
-	imprimirVariaveisR(solucao);
-	imprimirLista(B);
+// inline void imprimirSolucao(R *solucao,LISTA_LIGADA *B)
+// {
+// 	imprimirR(solucao->matriz, solucao->L, solucao->W);
+// 	imprimirVariaveisR(solucao);
+// 	imprimirLista(B);
 
-}
+// }
 
 #endif

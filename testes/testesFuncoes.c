@@ -54,8 +54,7 @@ int main(int argc, char const *argv[])
     
     float resultado = Simulated_Annealing(10000.0,0.11,700,0.98,r,P,B);
 
-    imprimirR(r->matriz,r->L,r->W);
-    imprimirVariaveisR(r);
+    imprimirR(r);
     printf("Solução encontrada: %.2f\n",resultado);
     printf("Solução ótima: %d\n\n",valor_otimo);
     printf("-------Lista B------\n");
@@ -67,7 +66,6 @@ int main(int argc, char const *argv[])
 
     printf("-------------------criarSolucao()---------------------------\n");
     imprimirR(r->matriz,r->L,r->W);
-    imprimirVariaveisR(r);
     */  
 
      //---------Imprimindo P e B(criarSolucao())---------
@@ -109,8 +107,7 @@ int main(int argc, char const *argv[])
     remocaoAleatoria(r,P,B,0.35);
 
     printf("-------------------remocaoAleatoria()---------------------------\n");
-    imprimirR(r->matriz,r->L,r->W);
-    imprimirVariaveisR(r);
+    imprimirR(r);
 
     //---------Imprimindo P e B(remocaoAleatoria())---------    
     printf("---------------Lista P remocaoAleatoria----------------------------\n");
@@ -123,8 +120,7 @@ int main(int argc, char const *argv[])
     deslocarPecas(r,B);
 
     printf("-------------------deslocarPecas()---------------------------\n");
-    imprimirR(r->matriz,r->L,r->W);
-    imprimirVariaveisR(r);
+    imprimirR(r);
 
     //---------Imprimindo P e B(deslocarPecas())---------    
     printf("---------------Lista P deslocarPecas-------------------------------\n");
@@ -142,8 +138,8 @@ int main(int argc, char const *argv[])
     printf("--------------------------------------------------------------------------------------------------------------------\n\n");
 
     fclose(inst);
-    apagarLista(P);
-    apagarLista(B);
+    apagarLista(&P);
+    apagarLista(&B);
     free(P);
     free(B);
     

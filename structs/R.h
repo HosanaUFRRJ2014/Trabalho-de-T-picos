@@ -10,6 +10,8 @@
 #ifndef R_H
 #define R_H
 
+#define LIMITE_INDICE_PECA 1000
+
 typedef struct             //comprimento L e largura W.
 {
 	int W;
@@ -31,9 +33,9 @@ inline void preencherComZeros(int **matriz, int l, int w)
 {
 	int i, j;
 
-	for (i = 0; i < l; i++)
+	for (i = 0; i < w; i++)
 	{
-		for (j = 0; j < w; j++)
+		for (j = 0; j < l; j++)
 		{
 			matriz[i][j] = 0;
 		}
@@ -45,9 +47,9 @@ inline void copiarMatriz(int **matrizDestino, int **matrizOrigem, int L, int W)
 {
 	int i,j;
 
-	for (i = 0; i < L; i++)
+	for (i = 0; i < W; i++)
 	{
-		for (j = 0; j < W; j++)
+		for (j = 0; j < L; j++)
 		{
 			matrizDestino[i][j] = matrizOrigem[i][j];
 		}
@@ -55,32 +57,30 @@ inline void copiarMatriz(int **matrizDestino, int **matrizOrigem, int L, int W)
 
 }
 
-inline void imprimirR(int **matriz, int l, int w)
+/*Imprime a matriz contida em R, e as variáveis de R*/
+inline void imprimirR(R *r)
 {
 	int i, j;
-
-	for (i = 0; i < l; i++)
+     
+    printf("Comprimento(L) na horizontal e Largura(W) na vertical\n");
+	for (i = 0; i < r->W; i++)
 	{
-		for (j = 0; j < w; j++)
+		for (j = 0; j < r->L; j++)
 		{
-			printf("%3d",matriz[i][j]); //9
+			printf("%4d",r->matriz[i][j]); //9
 		}
 
 		printf("\n");
 	}
-}
 
-//Função feita por Lívia.
-inline void imprimirVariaveisR(R *r)
-{
 	printf("----------------Variáveis de R---------------------------\n");
 	printf("indicePeca atual: %d\n",r->indicePeca);
 	printf("Quantidade de peças presentes: %d\n",r->quantidade);
 	printf("Valor de utilidade total: %.2f\n",r->valorUtilidadeTotal);
 	printf("Área de R: %d\n",(r->L * r->W));
 	printf("---------------------------------------------------------\n");
-}
 
+}
 
 inline R * criarRetanguloR(int l, int w)
 {
@@ -93,11 +93,11 @@ inline R * criarRetanguloR(int l, int w)
 		r->W = w;
 		r->L = l;
 
-		r->matriz = (int **) malloc(l * sizeof(int *));
+		r->matriz = (int **) malloc(w * sizeof(int *));
    		
-   		for (i = 0; i < l; i++)
+   		for (i = 0; i < w; i++)
    		{        
-            r->matriz[i] = (int *) malloc(w * sizeof(int));
+            r->matriz[i] = (int *) malloc(l * sizeof(int));
    
  		}
    		
@@ -181,6 +181,10 @@ inline void preencherRcomPeca(R *r, PECA *nova, PONTO_CANDIDATO *ponto,int indic
 
 	int fatorPreenchimento;
 
+    //Para não haverem peças com indíces muito grandes, o que atrapalha a leitura do resultado em R 
+	if(r->indicePeca == LIMITE_INDICE_PECA)
+		r->indicePeca = 1;
+
 	if(indicePeca == -1) //Preenche com o próximo índice salvo em R.
 	{
 		fatorPreenchimento = r->indicePeca;
@@ -239,7 +243,11 @@ inline void despreencherRcomPeca(R* r,PECA *aRemover,PONTO_CANDIDATO *p1,PONTO_C
 	PONTO_CANDIDATO *origemPeca = coordenadaOrigemPeca(aRemover,p1,p2);
 
 	if(!ehPontoCandidato(origemPeca))
+	{ 	
+		free(origemPeca);
+	    origemPeca = NULL;
 		return;
+	}
 
 
 	for (i = origemPeca->y; i < origemPeca->y + aRemover->w; i++)
@@ -253,6 +261,8 @@ inline void despreencherRcomPeca(R* r,PECA *aRemover,PONTO_CANDIDATO *p1,PONTO_C
 
 	r->quantidade--;
 	r->valorUtilidadeTotal -= aRemover->v;
+	free(origemPeca);
+	origemPeca = NULL;
 
 }
 
@@ -323,6 +333,11 @@ inline int adicionarPecaAoRetangulo(R *r, LISTA_LIGADA *B , PECA *nova)
 				aux_pt2 = aux_pt2->proximo;
 			}
 
+			free(aux_pt1);
+			free(aux_pt2);
+			aux_pt1 = NULL;
+			aux_pt2 = NULL;
+
 		}
 
 		aux = aux->proximo;
@@ -373,6 +388,7 @@ inline void removerPecaDoRetangulo(R *r,LISTA_LIGADA *P,LISTA_LIGADA *B, PECA *a
 	removerPecaDadoPeca(B,aRemover,p1,p2);
 
 	free(novaPeca);
+	novaPeca = NULL;
 }
 
 //Função feita por Lívia.
@@ -481,9 +497,7 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 		aux = B->inicio;
 	}
 	
-	PONTO_CANDIDATO *aux_ponto,*aux_pontoOp;
 
-	
 	//Ordenação do vetor de acordo com a distância da origem da peça com (0,0).
 	if(r->quantidade > 1)
 	  mergeSort(arrayPecas,0,r->quantidade - 1);
@@ -494,7 +508,6 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 
 	//Criar a nova lista B que será considerada.
 	PONTO_CANDIDATO *pontoEscolhido,*aux_pontoEscolhido,*aux_origemPeca;
-	PECA *novaPecaB;
 	int countB, indicePeca;
 	
 	pontoEscolhido = (PONTO_CANDIDATO*)malloc(sizeof(PONTO_CANDIDATO));
@@ -609,7 +622,11 @@ inline void deslocarPecas(R *r, LISTA_LIGADA *B)
 	}
 
 	free(pontoEscolhido);
+	pontoEscolhido = NULL;
 	free(aux_pontoEscolhido);
+	aux_pontoEscolhido = NULL;
+	free(arrayPecas);
+	arrayPecas = NULL;
 }
 
 //se não funcionar, varrer a matriz dando free
@@ -617,9 +634,10 @@ inline void apagarRetanguloR(R *r)
 {
 	int i = 0;
 
-	for (i = 0; i < r->L; i++)
+	for (i = 0; i < r->W; i++)
 	{
 		free(r->matriz[i]);
+		r->matriz[i] = NULL;
 	}
 
 	free(r->matriz);
@@ -628,6 +646,8 @@ inline void apagarRetanguloR(R *r)
 
 
 	free(r);
+
+	r = NULL;
 
 }
 

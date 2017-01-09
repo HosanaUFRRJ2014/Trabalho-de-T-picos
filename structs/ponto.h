@@ -73,6 +73,12 @@ inline PONTO_CANDIDATO * primeiroPontoFactivel(PONTO_CANDIDATO * a, PONTO_CANDID
 
 }
 
+inline void apagarPonto(PONTO_CANDIDATO **p)
+{
+	free(*p);
+
+}
+
 inline void imprimirPontoCandidato(PONTO_CANDIDATO *p)
 {
 	if(p == NULL)
