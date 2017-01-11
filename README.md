@@ -30,7 +30,7 @@ A diretiva -lm permitirá que funções da bibliotema math.h sejam usadas.
 
 Exemplo de execução:
 
-	./Main inst1.txt 10000 0.11 700 0.98 
+	./Main testes/inst1.txt 10000 0.11 700 0.98 
 
 Vale ressaltar que as instâncias de teste do programa podem ser encontradas dentro da pasta testes da aplicação.
 
