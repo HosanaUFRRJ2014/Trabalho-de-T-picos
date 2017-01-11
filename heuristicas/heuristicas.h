@@ -106,7 +106,7 @@ inline void trocarSolucao(R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B, float gamm
 	//return nova;
 }
 
-inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B)
+inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R *atual, LISTA_LIGADA *P, LISTA_LIGADA *B, double *tempo)
 {
 	//R *atual, *nova, *melhor;
 	R *nova,*melhor,*atualAlg;
@@ -153,6 +153,9 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 	copiarSolucao(nova,atual);
 
 //	srand((double)time(NULL));
+
+	//contagem de tempo
+	double comeco = (double) clock () / CLOCKS_PER_SEC;
 
 	while(T > T_c)
 	{
@@ -224,8 +227,16 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 		iterT = 0;
 	}
 
-	//printf("VU de atual: %2.f\n",atual->valorUtilidadeTotal);
-	//printf("VU de melhor: %2.f\n",melhor->valorUtilidadeTotal);
+	//fim contagem de tempo
+    double fim = (double) clock () / CLOCKS_PER_SEC;
+
+    *tempo = fim - comeco;
+
+
+/******************************************/
+//teste pra ver se o ponteiro que pus estava sendo usado adequadamente. Comparei o resultado de dentro da função com o de fora e deu tudo certo!! :D
+//    printf("rsrsrs %f\n",*tempo );
+/*******************************************/
 
 	copiarLista(P,P_melhor);
 	copiarLista(B,B_melhor);
@@ -254,14 +265,16 @@ inline float Simulated_Annealing(float T, float T_c, int It_max, float alpha, R 
 	//return melhor->valorUtilidadeTotal;
 	return aux_result;
 }
-//*/
 
-// inline void imprimirSolucao(R *solucao,LISTA_LIGADA *B)
-// {
-// 	imprimirR(solucao->matriz, solucao->L, solucao->W);
-// 	imprimirVariaveisR(solucao);
-// 	imprimirLista(B);
+inline void imprimirParametrosDeEntradaSA(float T, float T_c, int It_max, float alpha)
+{
+	printf("\n-------------> Parâmetros de entrada do SA <-------------\n");
+    printf("Temperatura inicial (T): %f\n", T);
+    printf("Temperatura de congelamento (T_c): %f\n", T_c);
+    printf("Número máximo de iterações (It_max): %d\n", It_max);
+    printf("Taxa de resfriamento (alpha): %f \n\n", alpha);
+    printf("----------------------------------------------------\n");
 
-// }
+}
 
 #endif

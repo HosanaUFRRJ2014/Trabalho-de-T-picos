@@ -20,8 +20,13 @@ void leitura_peca(FILE *arq, LISTA_LIGADA *lista)
 {
 	int l, w, P, Q, v;
 
-	fscanf(arq," %d %d %d %d %d\n", &l, &w, &P, &Q, &v);
-
+	int lido = fscanf(arq," %d %d %d %d %d\n", &l, &w, &P, &Q, &v);
+    if(lido == false)
+    {
+    	printf("Uma peça não foi lida.\n");
+    	exit(1);
+    }
+	
 	PECA *nova_peca = criarPeca(l,w,P,Q,v,Q);
 
 	inserirPecaOrdenado(lista, nova_peca);

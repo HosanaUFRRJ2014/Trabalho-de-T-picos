@@ -10,18 +10,49 @@
 #define ESCOLHA_PECA 0
 #define ESCOLHA_PC 1
 
+//Função para a validação dos parãmetros inseridos pelo usuário
+inline void validar(char const *argv[])
+{
+    if(argv[1] == NULL ||argv[2] == NULL || argv[3] == NULL || argv[4] == NULL || argv[5] == NULL)
+    {
+        printf("\n|                                UM ERRO OCORREU!                                |\n");
+
+        printf("\n\nCausa: Existe pelo menos 1 (um) parâmetro faltando. Por favor, verifique a quantidade digitada e tente novamente.\n");
+        printf("\n-------------> Parâmetros requeridos <-------------\n");
+        printf("Temperatura inicial (T)\n");
+        printf("Temperatura de congelamento (T_c)\n");
+        printf("Número máximo de iterações (It_max)\n");
+        printf("Taxa de resfriamento (alpha) \n\n");
+        exit(1);
+
+    }
+
+}
+
+inline void imprimirValoresSimmulatedAnnealing();
+
 int main(int argc, char const *argv[])
 {
-    FILE *inst = fopen(argv[1],"r");
-    //FILE *inst = fopen("inst2.txt","r");
-    //FILE *inst = fopen("inst8.txt","r");
-    //FILE *inst = fopen("inst10.txt","r");
 
+    validar(argv);
+
+    //instância a ser lida do arquivo passado como parâmetro para o programa
+    FILE *inst = fopen(argv[1],"r");
     if(inst == NULL)
     {
+        printf("\n|                                UM ERRO OCORREU!                                |\n");
         printf("Arquivo %s não encontrado.\n",argv[1]);
         exit(1);
     }
+
+    //Variáveis de entrada para o SA, recebidas como parâmetro para a aplicação
+
+    float T = (float) atof(argv[2]);
+    float T_c = (float) atof(argv[3]);
+    int It_max = atoi(argv[4]);
+    float alpha = (float) atof(argv[5]);
+
+     imprimirParametrosDeEntradaSA(T, T_c, It_max, alpha);
 
     R *r = NULL;
     LISTA_LIGADA *P = criarLista(), *B = criarLista();
@@ -51,12 +82,15 @@ int main(int argc, char const *argv[])
     //Para seed dos aleatórios.
     srand(time(NULL));
 
-    
-    float resultado = Simulated_Annealing(10000.0,0.11,700,0.98,r,P,B);
+    double tempo = 0;
 
+    //valores que os autores do artigo usaram:
+    //resultados[num_inst] = Simulated_Annealing(10000.0,0.11,700,0.98,ret,P,B);
+    float resultado = Simulated_Annealing(T,T_c,It_max,alpha,r,P,B,&tempo);
     imprimirR(r);
     printf("Solução encontrada: %.2f\n",resultado);
     printf("Solução ótima: %d\n\n",valor_otimo);
+    printf("Tempo para encontrar a solução: %f\n",tempo);
     printf("-------Lista B------\n");
     imprimirLista(B);
     

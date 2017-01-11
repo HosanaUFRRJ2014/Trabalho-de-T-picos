@@ -55,7 +55,7 @@ int main(int argc, char const *argv[])
 		//resultados[num_inst] = Simulated_Annealing(10000.0,0.11,700,0.98,ret,P,B);
 
 		//valores de entrada temporários para testes mais rápidos e concluentes
-		resultados[num_inst] = Simulated_Annealing(10000.0,0.11,20,0.98,ret,P,B);
+		resultados[num_inst] = Simulated_Annealing(10000.0,0.11,700,0.98,ret,P,B);
  
 
 		//imprimirLista(lista);

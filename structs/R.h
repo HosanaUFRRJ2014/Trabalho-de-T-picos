@@ -62,7 +62,8 @@ inline void imprimirR(R *r)
 {
 	int i, j;
      
-    printf("Comprimento(L) na horizontal e Largura(W) na vertical\n");
+    printf("\nComprimento(L) na horizontal e Largura(W) na vertical\n\n");
+	
 	for (i = 0; i < r->W; i++)
 	{
 		for (j = 0; j < r->L; j++)
@@ -77,6 +78,8 @@ inline void imprimirR(R *r)
 	printf("indicePeca atual: %d\n",r->indicePeca);
 	printf("Quantidade de peças presentes: %d\n",r->quantidade);
 	printf("Valor de utilidade total: %.2f\n",r->valorUtilidadeTotal);
+    printf("L: %d\n",r->L);
+    printf("W: %d\n",r->W);
 	printf("Área de R: %d\n",(r->L * r->W));
 	printf("---------------------------------------------------------\n");
 
