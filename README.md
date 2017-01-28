@@ -1,4 +1,4 @@
-# Trabalho de Tópicos
+# Trabalho de Tópicos Especiais em Otimização
 Repositório para o trabalho de Tópicos Especiais em Otimização
 
 **Instruções:**
@@ -58,6 +58,7 @@ lembrando que [x] deve ser trocado por algum valor entre 1 e 21 inclusive.
 	Agora digite run inst[x].txt
 
 4) Para executar o shell script para a execução de um conjunto de testes:
+
 -Dentro da pasta do projeto, no terminal, digite o comando:
 
 	chmod a+x ExecucaoSA.sh
