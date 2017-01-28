@@ -61,19 +61,12 @@ inline int inserirPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array, PONTO_CANDIDATO
         //se for o primeiro nó a ser inserido na array:
 		if(array->inicio == NULL) 
         {
-        	
-        	
-        	array->inicio = pnovo;
-        	   //  array->fim = pnovo;
-
-        
+        	array->inicio = pnovo;        
         }
         else
         { 
 	         array->fim->proximo = pnovo;
-	         pnovo->anterior = array->fim;
-	       //  array->fim = pnovo;
-	         
+	         pnovo->anterior = array->fim;     
     	}
 
     	array->fim = pnovo;
@@ -108,7 +101,6 @@ inline int removerPontoCandidato(ARRAY_PONTOS_CANDIDATOS *array)
 	return false;
 }
 
-/*Função feita por Lívia*/
 inline void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,NO_Pt *aRemoverP1, NO_Pt *aRemoverP2)
 {
 	//Remover o ponto candidato no array de pontos candidatos.
@@ -135,23 +127,6 @@ inline void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_C
 		aRemoverP2->proximo->anterior = aRemoverP2->anterior;
 	}
 
-	/*	
-	if(aRemoverP1 == arrayP1->fim && aRemoverP2 == arrayP2->fim)
-	{
-		arrayP1->fim = aRemoverP1->anterior;
-		arrayP2->fim = aRemoverP2->anterior;
-	}
-	else if(aRemoverP1 != arrayP1->fim && aRemoverP2 != arrayP2->fim)
-	{
-		//Fazer as alterações normais
-		aRemoverP1->anterior->proximo = aRemoverP1->proximo;
-		aRemoverP2->anterior->proximo = aRemoverP2->proximo;
-
-		aRemoverP1->proximo->anterior = aRemoverP1->anterior;
-		aRemoverP2->proximo->anterior = aRemoverP2->anterior;
-	}
-	*/
-
 	arrayP1->tamanho--;
 	arrayP2->tamanho--;
 
@@ -161,7 +136,8 @@ inline void removePontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_C
 	free(aRemoverP2);
 	return;
 }
-/*Função feita por Lívia*/
+
+
 inline int removerPontoCandidatoDadoPontoCandidato(ARRAY_PONTOS_CANDIDATOS *arrayP1,ARRAY_PONTOS_CANDIDATOS *arrayP2,PONTO_CANDIDATO *pontoP1,PONTO_CANDIDATO *pontoP2)
 {
 	if(!vazio(arrayP1) && !vazio(arrayP2))
@@ -184,7 +160,6 @@ inline int removerPontoCandidatoDadoPontoCandidato(ARRAY_PONTOS_CANDIDATOS *arra
 		 free(auxP1);
 	     free(auxP2);
 	}
-
 
 	//Não existe este ponto candidato para removê-lo
 	return false;
@@ -220,7 +195,6 @@ inline void apagarArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS **p1, ARRAY_PONT
 
 }
 
-
 inline void imprimirArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS *p)
 {
 	NO_Pt *aux = p->inicio;
@@ -233,7 +207,5 @@ inline void imprimirArrayPontosCandidatos(ARRAY_PONTOS_CANDIDATOS *p)
 
 	free(aux);
 }
-
-
 
 #endif

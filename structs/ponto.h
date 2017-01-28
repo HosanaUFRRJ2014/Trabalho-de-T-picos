@@ -21,6 +21,11 @@ typedef struct
 	
 }PONTO_CANDIDATO;
 
+inline double distanciaEntreDoisPontos(int x1, int y1, int x2, int y2)
+{
+	return (sqrt(pow((x1 - x2),2) + pow((y1 - y2),2)));
+}
+
 //criar struct ponto candidato. Inicialmente ao ser definido em peça, ele será (-1,-1), pois não estará definido em relação a R.
 inline PONTO_CANDIDATO *criarPontoCandidato(int x, int y)
 {
@@ -38,21 +43,18 @@ inline PONTO_CANDIDATO *criarPontoCandidato(int x, int y)
 //função para a verificação de existencia de ponto. Para os casos em que podem não existir p1 ou p2 pois os mesmos ultrapassariam W e/ou L de R
 inline int ehPontoCandidato(PONTO_CANDIDATO *p)
 {
-
-if(p != NULL)
-{
-	if(p->x != -1 && p->y != -1)
-		return true;
-}
+	if(p != NULL)
+	{
+		if(p->x != -1 && p->y != -1)
+			return true;
+	}
     
-
 	return false;
 }
 
 //função para a verificação do ponto mais próximo da origem (0,0)
 inline PONTO_CANDIDATO * primeiroPontoFactivel(PONTO_CANDIDATO * a, PONTO_CANDIDATO *b)
 {
-	//otimizar esse trecho
 	// se nenhum dos dois é ponto candidato. Existem peças que podem não ter um pt. cand. ou não ter os dois.
 	if(!ehPontoCandidato(a) && !ehPontoCandidato(b)) // ( !(P || Q) ) equiv. a (!P && !Q) 
 	 	return NULL;
@@ -63,20 +65,17 @@ inline PONTO_CANDIDATO * primeiroPontoFactivel(PONTO_CANDIDATO * a, PONTO_CANDID
 	
 	if(!ehPontoCandidato(b))
 		return a;
-	//fim do trecho
 
 	//se 'a' está mais próximo da origem que 'b'
-	if( sqrt(pow(a->x,2) + pow(a->y,2)) <= sqrt(pow(b->x,2) + pow(b->y,2)) )
+	if(distanciaEntreDoisPontos(a->x,a->y,0,0) <= distanciaEntreDoisPontos(b->x,b->y,0,0))
 		return a;
 	else
 		return b;
-
 }
 
 inline void apagarPonto(PONTO_CANDIDATO **p)
 {
 	free(*p);
-
 }
 
 inline void imprimirPontoCandidato(PONTO_CANDIDATO *p)
@@ -85,7 +84,6 @@ inline void imprimirPontoCandidato(PONTO_CANDIDATO *p)
 	{
 		printf("x: -1\n");
 		printf("y: -1\n");
-
 	}
 	else
 	{
@@ -93,12 +91,6 @@ inline void imprimirPontoCandidato(PONTO_CANDIDATO *p)
 		printf("y: %d\n",p->y);
 	}
 
-}
-
-//Função feita por Lívia.
-inline double distanciaEntreDoisPontos(int x1, int y1, int x2, int y2)
-{
-	return (sqrt(pow((x1 - x2),2) + pow((y1 - y2),2)));
 }
 
 #endif

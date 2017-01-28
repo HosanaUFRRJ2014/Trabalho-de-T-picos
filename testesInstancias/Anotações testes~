@@ -1,0 +1,17 @@
+Parâmetros do SA:
+
+1) Temperatura inicial;
+2) Temperatura de congelamento;
+3) Número de iterações máximas por temperatura;
+4) Taxa de resfriamento;
+5) Taxa de remoção.(Algoritmo de reconstrução da solução)
+
+Do artigo:
+
+1)10000 2)0.11 3)700 4)0.98 5)0.35(35%)
+
+*Método de avaliação:
+
+-Para cada variação de parâmetro, rodar 5 vezes e avaliar os resultados.
+
+

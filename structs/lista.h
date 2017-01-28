@@ -8,11 +8,8 @@
 
 /*implementação de uma lista duplamente encadeada*/
 
-//typedef struct lista_ligada LISTA_LIGADA;
-
 #ifndef LISTA_H
 #define LISTA_H
-
 
 typedef struct NO_ NO;
 struct NO_{
@@ -55,14 +52,11 @@ inline int vazia(LISTA_LIGADA *l)
 
 inline int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 {
-
 	NO *pnovo = (NO *) malloc (sizeof(NO));
 
 	NO *aux;
 
 	PECA *peca = (PECA *) malloc(sizeof(PECA));
-
-	//peca = criarPeca(aInserir->l, aInserir->w, aInserir->P,aInserir->Q, aInserir->v, aInserir->quantidade);
 
 	copiarPeca(peca, aInserir);
 
@@ -76,29 +70,19 @@ inline int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
         //se for o primeiro nó a ser inserido na lista:
 		if(lista->inicio == NULL) 
         {
-        	
-        	//printf("label 1\n");
         	lista->inicio = pnovo;
         	lista->fim = pnovo;
-
-        
         }
         //se não for, a lista precisará ser percorrida
         else
         {
         	aux = lista->inicio;
-        	//printf("label 2\n");
 	        while(aux != NULL)
 	        {
-	        	//printf("label 3\n");
-			    //ver se as peças são iguais Se sim, verificar os limites.(No momento,optei por não verificar, pois não sei se é preciso mesmo)
+			    //ver se as peças são iguais.
 			    if(pecasIguais(aux->peca,peca))
 			    {
-			    	//printf("label 4\n");
 		    		aux->peca->quantidade += peca->quantidade;
-		    		//printf("label 5\n");
-		    		//printf("%d\n", peca->p1->fim->ponto->x);
-		    		//printf("label 6\n");
 
 		    		if(peca->p1->fim != NULL && peca->p2->fim != NULL)
 		    		{
@@ -106,8 +90,6 @@ inline int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
 	    	        	inserirPontoCandidato(aux->peca->p2, peca->p2->fim->ponto);
 		    		}
 
-
-	    	        //printf("label 7\n");
 		    		return true;
 
 			    }
@@ -125,8 +107,6 @@ inline int inserirPeca(LISTA_LIGADA *lista, PECA *aInserir)
     	}
 
    		lista->tamanho++;
-   		// free(aux);
-   		// aux = NULL;
     	return true;
 		
 	}
@@ -142,7 +122,6 @@ inline int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
 
 	PECA *peca = (PECA *) malloc(sizeof(PECA));
 	copiarPeca(peca, aInserir);
-	//peca = criarPeca(aInserir->l, aInserir->w, aInserir->P,aInserir->Q, aInserir->v, aInserir->quantidade);
 
 	if(pnovo != NULL)
 	{
@@ -166,7 +145,7 @@ inline int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
         while(aux != NULL)
         {
 
-		    //ver se as peças são iguais. Se sim, só somar sua quantidade. Não estou checando os limites!!
+		    //ver se as peças são iguais. Se sim, só somar sua quantidade.
 		    if(pecasIguais(aux->peca,peca))
 		    {
 		    	aux->peca->quantidade += peca->quantidade;
@@ -222,11 +201,7 @@ inline int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
         pnovo->anterior = lista->fim;
         lista->fim = pnovo;
         lista->tamanho++;
-        // free(aux);
-        // aux = NULL;
         return true;
-
-		
 	}
 
 	return false;
@@ -235,29 +210,23 @@ inline int inserirPecaOrdenado(LISTA_LIGADA *lista, PECA *aInserir)
 
 inline PECA *removerPeca(LISTA_LIGADA *lista)
 {
-	//printf("linha 231\n");
 	if(!vazia(lista))
 	{
 		NO *aRemover = lista->inicio;
 
 		PECA *retorno =  (PECA *) malloc (sizeof(PECA));
 
-
 		if(aRemover->peca->quantidade == 1)
 		{
 			lista->inicio = aRemover->proximo;
 
-
 	        lista->tamanho--;
 			*retorno = *aRemover->peca;
 
-	        
 	        free(aRemover);
 
             //não tirar esse return daqui!! :)
 			return retorno;
-
-
         }
 
         if(aRemover->peca->quantidade > 1)
@@ -271,30 +240,18 @@ inline PECA *removerPeca(LISTA_LIGADA *lista)
 			removerPontoCandidato(aRemover->peca->p2);
 
 			aRemover->peca->quantidade--;
-
-
         }
       
-        return retorno;	
-       
+        return retorno;
 	}
 
 	return NULL;
 }
 
-/*Função feita por Lívia*/
 inline void removePeca(LISTA_LIGADA *lista,NO *aRemover,PONTO_CANDIDATO *ponto_aRemoverP1,PONTO_CANDIDATO *ponto_aRemoverP2)
 {
 	if(!vazia(lista))
-	{
-		/*
-		if(aRemover == lista->inicio)
-		{
-			removerPeca(lista);
-			return;
-		}
-		*/
-		
+	{		
 		if(aRemover->peca->quantidade > 1)
 		{
 			removerPontoCandidatoDadoPontoCandidato(aRemover->peca->p1,aRemover->peca->p2,ponto_aRemoverP1,ponto_aRemoverP2);
@@ -316,31 +273,8 @@ inline void removePeca(LISTA_LIGADA *lista,NO *aRemover,PONTO_CANDIDATO *ponto_a
 				aRemover->proximo->anterior = aRemover->anterior;
 
 			lista->tamanho--;
-			//free(aRemover->peca);
 			free(aRemover);
 			return;
-
-			/*
-			aRemover->anterior->proximo = aRemover->proximo;
-
-			if(aRemover == lista->fim)
-			{
-				lista->fim = aRemover->anterior;
-				lista->tamanho--;
-				//free(aRemover->peca);
-				free(aRemover);
-				return;
-			}
-			else
-			{
-				//aRemover->anterior->proximo = aRemover->proximo;
-				aRemover->proximo->anterior = aRemover->anterior;
-				lista->tamanho--;
-				//free(aRemover->peca);
-				free(aRemover);
-				return;
-			}
-			*/
 		}
 	}
 
@@ -348,7 +282,6 @@ inline void removePeca(LISTA_LIGADA *lista,NO *aRemover,PONTO_CANDIDATO *ponto_a
 	return;
 }
 
-/*Função feita por Lívia*/
 inline int removerPecaDadoPeca(LISTA_LIGADA *B, PECA *aRemover, PONTO_CANDIDATO *p1,PONTO_CANDIDATO *p2)
 {
 	NO *aux = B->inicio;
@@ -371,8 +304,7 @@ inline int removerPecaDadoPeca(LISTA_LIGADA *B, PECA *aRemover, PONTO_CANDIDATO 
 	//Se não tem essa peça na lista, retornamos NULL.
 	return false;
 }
-
-// /*Função feita por Lívia.*/ 
+ 
 inline void apagarLista(LISTA_LIGADA **lista)
 {
 	while(!vazia(*lista))
@@ -385,35 +317,12 @@ void apagarNo(NO *no)
 	free(no);
 }
 
-// void apagarLista(LISTA_LIGADA **lista) 
-// {
-// 	NO *paux;
-// 	paux = (*lista)->inicio;
-// 	NO *prem;
-// 	prem = NULL;
-
-// 	while(paux != NULL) 
-// 	{
-// 		prem = paux;
-// 		paux = paux->proximo;
-// 		//apagarNo(prem);
-// 	}
-
-// 	//free(*lista);
-// 	//*lista=NULL;
-
-// }
-
-/*Função feita por Lívia.*/
 inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
 {
-	//copiarPeca(PECA *pecaDestino, PECA *pecaOrigem)
-
 	NO *aux = origem->inicio;
 
 	if(!vazia(destino))
 		apagarLista(&destino);
-
 
 	if(!vazia(origem))
 	{
@@ -423,33 +332,6 @@ inline void copiarLista(LISTA_LIGADA *destino,LISTA_LIGADA *origem)
 			aux = aux->proximo;
 		}
 	}
-
-	/*
-	if(vazia(destino)) //Não há necessidade de apagar a lista destino!
-	{
-		if(!vazia(origem))
-		{
-			while(aux != NULL)
-			{
-				inserirPeca(destino, aux->peca);
-				aux = aux->proximo;
-			}
-		}
-	}
-	else //Apaga-se a lista destino e depois adiciona os elementos de origem.
-	{
-		apagarLista(destino);
-
-		if(!vazia(origem))
-		{
-			while(aux != NULL)
-			{
-				inserirPeca(destino, aux->peca);
-				aux = aux->proximo;
-			}
-		}
-	}
-	*/
 }
 
 inline LISTA_LIGADA * ordenarLista(LISTA_LIGADA *lista)
@@ -488,7 +370,5 @@ inline void imprimirLista(LISTA_LIGADA *l)
 	free(aux);
 	aux = NULL;
 }
-
-
 
 #endif

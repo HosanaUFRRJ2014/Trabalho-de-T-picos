@@ -1,4 +1,4 @@
-# Trabalho-de-T-picos
+# Trabalho-de-Tópicos
 Repositório para o trabalho de Tópicos Especiais em Otimização
 
 **Instruções:**
@@ -56,3 +56,29 @@ lembrando que [x] deve ser trocado por algum valor entre 1 e 21 inclusive.
 	Digite gdb no terminal
 	Digite  file tt
 	Agora digite run inst[x].txt
+
+4) Para executar o shell script para a execução de um conjunto de testes:
+-Dentro da pasta do projeto, no terminal, digite o comando:
+
+	chmod a+x ExecucaoSA.sh
+
+O comando "chmod" altera as permissões ods arquivos com relação ao seu uso. O comando anterior dará permissão de execução do arquivo como um executável. Para executá-lo, basta digitar no terminal(lembrando, dentro da pasta do projeto) o seguinte comando:
+
+	./ExecucaoSA.sh P1 P2 P3 P4 P5 P6 P7
+Onde:
+
+P1: Nome do arquivo da instância(ex:inst1.txt);								       	   
+P2: Temperatura inicial;					
+P3: Temperatura de congelamento(critério de parada);					
+P4: Número de Iterações máximas por Temperatura;
+P5: Taxa de resfriamento;  					   
+P6: Quantidade de vezes que o teste será realizado com a instância;					     
+P7: Diretório do projeto(ex: /home/livia/Trabalho-de-Topicos).
+
+Exemplo de execução:
+
+	./ExecucaoSA.sh inst1.txt 10000 0.11 50 0.98 1 /home/livia/Trabalho-de-Topicos
+
+O script gerará uma arquivo log com nome definido de 'testeinst[x].txt' dentro da pasta 'testesInstancias'. Cada execução terá a data da execução juntamente com os testes feitos. Testes realizados com a mesma instância serão salvos no mesmo arquivo referente àquele teste, caso o mesmo já esteja criado.
+
+Qualquer dpuvida na execução deste shell script, digite o comando "./ExecucaoSA.sh descricao" no terminal dentro da pasta do projeto.
