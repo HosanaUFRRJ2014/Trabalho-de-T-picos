@@ -1,4 +1,4 @@
-# Trabalho-de-Tópicos
+# Trabalho de Tópicos
 Repositório para o trabalho de Tópicos Especiais em Otimização
 
 **Instruções:**
@@ -81,4 +81,4 @@ Exemplo de execução:
 
 O script gerará uma arquivo log com nome definido de 'testeinst[x].txt' dentro da pasta 'testesInstancias'. Cada execução terá a data da execução juntamente com os testes feitos. Testes realizados com a mesma instância serão salvos no mesmo arquivo referente àquele teste, caso o mesmo já esteja criado.
 
-Qualquer dpuvida na execução deste shell script, digite o comando "./ExecucaoSA.sh descricao" no terminal dentro da pasta do projeto.
+Qualquer dúvida na execução deste shell script, digite o comando "./ExecucaoSA.sh descricao" no terminal dentro da pasta do projeto.
