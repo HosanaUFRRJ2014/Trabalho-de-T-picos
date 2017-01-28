@@ -25,6 +25,7 @@ A diretiva -lm permitirá que funções da bibliotema math.h sejam usadas.
 
 
 ***************************Para executar********************************
+
 2) Para executar a aplicação, digite :
 ./[nome_do_programa] [arquivo_de_Teste].txt [temperatura_Inicial] [temperatura_de_congelamento] [num_max_iteracoes] [taxa_resfriamento]
 
